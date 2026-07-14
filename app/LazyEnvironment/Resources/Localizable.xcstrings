@@ -1,0 +1,4851 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Lazy Environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lazy Environment"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lazy Environment"
+          }
+        }
+      }
+    },
+    "Select an environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境を選択してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경을 선택하세요"
+          }
+        }
+      }
+    },
+    "Update All": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて更新"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "모두 업데이트"
+          }
+        }
+      }
+    },
+    "Update every installed environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール済みのすべての環境を更新します"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치된 모든 환경을 업데이트합니다"
+          }
+        }
+      }
+    },
+    "Refresh": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再読み込み"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "새로고침"
+          }
+        }
+      }
+    },
+    "Re-detect installs and re-scan disk usage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール状況を再検出し、ディスク使用量を再スキャンします"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치 여부를 다시 감지하고 디스크 사용량을 다시 검사합니다"
+          }
+        }
+      }
+    },
+    "Add Environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境を追加"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 추가"
+          }
+        }
+      }
+    },
+    "Add a custom environment recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム環境レシピを追加します"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정 환경 레시피를 추가합니다"
+          }
+        }
+      }
+    },
+    "All": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "전체"
+          }
+        }
+      }
+    },
+    "Categories": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カテゴリ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "카테고리"
+          }
+        }
+      }
+    },
+    "Managed disk usage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "管理対象のディスク使用量"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "관리 중인 디스크 사용량"
+          }
+        }
+      }
+    },
+    "No environments": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境がありません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 없음"
+          }
+        }
+      }
+    },
+    "Edit Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシピを編集"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레시피 편집"
+          }
+        }
+      }
+    },
+    "Delete Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシピを削除"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레시피 삭제"
+          }
+        }
+      }
+    },
+    "Delete this custom recipe?": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このカスタムレシピを削除しますか？"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 사용자 지정 레시피를 삭제할까요?"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "삭제"
+          }
+        }
+      }
+    },
+    "Only the recipe definition is removed. Nothing is uninstalled from disk.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシピ定義のみが削除されます。ディスクからアンインストールされるものはありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레시피 정의만 제거됩니다. 디스크에서 제거되는 항목은 없습니다."
+          }
+        }
+      }
+    },
+    "Recipe last verified: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシピの最終確認: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레시피 마지막 확인: %@"
+          }
+        }
+      }
+    },
+    "Review command first…": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先にコマンドを確認…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어 먼저 확인…"
+          }
+        }
+      }
+    },
+    "The upstream official installer for this tool can silently fall back to Homebrew. This recipe uses a brew-free method — keep that in mind if you edit it.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このツールの公式インストーラーは、自動的に Homebrew にフォールバックすることがあります。このレシピは brew を使わない方法を採用しているため、編集する際はこの点にご注意ください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 도구의 공식 설치 프로그램은 자동으로 Homebrew로 대체될 수 있습니다. 이 레시피는 brew를 사용하지 않는 방식을 쓰므로, 편집할 때 이 점을 유의하세요."
+          }
+        }
+      }
+    },
+    "This tool is a shell function, not a binary. Commands run via an interactive shell (zsh -ic).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このツールはバイナリではなくシェル関数です。コマンドは対話型シェル（zsh -ic）で実行されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 도구는 바이너리가 아니라 셸 함수입니다. 명령어는 대화형 셸(zsh -ic)로 실행됩니다."
+          }
+        }
+      }
+    },
+    "Manual steps (cannot be scripted)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手動ステップ（スクリプト化不可）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "수동 단계 (스크립트로 자동화 불가)"
+          }
+        }
+      }
+    },
+    "Pinned version (empty = always latest)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "固定バージョン（空欄 = 常に最新）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "고정 버전 (비워 두면 항상 최신)"
+          }
+        }
+      }
+    },
+    "Apply": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "適用"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "적용"
+          }
+        }
+      }
+    },
+    "Version pin": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン固定"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전 고정"
+          }
+        }
+      }
+    },
+    "Disk usage measured %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク使用量の測定: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 사용량 측정: %@"
+          }
+        }
+      }
+    },
+    "Rescan": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再スキャン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다시 검사"
+          }
+        }
+      }
+    },
+    "Paths on disk": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク上のパス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 경로"
+          }
+        }
+      }
+    },
+    "Shared with %@ — counted once in totals": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ と共有 — 合計には一度だけ計上されます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@와(과) 공유됨 — 합계에는 한 번만 반영됩니다"
+          }
+        }
+      }
+    },
+    "Environment variables": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境変数"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 변수"
+          }
+        }
+      }
+    },
+    "Add these to your shell profile so the tools resolve the same paths in your terminal.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ターミナルでもツールが同じパスを解決できるよう、これらをシェルプロファイルに追加してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "터미널에서도 도구가 동일한 경로를 인식하도록 셸 프로필에 추가하세요."
+          }
+        }
+      }
+    },
+    "Copy export lines": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "export 行をコピー"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "export 구문 복사"
+          }
+        }
+      }
+    },
+    "Finished successfully": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正常に完了しました"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "성공적으로 완료됨"
+          }
+        }
+      }
+    },
+    "Exited with code %d": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コード %d で終了しました"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "코드 %d(으)로 종료됨"
+          }
+        }
+      }
+    },
+    "Running — %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実行中 — %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실행 중 — %@"
+          }
+        }
+      }
+    },
+    "Last run — %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前回の実行 — %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "마지막 실행 — %@"
+          }
+        }
+      }
+    },
+    "No output": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出力なし"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "출력 없음"
+          }
+        }
+      }
+    },
+    "Succeeded": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "成功"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "성공"
+          }
+        }
+      }
+    },
+    "Failed (exit %d)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "失敗（終了コード %d）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실패 (종료 코드 %d)"
+          }
+        }
+      }
+    },
+    "Official installer may silently fall back to Homebrew": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公式インストーラーが自動的に Homebrew にフォールバックする可能性があります"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "공식 설치 프로그램이 자동으로 Homebrew로 대체될 수 있습니다"
+          }
+        }
+      }
+    },
+    "General": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一般"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "일반"
+          }
+        }
+      }
+    },
+    "Dev home directory": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開発ホームディレクトリ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "개발 홈 디렉터리"
+          }
+        }
+      }
+    },
+    "Choose…": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "선택…"
+          }
+        }
+      }
+    },
+    "Resolves to": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実際のパス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실제 경로"
+          }
+        }
+      }
+    },
+    "Language": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "言語"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "언어"
+          }
+        }
+      }
+    },
+    "System": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "システム"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "시스템"
+          }
+        }
+      }
+    },
+    "Execution": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実行"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실행"
+          }
+        }
+      }
+    },
+    "Always review commands before running": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実行前に常にコマンドを確認"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실행 전 항상 명령어 확인"
+          }
+        }
+      }
+    },
+    "Commands are always shown for the first run of each recipe. Enable this to review on every run.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "各レシピの初回実行時には常にコマンドが表示されます。毎回確認したい場合はこのオプションをオンにしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "각 레시피를 처음 실행할 때는 항상 명령어가 표시됩니다. 매번 확인하려면 이 옵션을 켜세요."
+          }
+        }
+      }
+    },
+    "Disk usage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク使用量"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 사용량"
+          }
+        }
+      }
+    },
+    "Data": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "データ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "데이터"
+          }
+        }
+      }
+    },
+    "Local data": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ローカルデータ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로컬 데이터"
+          }
+        }
+      }
+    },
+    "Show in Finder": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finder で表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finder에서 보기"
+          }
+        }
+      }
+    },
+    "Review command": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コマンドを確認"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어 확인"
+          }
+        }
+      }
+    },
+    "%@ — %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@"
+          }
+        }
+      }
+    },
+    "Environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경"
+          }
+        }
+      }
+    },
+    "Command": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コマンド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어"
+          }
+        }
+      }
+    },
+    "Runs in an interactive login shell (zsh -ic) because this tool is a shell function.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このツールはシェル関数のため、対話型ログインシェル（zsh -ic）で実行されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 도구는 셸 함수이므로 대화형 로그인 셸(zsh -ic)에서 실행됩니다."
+          }
+        }
+      }
+    },
+    "Resolving command…": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コマンドを確認中…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어 확인 중…"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "취소"
+          }
+        }
+      }
+    },
+    "Run": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実行"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실행"
+          }
+        }
+      }
+    },
+    "This recipe does not define a command for this action.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピには、この操作に対応するコマンドが定義されていません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피에는 해당 작업에 대한 명령어가 정의되어 있지 않습니다."
+          }
+        }
+      }
+    },
+    "Add custom environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム環境を追加"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정 환경 추가"
+          }
+        }
+      }
+    },
+    "Edit custom environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム環境を編集"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정 환경 편집"
+          }
+        }
+      }
+    },
+    "Form": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォーム"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "양식"
+          }
+        }
+      }
+    },
+    "JSON": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON"
+          }
+        }
+      }
+    },
+    "Save": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "저장"
+          }
+        }
+      }
+    },
+    "Identity": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "識別情報"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "식별 정보"
+          }
+        }
+      }
+    },
+    "ID (kebab-case, unique)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID（kebab-case、一意）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID (kebab-case, 고유값)"
+          }
+        }
+      }
+    },
+    "Display name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示名"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "표시 이름"
+          }
+        }
+      }
+    },
+    "Summary": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "概要"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "요약"
+          }
+        }
+      }
+    },
+    "Category": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カテゴリ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "카테고리"
+          }
+        }
+      }
+    },
+    "Commands": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コマンド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어"
+          }
+        }
+      }
+    },
+    "Detect (exit 0 = installed)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "検出（終了コード 0 = インストール済み）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "감지 (종료 코드 0 = 설치됨)"
+          }
+        }
+      }
+    },
+    "Current version": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のバージョン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "현재 버전"
+          }
+        }
+      }
+    },
+    "Install": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치"
+          }
+        }
+      }
+    },
+    "Update": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트"
+          }
+        }
+      }
+    },
+    "Uninstall": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アンインストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "제거"
+          }
+        }
+      }
+    },
+    "Tokens: {{latestTag}} / {{latestVersion}} resolve from source pinning, {{version}} prefers the pinned version.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トークン: {{latestTag}} / {{latestVersion}} はソース固定から解決され、{{version}} は固定バージョンを優先します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "토큰: {{latestTag}} / {{latestVersion}}은(는) 소스 고정에서 확인되고, {{version}}은(는) 고정된 버전을 우선합니다."
+          }
+        }
+      }
+    },
+    "Environment & paths": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境変数とパス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 변수 및 경로"
+          }
+        }
+      }
+    },
+    "Environment variables (KEY=VALUE per line)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境変数（1 行に KEY=VALUE）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 변수 (한 줄에 KEY=VALUE)"
+          }
+        }
+      }
+    },
+    "Disk usage paths (one per line, $DEV_HOME and ~ allowed)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク使用量のパス（1 行に 1 つ、$DEV_HOME と ~ が使用可能）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 사용량 경로 (한 줄에 하나, $DEV_HOME 및 ~ 사용 가능)"
+          }
+        }
+      }
+    },
+    "Manual steps (one per line)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手動ステップ（1 行に 1 つ）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "수동 단계 (한 줄에 하나)"
+          }
+        }
+      }
+    },
+    "Behavior": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "動作"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동작"
+          }
+        }
+      }
+    },
+    "Requires interactive shell (tool is a shell function, e.g. nvm, sdk)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "対話型シェルが必要（ツールがシェル関数の場合、例: nvm、sdk）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "대화형 셸 필요 (도구가 셸 함수인 경우, 예: nvm, sdk)"
+          }
+        }
+      }
+    },
+    "Official installer has Homebrew fallback risk": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公式インストーラーに Homebrew フォールバックのリスクあり"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "공식 설치 프로그램에 Homebrew 대체 위험 있음"
+          }
+        }
+      }
+    },
+    "Supports version pinning": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン固定に対応"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전 고정 지원"
+          }
+        }
+      }
+    },
+    "Source pinning": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ソース固定"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "소스 고정"
+          }
+        }
+      }
+    },
+    "How is “latest” resolved?": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“最新”はどのように解決されますか？"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“최신”을 어떻게 확인하나요?"
+          }
+        }
+      }
+    },
+    "Apply JSON to form": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON をフォームに適用"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON을 양식에 적용"
+          }
+        }
+      }
+    },
+    "None": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "なし"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "없음"
+          }
+        }
+      }
+    },
+    "GitHub latest tag": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub の最新タグ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub 최신 태그"
+          }
+        }
+      }
+    },
+    "Stable vendor URL": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安定した配布元 URL"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "안정 배포처 URL"
+          }
+        }
+      }
+    },
+    "Pinned version": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "固定バージョン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "고정 버전"
+          }
+        }
+      }
+    },
+    "go.dev release feed": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "go.dev リリースフィード"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "go.dev 릴리스 피드"
+          }
+        }
+      }
+    },
+    "owner/repo": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "owner/repo"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "owner/repo"
+          }
+        }
+      }
+    },
+    "https://…": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://…"
+          }
+        }
+      }
+    },
+    "version": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전"
+          }
+        }
+      }
+    },
+    "ID is required.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID は必須です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID는 필수입니다."
+          }
+        }
+      }
+    },
+    "Display name is required.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示名は必須です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "표시 이름은 필수입니다."
+          }
+        }
+      }
+    },
+    "A recipe with this ID already exists.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この ID のレシピはすでに存在します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 ID를 가진 레시피가 이미 존재합니다."
+          }
+        }
+      }
+    },
+    "Environment variable line “%@” is not KEY=VALUE.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境変数の行“%@”が KEY=VALUE 形式ではありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 변수 줄 “%@”이(가) KEY=VALUE 형식이 아닙니다."
+          }
+        }
+      }
+    },
+    "Environment variable line “%@” has an empty key.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "環境変数の行“%@”のキーが空です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "환경 변수 줄 “%@”의 키가 비어 있습니다."
+          }
+        }
+      }
+    },
+    "GitHub pinning requires owner/repo.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub 固定には owner/repo が必要です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub 고정에는 owner/repo가 필요합니다."
+          }
+        }
+      }
+    },
+    "Invalid recipe JSON: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシピ JSON が無効です: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "잘못된 레시피 JSON: %@"
+          }
+        }
+      }
+    },
+    "Checking": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "確認中"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "확인 중"
+          }
+        }
+      }
+    },
+    "Not installed": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未インストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치되지 않음"
+          }
+        }
+      }
+    },
+    "Installed": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール済み"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치됨"
+          }
+        }
+      }
+    },
+    "Broken": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "破損"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "손상됨"
+          }
+        }
+      }
+    },
+    "Languages": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "言語"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "언어"
+          }
+        }
+      }
+    },
+    "Runtimes": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ランタイム"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "런타임"
+          }
+        }
+      }
+    },
+    "Mobile": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モバイル"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "모바일"
+          }
+        }
+      }
+    },
+    "Editors": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エディター"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "에디터"
+          }
+        }
+      }
+    },
+    "AI Agents": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI エージェント"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 에이전트"
+          }
+        }
+      }
+    },
+    "Custom": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정"
+          }
+        }
+      }
+    },
+    "The command references a version token but the recipe has no source pinning to resolve it.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コマンドはバージョントークンを参照していますが、レシピにはそれを解決するソース固定がありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "명령어가 버전 토큰을 참조하지만, 레시피에 이를 확인할 소스 고정이 없습니다."
+          }
+        }
+      }
+    },
+    "This recipe's source pinning does not provide a resolvable version.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピのソース固定では、解決可能なバージョンを取得できません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 소스 고정으로는 확인 가능한 버전을 제공할 수 없습니다."
+          }
+        }
+      }
+    },
+    "Version lookup failed: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョンの照会に失敗しました: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전 조회 실패: %@"
+          }
+        }
+      }
+    },
+    "Version lookup returned an unexpected response.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョンの照会で予期しない応答が返されました。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전 조회에서 예상치 못한 응답을 받았습니다."
+          }
+        }
+      }
+    },
+    "Installed (external)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール済み（外部）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치됨 (외부)"
+          }
+        }
+      }
+    },
+    "Existing install detected: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "既存のインストールを検出しました: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기존 설치 감지됨: %@"
+          }
+        }
+      }
+    },
+    "This install lives outside the managed layout. Install sets up a separate managed copy under your dev home and leaves the existing one untouched.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このインストールは管理レイアウトの外にあります。インストールを実行すると、開発ホームの下に別途管理コピーを構成し、既存のインストールはそのまま残します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 설치는 관리 레이아웃 밖에 있습니다. 설치를 누르면 개발 홈 아래에 별도의 관리 사본을 구성하며, 기존 설치는 그대로 둡니다."
+          }
+        }
+      }
+    },
+    "External install": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外部インストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "외부 설치"
+          }
+        }
+      }
+    },
+    "Install location": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストール場所"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치 위치"
+          }
+        }
+      }
+    },
+    "Custom base path (empty = global dev home)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタムベースパス（空欄 = グローバル開発ホーム）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정 기준 경로 (비워 두면 전역 개발 홈)"
+          }
+        }
+      }
+    },
+    "Resolves to: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実際のパス: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실제 경로: %@"
+          }
+        }
+      }
+    },
+    "This recipe installs under $DEV_HOME. A custom base changes where Install puts it — and where detection and disk usage look.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピは $DEV_HOME の下にインストールされます。カスタムベースを指定すると、インストール先と、検出およびディスク使用量の参照先がその基準で変わります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피는 $DEV_HOME 아래에 설치됩니다. 기준 경로를 지정하면 설치 위치와 감지·디스크 사용량이 그 경로 기준으로 동작합니다."
+          }
+        }
+      }
+    },
+    "Uninstall removes this detected existing install — review the exact command before running.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アンインストールは、検出された既存のインストールを削除します — 実行前に正確なコマンドを確認してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "제거는 감지된 기존 설치를 삭제합니다 — 실행 전 정확한 명령을 확인하세요."
+          }
+        }
+      }
+    },
+    "Runs with administrator privileges — macOS will ask for your password.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "管理者権限で実行されます — macOS がパスワードの入力を求めます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "관리자 권한으로 실행됩니다 — macOS가 비밀번호를 요청합니다."
+          }
+        }
+      }
+    },
+    "Open Lazy Environment": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lazy Environment を開く"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lazy Environment 열기"
+          }
+        }
+      }
+    },
+    "Settings…": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설정…"
+          }
+        }
+      }
+    },
+    "Quit": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "終了"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "종료"
+          }
+        }
+      }
+    },
+    "Show Details": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "詳細を表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "자세히 보기"
+          }
+        }
+      }
+    },
+    "Scanned %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スキャン: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "스캔: %@"
+          }
+        }
+      }
+    },
+    "App": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "앱"
+          }
+        }
+      }
+    },
+    "Launch at login": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログイン時に起動"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로그인 시 자동 시작"
+          }
+        }
+      }
+    },
+    "Show menu bar icon": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メニューバーアイコンを表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "메뉴 막대 아이콘 표시"
+          }
+        }
+      }
+    },
+    "Start hidden in the menu bar (no main window, no Dock icon)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メニューバーに隠れた状態で起動（メインウインドウ・Dock アイコンなし）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "메뉴 막대에 숨겨진 채로 시작 (메인 창·Dock 아이콘 없음)"
+          }
+        }
+      }
+    },
+    "External": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外部"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "외부"
+          }
+        }
+      }
+    },
+    "Top disk usage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク使用量の上位"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 사용량 상위"
+          }
+        }
+      }
+    },
+    "Disk usage is scanned only when you ask for it (Refresh or Rescan). The last measurement time is stored and shown per path.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ディスク使用量は、要求したとき（再読み込みまたは再スキャン）にのみスキャンされます。最後に測定した時刻はパスごとに保存され、表示されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "디스크 사용량은 직접 요청할 때만(새로고침·다시 검사) 스캔합니다. 마지막 측정 시각은 경로별로 저장되어 표시됩니다."
+          }
+        }
+      }
+    },
+    "Bootstraps Homebrew at the default `/opt/homebrew` prefix, reserved for auxiliary CLIs (jq, git, gh) and GUI casks only — the primary language runtimes ship their own brew-free installers. Update runs `brew update` to refresh Homebrew and its formula definitions.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew を既定のプレフィックス `/opt/homebrew` にブートストラップします。主要な言語ランタイムは独自の brew を使わないインストーラーを備えているため、Homebrew は補助 CLI（jq、git、gh）と GUI cask 専用として予約されています。更新は `brew update` を実行して Homebrew とその formula 定義を更新します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew를 기본 프리픽스인 `/opt/homebrew`에 부트스트랩합니다. 기본 언어 런타임은 자체 brew-free 설치 프로그램을 사용하므로, Homebrew는 보조 CLI(jq, git, gh)와 GUI cask 전용으로만 예약되어 있습니다. 업데이트는 `brew update`로 Homebrew와 포뮬러 정의를 갱신합니다."
+          }
+        }
+      }
+    },
+    "On a fresh Mac, creating `/opt/homebrew` needs administrator rights. Because `NONINTERACTIVE=1` suppresses the password prompt and this app runs commands without a terminal, run the very first bootstrap yourself in Terminal.app: paste the official command from https://brew.sh (it will ask for your admin password). Once `/opt/homebrew` exists and is owned by your account, this app's Update and later brew operations need no sudo.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい Mac では、`/opt/homebrew` の作成に管理者権限が必要です。`NONINTERACTIVE=1` がパスワードプロンプトを抑制し、このアプリはターミナルなしでコマンドを実行するため、最初のブートストラップは Terminal.app でご自身で実行してください。https://brew.sh の公式コマンドを貼り付けると、管理者パスワードの入力を求められます。`/opt/homebrew` が作成されてご自身のアカウントの所有になれば、以降のこのアプリの更新や brew 操作に sudo は不要です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "새 Mac에서 `/opt/homebrew`를 만들려면 관리자 권한이 필요합니다. `NONINTERACTIVE=1`이 비밀번호 프롬프트를 막고 이 앱은 터미널 없이 명령을 실행하므로, 최초 부트스트랩은 Terminal.app에서 직접 실행하세요. https://brew.sh 의 공식 명령을 붙여넣으면 관리자 비밀번호를 물어봅니다. `/opt/homebrew`가 생성되고 사용자 계정 소유가 되면, 이후 이 앱의 업데이트와 brew 작업에는 sudo가 필요 없습니다."
+          }
+        }
+      }
+    },
+    "Keep the default `/opt/homebrew` prefix — a custom prefix loses access to precompiled bottles and forces slow from-source builds for most formulae. If you want it to appear under a custom apps folder, symlink rather than relocate.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "既定の `/opt/homebrew` プレフィックスを維持してください。カスタムプレフィックスではコンパイル済みの bottle を利用できず、ほとんどの formula をソースから遅くビルドすることになります。カスタムのアプリフォルダの下に表示したい場合は、移動ではなくシンボリックリンクを使用してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기본 `/opt/homebrew` 프리픽스를 유지하세요. 사용자 지정 프리픽스는 미리 컴파일된 bottle을 사용할 수 없어 대부분의 포뮬러를 소스에서 느리게 빌드하게 됩니다. 사용자 지정 앱 폴더 아래에 보이게 하려면 이동하지 말고 심볼릭 링크를 사용하세요."
+          }
+        }
+      }
+    },
+    "Per product policy, use Homebrew only for auxiliary tools (jq, git, gh) and GUI casks (VS Code, Cursor), not for the primary language/runtime recipes — those install brew-free so your toolchains stay independent of Homebrew.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "製品ポリシー上、Homebrew は補助ツール（jq、git、gh）と GUI cask（VS Code、Cursor）にのみ使用し、主要な言語/ランタイムのレシピには使用しないでください。これらは brew を使わずにインストールされ、ツールチェーンが Homebrew に依存しないようにしています。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "제품 정책상 Homebrew는 보조 도구(jq, git, gh)와 GUI cask(VS Code, Cursor)에만 사용하고 기본 언어/런타임 레시피에는 사용하지 마세요. 그 레시피들은 brew 없이 설치되어 툴체인이 Homebrew에 의존하지 않도록 합니다."
+          }
+        }
+      }
+    },
+    "Installs Node.js through nvm into a relocated `NVM_DIR` at `$DEV_HOME/js/nvm` (instead of the default `~/.nvm`). Update runs `nvm install --lts` and repoints the `default` alias, keeping you on the latest LTS Node.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Node.js を nvm でインストールしますが、既定の `~/.nvm` ではなく `$DEV_HOME/js/nvm` に再配置した `NVM_DIR` にインストールします。更新は `nvm install --lts` を実行し、`default` エイリアスを付け直して、常に最新の LTS Node を維持します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Node.js를 nvm으로 설치하되, 기본 `~/.nvm` 대신 `$DEV_HOME/js/nvm`으로 재배치한 `NVM_DIR`에 설치합니다. 업데이트는 `nvm install --lts`를 실행하고 `default` 별칭을 다시 지정하여 항상 최신 LTS Node를 유지합니다."
+          }
+        }
+      }
+    },
+    "nvm is a shell function sourced from `nvm.sh`, not a binary on `PATH` (PRD §9.7), so this app drives it through an interactive shell (`zsh -ic`). Shell startup banners may leak into the log output — that is expected and safe to ignore.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nvm は `PATH` 上のバイナリではなく、`nvm.sh` から source されるシェル関数です（PRD §9.7）。そのため、このアプリは対話型シェル（`zsh -ic`）で nvm を実行します。シェル起動時のバナーがログ出力に混ざることがありますが、これは想定内であり無視して問題ありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nvm은 `PATH`에 있는 바이너리가 아니라 `nvm.sh`에서 source되는 셸 함수입니다(PRD §9.7). 그래서 이 앱은 대화형 셸(`zsh -ic`)로 nvm을 실행합니다. 셸 시작 배너가 로그 출력에 섞여 나올 수 있는데, 이는 정상이며 무시해도 됩니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `source \"$NVM_DIR/nvm.sh\"` after them so `nvm`, `node`, and `npm` resolve in every new terminal you open.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後にその下へ `source \"$NVM_DIR/nvm.sh\"` を追加すると、新しく開くすべてのターミナルで `nvm`、`node`、`npm` が解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 그 아래에 `source \"$NVM_DIR/nvm.sh\"`를 추가하면 새로 여는 모든 터미널에서 `nvm`, `node`, `npm`이 인식됩니다."
+          }
+        }
+      }
+    },
+    "Several other recipes (Codex CLI, opencode) run their npm installs through this nvm-managed Node, so install this recipe first if you plan to use them.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "他のいくつかのレシピ（Codex CLI、opencode）は、この nvm 管理下の Node を通じて npm インストールを実行します。これらを使う予定がある場合は、このレシピを先にインストールしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다른 여러 레시피(Codex CLI, opencode)가 이 nvm 관리 Node로 npm 설치를 실행하므로, 그 도구들을 사용할 계획이라면 이 레시피를 먼저 설치하세요."
+          }
+        }
+      }
+    },
+    "Installs the pnpm package manager to a managed `PNPM_HOME` at `$DEV_HOME/js/pnpm` via pnpm's official standalone script. Update re-runs the same script, which upgrades pnpm in place.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pnpm パッケージマネージャーを、pnpm 公式の standalone スクリプトで `$DEV_HOME/js/pnpm` の管理された `PNPM_HOME` にインストールします。更新は同じスクリプトを再実行し、pnpm をその場でアップグレードします。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pnpm 패키지 매니저를 pnpm 공식 standalone 스크립트로 `$DEV_HOME/js/pnpm`의 관리형 `PNPM_HOME`에 설치합니다. 업데이트는 같은 스크립트를 다시 실행하여 pnpm을 제자리에서 업그레이드합니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `PNPM_HOME` on your `PATH` with `export PATH=\"$PNPM_HOME:$PATH\"` so the `pnpm` command resolves in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$PNPM_HOME:$PATH\"` で `PNPM_HOME` を `PATH` に追加すると、ご自身のターミナルで `pnpm` コマンドが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$PNPM_HOME:$PATH\"`로 `PNPM_HOME`을 `PATH`에 추가하면 사용자 터미널에서 `pnpm` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "pnpm is installed as a standalone binary and does not need Node to run itself. To install Node too, use the Node.js (nvm) recipe, or run `pnpm env use --global lts` after pnpm is on your PATH.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pnpm は standalone バイナリとしてインストールされ、pnpm 自体の実行に Node は必要ありません。Node もインストールするには、Node.js (nvm) レシピを使うか、pnpm が PATH に入った後に `pnpm env use --global lts` を実行してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pnpm은 standalone 바이너리로 설치되어 pnpm 자체를 실행하는 데는 Node가 필요 없습니다. Node도 설치하려면 Node.js (nvm) 레시피를 사용하거나, pnpm이 PATH에 올라온 뒤 `pnpm env use --global lts`를 실행하세요."
+          }
+        }
+      }
+    },
+    "Installs the Bun JavaScript runtime, bundler, and package manager under a managed `BUN_INSTALL` at `$DEV_HOME/js/bun` via Bun's official script. Update runs `bun upgrade`, which replaces the binary in place with the latest release.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bun の JavaScript ランタイム・バンドラー・パッケージマネージャーを、Bun 公式スクリプトで `$DEV_HOME/js/bun` の管理された `BUN_INSTALL` の下にインストールします。更新は `bun upgrade` を実行し、バイナリを最新リリースにその場で置き換えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bun JavaScript 런타임·번들러·패키지 매니저를 Bun 공식 스크립트로 `$DEV_HOME/js/bun`의 관리형 `BUN_INSTALL` 아래에 설치합니다. 업데이트는 `bun upgrade`를 실행하여 바이너리를 최신 릴리스로 제자리 교체합니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add Bun to your `PATH` with `export PATH=\"$BUN_INSTALL/bin:$PATH\"` so the `bun` command resolves in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$BUN_INSTALL/bin:$PATH\"` で Bun を `PATH` に追加すると、ご自身のターミナルで `bun` コマンドが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$BUN_INSTALL/bin:$PATH\"`로 Bun을 `PATH`에 추가하면 사용자 터미널에서 `bun` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "Bun's installer normally edits your shell profile automatically; because this recipe runs non-interactively, add the export and PATH lines yourself as above.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bun のインストーラーは通常シェルプロファイルを自動で編集しますが、このレシピは非対話的に実行されるため、上記のとおり export と PATH の行をご自身で追加してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bun 설치 프로그램은 보통 셸 프로필을 자동으로 편집하지만, 이 레시피는 비대화형으로 실행되므로 위와 같이 export와 PATH 구문을 직접 추가하세요."
+          }
+        }
+      }
+    },
+    "Installs a Java toolchain through SDKMAN into a relocated `SDKMAN_DIR` at `$DEV_HOME/java/sdkman`, configured to answer prompts automatically; the Gradle cache lives at `$DEV_HOME/java/gradle` (`GRADLE_USER_HOME`), shared with the Android SDK recipe. Update runs `sdk install java` to fetch the latest Java release.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Java ツールチェーンを SDKMAN でインストールしますが、`$DEV_HOME/java/sdkman` に再配置した `SDKMAN_DIR` にインストールし、プロンプトに自動応答するよう構成します。Gradle キャッシュは `$DEV_HOME/java/gradle`（`GRADLE_USER_HOME`）にあり、Android SDK レシピと共有されます。更新は `sdk install java` を実行して最新の Java リリースを取得します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Java 툴체인을 SDKMAN으로 설치하되, `$DEV_HOME/java/sdkman`으로 재배치한 `SDKMAN_DIR`에 설치하고 프롬프트에 자동 응답하도록 구성합니다. Gradle 캐시는 `$DEV_HOME/java/gradle`(`GRADLE_USER_HOME`)에 있으며 Android SDK 레시피와 공유됩니다. 업데이트는 `sdk install java`로 최신 Java 릴리스를 받습니다."
+          }
+        }
+      }
+    },
+    "`sdk` is a shell function sourced from `sdkman-init.sh`, not a binary on `PATH` (PRD §9.7), so this app drives it through an interactive shell (`zsh -ic`); expect shell startup banners in the log output.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`sdk` は `PATH` 上のバイナリではなく、`sdkman-init.sh` から source されるシェル関数です（PRD §9.7）。そのため、このアプリは対話型シェル（`zsh -ic`）で実行し、ログ出力にシェル起動時のバナーが表示されることがあります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`sdk`는 `PATH`에 있는 바이너리가 아니라 `sdkman-init.sh`에서 source되는 셸 함수입니다(PRD §9.7). 그래서 이 앱은 대화형 셸(`zsh -ic`)로 실행하며, 로그 출력에 셸 시작 배너가 나타날 수 있습니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `source \"$SDKMAN_DIR/bin/sdkman-init.sh\"` after them so `sdk` and `java` resolve in every new terminal.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後にその下へ `source \"$SDKMAN_DIR/bin/sdkman-init.sh\"` を追加すると、新しいターミナルごとに `sdk` と `java` が解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 그 아래에 `source \"$SDKMAN_DIR/bin/sdkman-init.sh\"`를 추가하면 새 터미널마다 `sdk`와 `java`가 인식됩니다."
+          }
+        }
+      }
+    },
+    "`GRADLE_USER_HOME` (`$DEV_HOME/java/gradle`) is shared with the Android SDK recipe so the Gradle cache is counted once, not twice — leave it in place if you use both.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`GRADLE_USER_HOME`（`$DEV_HOME/java/gradle`）は Android SDK レシピと共有されるため、Gradle キャッシュは二重ではなく一度だけ計上されます。両方を使用する場合は、このパスをそのままにしておいてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`GRADLE_USER_HOME`(`$DEV_HOME/java/gradle`)은 Android SDK 레시피와 공유되어 Gradle 캐시가 두 번이 아니라 한 번만 계산됩니다. 두 레시피를 모두 사용한다면 이 경로를 그대로 두세요."
+          }
+        }
+      }
+    },
+    "Installs the Rust toolchain via rustup with `RUSTUP_HOME` and `CARGO_HOME` relocated to `$DEV_HOME/rust/rustup` and `$DEV_HOME/rust/cargo` (installed with `--no-modify-path`, so your shell profile is left untouched). Update runs `rustup update` to refresh the stable toolchain.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rust ツールチェーンを rustup でインストールし、`RUSTUP_HOME` と `CARGO_HOME` をそれぞれ `$DEV_HOME/rust/rustup` と `$DEV_HOME/rust/cargo` に再配置します（`--no-modify-path` でインストールするため、シェルプロファイルは変更されません）。更新は `rustup update` を実行して stable ツールチェーンを更新します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rust 툴체인을 rustup으로 설치하되, `RUSTUP_HOME`과 `CARGO_HOME`을 각각 `$DEV_HOME/rust/rustup`과 `$DEV_HOME/rust/cargo`로 재배치합니다(`--no-modify-path`로 설치하므로 셸 프로필은 건드리지 않습니다). 업데이트는 `rustup update`로 stable 툴체인을 갱신합니다."
+          }
+        }
+      }
+    },
+    "The installer runs with `--no-modify-path`, so wire the toolchain into your shell yourself: click the \"Copy export lines\" button in this recipe's detail view, paste them into `~/.zshrc`, and add `export PATH=\"$CARGO_HOME/bin:$PATH\"` so `cargo`, `rustc`, and `rustup` resolve in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストーラーは `--no-modify-path` で実行されるため、ツールチェーンはご自身でシェルに組み込む必要があります。このレシピの詳細画面で「export 行をコピー」ボタンをクリックして `~/.zshrc` に貼り付け、`export PATH=\"$CARGO_HOME/bin:$PATH\"` を追加すると、ご自身のターミナルで `cargo`、`rustc`、`rustup` が解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치 프로그램은 `--no-modify-path`로 실행되므로 툴체인을 셸에 직접 연결해야 합니다. 이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣고, `export PATH=\"$CARGO_HOME/bin:$PATH\"`를 추가하면 사용자 터미널에서 `cargo`, `rustc`, `rustup`이 인식됩니다."
+          }
+        }
+      }
+    },
+    "Building crates needs the Xcode Command Line Tools' linker. If a build fails with a missing linker or compiler, run `xcode-select --install` (a GUI prompt appears) and retry.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "crate のビルドには Xcode Command Line Tools のリンカーが必要です。リンカーやコンパイラーが見つからないというエラーでビルドが失敗した場合は、`xcode-select --install`（GUI プロンプトが表示されます）を実行してから再試行してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "crate를 빌드하려면 Xcode Command Line Tools의 링커가 필요합니다. 링커나 컴파일러가 없다는 오류로 빌드가 실패하면 `xcode-select --install`(GUI 프롬프트가 뜹니다)을 실행한 뒤 다시 시도하세요."
+          }
+        }
+      }
+    },
+    "Installs a current Go toolchain from go.dev's official tarball into `$DEV_HOME/go/toolchain` (with `GOPATH` at `$DEV_HOME/go/gopath`) and sets `GOTOOLCHAIN=auto` so Go switches per-project versions from `go.mod` on its own. Update re-downloads and extracts the latest release, replacing the toolchain in place.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新の Go ツールチェーンを go.dev 公式の tarball から `$DEV_HOME/go/toolchain` にインストールし（`GOPATH` は `$DEV_HOME/go/gopath`）、`GOTOOLCHAIN=auto` を設定して、Go が `go.mod` に応じてプロジェクトごとのバージョンを自動で切り替えるようにします。更新は最新リリースを再ダウンロードして展開し、ツールチェーンをその場で置き換えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "현재 Go 툴체인을 go.dev 공식 tarball에서 `$DEV_HOME/go/toolchain`에 설치하고(`GOPATH`는 `$DEV_HOME/go/gopath`), `GOTOOLCHAIN=auto`를 설정하여 Go가 `go.mod`에 따라 프로젝트별 버전을 스스로 전환하도록 합니다. 업데이트는 최신 릴리스를 다시 내려받아 압축을 풀고 툴체인을 제자리 교체합니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add the toolchain to your `PATH` with `export PATH=\"$DEV_HOME/go/toolchain/go/bin:$GOPATH/bin:$PATH\"` so the `go` command resolves in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$DEV_HOME/go/toolchain/go/bin:$GOPATH/bin:$PATH\"` でツールチェーンを `PATH` に追加すると、ご自身のターミナルで `go` コマンドが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$DEV_HOME/go/toolchain/go/bin:$GOPATH/bin:$PATH\"`로 툴체인을 `PATH`에 추가하면 사용자 터미널에서 `go` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "This recipe supports pinning a specific Go version in the detail view; leave it empty to always fetch the latest. Because `GOTOOLCHAIN=auto` is set, a project's `go.mod` can still pull a different toolchain automatically when you build it.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピは詳細画面で特定の Go バージョンの固定に対応しています。空欄にすると常に最新版を取得します。`GOTOOLCHAIN=auto` が設定されているため、ビルド時にプロジェクトの `go.mod` が別のツールチェーンを自動で取得することもあります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피는 상세 화면에서 특정 Go 버전 고정을 지원합니다. 비워 두면 항상 최신 버전을 받습니다. `GOTOOLCHAIN=auto`가 설정되어 있으므로, 빌드 시 프로젝트의 `go.mod`가 다른 툴체인을 자동으로 받아올 수도 있습니다."
+          }
+        }
+      }
+    },
+    "Installs Astral's uv Python package/version manager with every data directory relocated under `$DEV_HOME/python/uv` — the `uv`/`uvx` binaries, cache, installed tools, and downloaded Python interpreters. Update runs `uv self update` to upgrade uv in place.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astral の uv Python パッケージ/バージョンマネージャーをインストールし、すべてのデータディレクトリ（`uv`/`uvx` バイナリ、キャッシュ、インストールしたツール、ダウンロードした Python インタープリター）を `$DEV_HOME/python/uv` の下に再配置します。更新は `uv self update` を実行して uv をその場でアップグレードします。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astral의 uv Python 패키지/버전 매니저를 설치하며, 모든 데이터 디렉터리(`uv`/`uvx` 바이너리, 캐시, 설치한 도구, 내려받은 Python 인터프리터)를 `$DEV_HOME/python/uv` 아래로 재배치합니다. 업데이트는 `uv self update`로 uv를 제자리 업그레이드합니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add uv to your `PATH` with `export PATH=\"$UV_INSTALL_DIR:$UV_TOOL_BIN_DIR:$PATH\"` so `uv`, `uvx`, and any tools you install with `uv tool install` resolve in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$UV_INSTALL_DIR:$UV_TOOL_BIN_DIR:$PATH\"` で uv を `PATH` に追加すると、ご自身のターミナルで `uv`、`uvx`、および `uv tool install` でインストールしたツールが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$UV_INSTALL_DIR:$UV_TOOL_BIN_DIR:$PATH\"`로 uv를 `PATH`에 추가하면 사용자 터미널에서 `uv`, `uvx`, 그리고 `uv tool install`로 설치한 도구들이 인식됩니다."
+          }
+        }
+      }
+    },
+    "uv manages its own downloaded interpreters under `$DEV_HOME/python/uv/pythons`. Don't rely on the system `/usr/bin/python3`, which is an Xcode Command Line Tools stub, not a real development interpreter (PRD §9.6).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv は `$DEV_HOME/python/uv/pythons` の下で、自身がダウンロードしたインタープリターを管理します。システムの `/usr/bin/python3` は、実際の開発用インタープリターではなく Xcode Command Line Tools のスタブなので、これに依存しないでください（PRD §9.6）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv는 `$DEV_HOME/python/uv/pythons` 아래에서 자체적으로 내려받은 인터프리터를 관리합니다. 시스템 `/usr/bin/python3`은 실제 개발용 인터프리터가 아니라 Xcode Command Line Tools의 stub이므로 의존하지 마세요(PRD §9.6)."
+          }
+        }
+      }
+    },
+    "Installs the rbenv Ruby version manager by cloning it directly from GitHub into `$DEV_HOME/ruby/rbenv` (avoiding the official installer's silent Homebrew fallback). Update pulls the latest rbenv/ruby-build, then compiles and selects the newest stable Ruby as your global version.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rbenv Ruby バージョンマネージャーを GitHub から直接 clone して `$DEV_HOME/ruby/rbenv` にインストールします（公式インストーラーの自動的な Homebrew フォールバックを回避します）。更新は最新の rbenv/ruby-build を pull した後、最新の stable Ruby をコンパイルしてグローバルバージョンとして選択します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rbenv Ruby 버전 매니저를 GitHub에서 직접 clone하여 `$DEV_HOME/ruby/rbenv`에 설치합니다(공식 설치 프로그램의 자동 Homebrew 대체를 피합니다). 업데이트는 최신 rbenv/ruby-build를 pull한 뒤, 최신 stable Ruby를 컴파일하여 전역 버전으로 선택합니다."
+          }
+        }
+      }
+    },
+    "Install sets up the version manager only (like the Node.js (nvm) recipe). Press Update to compile and select the latest stable Ruby — this can take several minutes and is streamed live in the log.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インストールはバージョンマネージャーのみを構成します（Node.js (nvm) レシピと同様）。更新を押すと最新の stable Ruby をコンパイルして選択します — この処理には数分かかることがあり、ログにリアルタイムでストリーミングされます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설치는 버전 매니저만 구성합니다(Node.js (nvm) 레시피와 동일). 업데이트를 누르면 최신 stable Ruby를 컴파일하여 선택합니다 — 이 과정은 몇 분 걸릴 수 있으며 로그로 실시간 스트리밍됩니다."
+          }
+        }
+      }
+    },
+    "Compiling Ruby with ruby-build needs the Xcode Command Line Tools. If the build reports a missing compiler, run `xcode-select --install` (a GUI prompt appears) and retry Update.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ruby-build で Ruby をコンパイルするには Xcode Command Line Tools が必要です。コンパイラーが見つからないというビルドエラーが出た場合は、`xcode-select --install`（GUI プロンプトが表示されます）を実行してから更新を再試行してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ruby-build로 Ruby를 컴파일하려면 Xcode Command Line Tools가 필요합니다. 컴파일러가 없다는 오류가 나면 `xcode-select --install`(GUI 프롬프트가 뜹니다)을 실행한 뒤 업데이트를 다시 시도하세요."
+          }
+        }
+      }
+    },
+    "ruby-build on macOS has historically needed OpenSSL/readline libraries that Homebrew usually supplies. Under the no-brew policy this is a known tension: if the Ruby build fails on OpenSSL, provide those libraries (or accept using Homebrew for just that dependency) and update again.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS の ruby-build は従来、通常は Homebrew が提供する OpenSSL/readline ライブラリを必要としてきました。no-brew ポリシーの下では、これは既知の相反点です。Ruby のビルドが OpenSSL で失敗する場合は、それらのライブラリを用意する（またはその依存関係に限って Homebrew の使用を許容する）うえで、再度更新してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS의 ruby-build는 예전부터 보통 Homebrew가 제공하는 OpenSSL/readline 라이브러리를 필요로 했습니다. no-brew 정책상 이는 알려진 상충 지점입니다. Ruby 빌드가 OpenSSL에서 실패하면 해당 라이브러리를 제공하거나(또는 그 의존성에 한해 Homebrew 사용을 허용하고) 다시 업데이트하세요."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `export PATH=\"$RBENV_ROOT/bin:$PATH\"` and `eval \"$(rbenv init - zsh)\"` so `rbenv` and your selected Ruby resolve in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$RBENV_ROOT/bin:$PATH\"` と `eval \"$(rbenv init - zsh)\"` を追加すると、ご自身のターミナルで `rbenv` と選択した Ruby が解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$RBENV_ROOT/bin:$PATH\"`와 `eval \"$(rbenv init - zsh)\"`를 추가하면 사용자 터미널에서 `rbenv`와 선택한 Ruby가 인식됩니다."
+          }
+        }
+      }
+    },
+    "Installs CocoaPods as a gem into the rbenv-managed Ruby, with its repos/templates directory relocated via `CP_HOME_DIR` to `$DEV_HOME/ruby/cocoapods`. Update runs `gem update cocoapods` and rehashes rbenv's shims.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CocoaPods を rbenv 管理下の Ruby に gem としてインストールし、repos/templates ディレクトリを `CP_HOME_DIR` で `$DEV_HOME/ruby/cocoapods` に再配置します。更新は `gem update cocoapods` を実行し、rbenv の shim を rehash します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CocoaPods를 rbenv 관리 Ruby에 gem으로 설치하며, repos/templates 디렉터리를 `CP_HOME_DIR`로 `$DEV_HOME/ruby/cocoapods`에 재배치합니다. 업데이트는 `gem update cocoapods`를 실행하고 rbenv shim을 rehash합니다."
+          }
+        }
+      }
+    },
+    "Install the Ruby (rbenv) recipe and press Update on it first so a real Ruby exists. Otherwise `gem install cocoapods` targets the macOS system Ruby, which needs sudo and is discouraged.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に Ruby (rbenv) レシピをインストールして更新を押し、実際の Ruby が存在する状態にしてください。そうしないと `gem install cocoapods` が macOS システムの Ruby を対象にしてしまい、これは sudo が必要で推奨されません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "먼저 Ruby (rbenv) 레시피를 설치하고 업데이트를 눌러 실제 Ruby가 존재하도록 하세요. 그렇지 않으면 `gem install cocoapods`가 macOS 시스템 Ruby를 대상으로 하는데, 이는 sudo가 필요하고 권장되지 않습니다."
+          }
+        }
+      }
+    },
+    "`CP_HOME_DIR` relocates the CocoaPods repos/templates directory, but the separate download cache at `~/Library/Caches/CocoaPods` has not always honored `CP_HOME_DIR` across versions (PRD §9.8); it is tracked here as a best-effort disk path and removed on uninstall.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`CP_HOME_DIR` は CocoaPods の repos/templates ディレクトリを再配置しますが、別途の `~/Library/Caches/CocoaPods` にあるダウンロードキャッシュは、バージョンによっては `CP_HOME_DIR` に常に従うとは限りませんでした（PRD §9.8）。ここでは best-effort なディスクパスとして追跡し、アンインストール時に併せて削除します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`CP_HOME_DIR`은 CocoaPods repos/templates 디렉터리를 재배치하지만, 별도의 다운로드 캐시인 `~/Library/Caches/CocoaPods`는 버전에 따라 `CP_HOME_DIR`을 항상 따르지는 않았습니다(PRD §9.8). 여기서는 best-effort 디스크 경로로 추적하며 제거 시 함께 삭제됩니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CP_HOME_DIR` and `RBENV_ROOT` match in your terminals. Run pod via `rbenv exec pod …` (or after `rbenv init`) so it uses the managed Ruby rather than the system one.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けると、ターミナルで `CP_HOME_DIR` と `RBENV_ROOT` が一致します。pod は `rbenv exec pod …` で（または `rbenv init` の後に）実行し、システムの Ruby ではなく管理された Ruby を使うようにしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으면 터미널에서 `CP_HOME_DIR`과 `RBENV_ROOT`이 일치합니다. pod은 `rbenv exec pod …`로(또는 `rbenv init` 이후에) 실행하여 시스템 Ruby가 아닌 관리 Ruby를 사용하도록 하세요."
+          }
+        }
+      }
+    },
+    "Prepares the `ANDROID_HOME` folder at `$DEV_HOME/android/sdk` and the shared Gradle cache (`$DEV_HOME/java/gradle`); the SDK components themselves are downloaded by Android Studio's first-run wizard, the only step that can set the SDK path. There is no automated update — SDK components are managed from Android Studio's SDK Manager.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`ANDROID_HOME` フォルダ（`$DEV_HOME/android/sdk`）と共有 Gradle キャッシュ（`$DEV_HOME/java/gradle`）を準備します。SDK コンポーネント自体は Android Studio の初回起動ウィザードがダウンロードし、SDK パスを設定できるのはこのステップだけです。自動更新はなく、SDK コンポーネントは Android Studio の SDK Manager で管理します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`ANDROID_HOME` 폴더(`$DEV_HOME/android/sdk`)와 공유 Gradle 캐시(`$DEV_HOME/java/gradle`)를 준비합니다. SDK 구성 요소 자체는 Android Studio의 첫 실행 마법사가 내려받으며, SDK 경로를 설정할 수 있는 단계는 이 마법사뿐입니다. 자동 업데이트는 없으며, SDK 구성 요소는 Android Studio의 SDK Manager에서 관리합니다."
+          }
+        }
+      }
+    },
+    "Download and install Android Studio from https://developer.android.com/studio (a GUI app; not scriptable here).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://developer.android.com/studio から Android Studio をダウンロードしてインストールしてください（GUI アプリのため、ここではスクリプト化できません）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://developer.android.com/studio 에서 Android Studio를 내려받아 설치하세요(GUI 앱이며 여기서 스크립트로 처리할 수 없습니다)."
+          }
+        }
+      }
+    },
+    "In Android Studio's first-run Setup Wizard, choose Custom setup and set the Android SDK Location to the prepared path `$DEV_HOME/android/sdk`. This path cannot be scripted — it must be typed into the wizard (PRD §9.8).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android Studio の初回起動セットアップウィザードで Custom セットアップを選び、Android SDK Location を準備済みのパス `$DEV_HOME/android/sdk` に設定してください。このパスはスクリプト化できず、ウィザードに直接入力する必要があります（PRD §9.8）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android Studio의 첫 실행 Setup Wizard에서 Custom 설정을 선택하고 Android SDK Location을 준비된 경로 `$DEV_HOME/android/sdk`로 지정하세요. 이 경로는 스크립트로 지정할 수 없으며 마법사에 직접 입력해야 합니다(PRD §9.8)."
+          }
+        }
+      }
+    },
+    "Accept the SDK license agreements so the wizard downloads platform-tools, an SDK Platform, and build-tools into that folder. Until then the recipe shows the folder as present but reports no `adb` version.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SDK ライセンス契約に同意すると、ウィザードが platform-tools、SDK Platform、build-tools をそのフォルダにダウンロードします。それまでは、レシピはフォルダが存在するとは表示しますが、`adb` のバージョンは報告しません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SDK 라이선스 계약에 동의하면 마법사가 platform-tools, SDK Platform, build-tools를 해당 폴더로 내려받습니다. 그 전까지는 레시피가 폴더는 존재하는 것으로 표시하되 `adb` 버전은 보고하지 않습니다."
+          }
+        }
+      }
+    },
+    "Install component updates later via Android Studio → Settings → Languages & Frameworks → Android SDK (the SDK Manager). The Gradle cache at `$DEV_HOME/java/gradle` is shared with the Java (SDKMAN) recipe and is left untouched on uninstall.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンポーネントの更新は、後で Android Studio → Settings → Languages & Frameworks → Android SDK（SDK Manager）からインストールしてください。`$DEV_HOME/java/gradle` の Gradle キャッシュは Java (SDKMAN) レシピと共有され、アンインストール時には変更されません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "구성 요소 업데이트는 이후 Android Studio → Settings → Languages & Frameworks → Android SDK(SDK Manager)에서 설치하세요. `$DEV_HOME/java/gradle`의 Gradle 캐시는 Java (SDKMAN) 레시피와 공유되며 제거 시에는 건드리지 않습니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add the platform tools to your `PATH` with `export PATH=\"$ANDROID_HOME/platform-tools:$PATH\"` so `adb` and other SDK tools resolve in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$ANDROID_HOME/platform-tools:$PATH\"` で platform-tools を `PATH` に追加すると、ご自身のターミナルで `adb` などの SDK ツールが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$ANDROID_HOME/platform-tools:$PATH\"`로 platform-tools를 `PATH`에 추가하면 사용자 터미널에서 `adb` 등 SDK 도구가 인식됩니다."
+          }
+        }
+      }
+    },
+    "Installs Docker Desktop by downloading the official DMG for Apple Silicon and copying `Docker.app` into `/Applications`; the first launch (privileged helper, license) is inherently manual. Update re-downloads the latest DMG and cleanly replaces the existing app bundle.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Silicon 向けの公式 DMG をダウンロードし、`Docker.app` を `/Applications` にコピーする方法で Docker Desktop をインストールします。初回起動（特権ヘルパーのインストール、ライセンス同意）は本質的に手動です。更新は最新の DMG を再ダウンロードし、既存のアプリバンドルをきれいに置き換えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Silicon용 공식 DMG를 내려받아 `Docker.app`을 `/Applications`에 복사하는 방식으로 Docker Desktop을 설치합니다. 첫 실행(권한 헬퍼 설치, 라이선스 동의)은 본질적으로 수동입니다. 업데이트는 최신 DMG를 다시 내려받아 기존 앱 번들을 깔끔하게 교체합니다."
+          }
+        }
+      }
+    },
+    "First launch is manual: open Docker Desktop from `/Applications`. It installs a privileged helper (macOS prompts for your password) and asks you to accept the service agreement — the app cannot script past these OS-level prompts (PRD §9.10).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初回起動は手動です。`/Applications` から Docker Desktop を開いてください。特権ヘルパーをインストールし（macOS がパスワードの入力を求めます）、サービス契約への同意を要求しますが、このアプリはこれらの OS レベルのプロンプトをスクリプトで通過できません（PRD §9.10）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "첫 실행은 수동입니다. `/Applications`에서 Docker Desktop을 여세요. 권한 헬퍼를 설치하고(macOS가 비밀번호를 요청합니다) 서비스 약관 동의를 요구하는데, 이 앱은 이러한 OS 수준 프롬프트를 스크립트로 넘어갈 수 없습니다(PRD §9.10)."
+          }
+        }
+      }
+    },
+    "Copying `Docker.app` into `/Applications` assumes your account is an administrator (the app cannot supply a sudo password). If the copy is denied, open the downloaded DMG and drag `Docker.app` to Applications yourself.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`Docker.app` を `/Applications` にコピーする操作は、ご自身のアカウントが管理者であることを前提としています（このアプリは sudo パスワードを提供できません）。コピーが拒否された場合は、ダウンロードした DMG を開き、`Docker.app` を Applications にご自身でドラッグしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`Docker.app`을 `/Applications`에 복사하는 작업은 사용자 계정이 관리자라고 가정합니다(이 앱은 sudo 비밀번호를 제공할 수 없습니다). 복사가 거부되면 내려받은 DMG를 열어 `Docker.app`을 Applications로 직접 끌어다 놓으세요."
+          }
+        }
+      }
+    },
+    "Before running Update, quit Docker Desktop so its app bundle can be replaced cleanly — Update removes the old `/Applications/Docker.app` and copies the new version in (a clean replace, not a merge).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新を実行する前に Docker Desktop を終了して、アプリバンドルがきれいに置き換えられるようにしてください。更新は既存の `/Applications/Docker.app` を削除し、新しいバージョンをコピーします（マージではなく完全な置き換えです）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트를 실행하기 전에 Docker Desktop을 종료하여 앱 번들이 깔끔하게 교체되도록 하세요. 업데이트는 기존 `/Applications/Docker.app`을 제거하고 새 버전을 복사합니다(병합이 아니라 완전 교체)."
+          }
+        }
+      }
+    },
+    "Docker's disk-image/data location is configurable only in Docker Desktop → Settings → Resources → Advanced, not from here (PRD §9.10).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docker のディスクイメージ/データの保存場所は、ここではなく Docker Desktop → Settings → Resources → Advanced でのみ設定できます（PRD §9.10）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docker의 디스크 이미지/데이터 위치는 여기가 아니라 Docker Desktop → Settings → Resources → Advanced에서만 설정할 수 있습니다(PRD §9.10)."
+          }
+        }
+      }
+    },
+    "Installs Neovim from the latest official GitHub release tarball for Apple Silicon into `$DEV_HOME/tools/neovim`. Update re-fetches the newest release tag and replaces the extracted build in place.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新の公式 GitHub リリース tarball（Apple Silicon 向け）から Neovim を `$DEV_HOME/tools/neovim` にインストールします。更新は最新のリリースタグを再取得し、展開したビルドをその場で置き換えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "최신 공식 GitHub 릴리스 tarball(Apple Silicon용)에서 Neovim을 `$DEV_HOME/tools/neovim`에 설치합니다. 업데이트는 최신 릴리스 태그를 다시 받아 압축을 푼 빌드를 제자리 교체합니다."
+          }
+        }
+      }
+    },
+    "The `nvim` binary lands at `$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim`, which isn't on your `PATH` by default. Add `export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\"` to `~/.zshrc` so the `nvim` command works in your own terminals.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`nvim` バイナリは `$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim` に配置され、既定では `PATH` に含まれません。`~/.zshrc` に `export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\"` を追加すると、ご自身のターミナルで `nvim` コマンドが動作します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`nvim` 바이너리는 `$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim`에 놓이며, 기본적으로 `PATH`에 없습니다. `~/.zshrc`에 `export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\"`를 추가하면 사용자 터미널에서 `nvim` 명령이 동작합니다."
+          }
+        }
+      }
+    },
+    "Install this recipe before LunarVim — LunarVim requires Neovim 0.9+ and will not install Neovim itself.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LunarVim より先にこのレシピをインストールしてください。LunarVim は Neovim 0.9 以上を必要とし、Neovim 自体はインストールしません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LunarVim보다 이 레시피를 먼저 설치하세요. LunarVim은 Neovim 0.9 이상을 요구하며 Neovim 자체는 설치하지 않습니다."
+          }
+        }
+      }
+    },
+    "Installs LunarVim from its Neovim-compatibility release branch (`release-1.4/neovim-0.9`) into `~/.local/share/lunarvim`, with the `lvim` launcher placed at `~/.local/bin`. Update re-runs the same pinned installer; because the branch URL drifts as new Neovim versions ship, it is tracked with `lastVerified` and should be checked periodically (PRD §9.9).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LunarVim を Neovim 互換のリリースブランチ（`release-1.4/neovim-0.9`）から `~/.local/share/lunarvim` にインストールし、`lvim` ランチャーを `~/.local/bin` に配置します。更新は同じ固定インストーラーを再実行します。新しい Neovim バージョンがリリースされるとブランチ URL が変化するため、`lastVerified` で追跡し、定期的に確認する必要があります（PRD §9.9）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LunarVim을 Neovim 호환 릴리스 브랜치(`release-1.4/neovim-0.9`)에서 `~/.local/share/lunarvim`에 설치하며, `lvim` 실행기는 `~/.local/bin`에 배치합니다. 업데이트는 동일한 고정 설치 프로그램을 다시 실행합니다. 새 Neovim 버전이 나오면 브랜치 URL이 바뀌므로 `lastVerified`로 추적하며 주기적으로 확인해야 합니다(PRD §9.9)."
+          }
+        }
+      }
+    },
+    "Install the Neovim recipe first — LunarVim's installer requires Neovim 0.9+ and will not install Neovim itself (on macOS it only prints a `brew install neovim` suggestion and exits, PRD §9.9).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に Neovim レシピをインストールしてください。LunarVim のインストーラーは Neovim 0.9 以上を必要とし、Neovim 自体はインストールしません（macOS では `brew install neovim` の提案を出力して終了するだけです、PRD §9.9）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neovim 레시피를 먼저 설치하세요. LunarVim 설치 프로그램은 Neovim 0.9 이상을 요구하며 Neovim 자체는 설치하지 않습니다(macOS에서는 `brew install neovim` 제안만 출력하고 종료합니다, PRD §9.9)."
+          }
+        }
+      }
+    },
+    "Optional language-server dependencies are installed only if `node`/`npm`, `python`, or `cargo` are already on `PATH`; otherwise the installer skips them with a warning (safe to add later once those recipes are installed).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オプションの言語サーバー依存関係は、`node`/`npm`、`python`、`cargo` がすでに `PATH` にある場合にのみインストールされます。ない場合は、インストーラーが警告とともにスキップします（該当するレシピをインストールした後で追加しても問題ありません）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "선택적인 언어 서버 의존성은 `node`/`npm`, `python`, `cargo`가 이미 `PATH`에 있을 때만 설치됩니다. 없으면 설치 프로그램이 경고와 함께 건너뜁니다(해당 레시피들을 설치한 뒤 나중에 추가해도 됩니다)."
+          }
+        }
+      }
+    },
+    "Add `export PATH=\"$HOME/.local/bin:$PATH\"` to `~/.zshrc` so the `lvim` command resolves. Note the pinned installer branch can go stale as Neovim advances — if an install fails, check the recipe's `lastVerified` date and confirm the branch URL is still current (PRD §9.9).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`~/.zshrc` に `export PATH=\"$HOME/.local/bin:$PATH\"` を追加すると、`lvim` コマンドが解決されます。固定されたインストーラーのブランチは、Neovim の進化に伴って古くなることがあります。インストールが失敗した場合は、レシピの `lastVerified` の日付を確認し、ブランチ URL が現在も有効かどうかを確かめてください（PRD §9.9）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`~/.zshrc`에 `export PATH=\"$HOME/.local/bin:$PATH\"`를 추가하면 `lvim` 명령이 인식됩니다. 고정된 설치 프로그램 브랜치는 Neovim이 발전하면서 오래될 수 있습니다. 설치가 실패하면 레시피의 `lastVerified` 날짜를 확인하고 브랜치 URL이 여전히 유효한지 점검하세요(PRD §9.9)."
+          }
+        }
+      }
+    },
+    "Relocates Xcode's DerivedData build cache to `$DEV_HOME/xcode/derived-data` via Xcode's official `IDECustomDerivedDataLocation` setting (`defaults write com.apple.dt.Xcode`), the Apple-supported alternative to symlinking. Re-run Relocate to re-apply the setting if it is ever reset.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode の DerivedData ビルドキャッシュを、Xcode 公式の `IDECustomDerivedDataLocation` 設定（`defaults write com.apple.dt.Xcode`）を使って `$DEV_HOME/xcode/derived-data` に再配置します。これはシンボリックリンクの代わりに Apple がサポートする方法です。設定がリセットされた場合は、再配置を再実行して再適用してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode의 DerivedData 빌드 캐시를 Xcode 공식 설정 `IDECustomDerivedDataLocation`(`defaults write com.apple.dt.Xcode`)을 통해 `$DEV_HOME/xcode/derived-data`로 재배치합니다. 이는 심볼릭 링크 대신 Apple이 지원하는 방식입니다. 설정이 초기화되면 재배치를 다시 실행하여 재적용하세요."
+          }
+        }
+      }
+    },
+    "Quit and relaunch Xcode so it picks up the new DerivedData location. The old `~/Library/Developer/Xcode/DerivedData` folder is safe to delete manually; Xcode regenerates build data on the next build.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode を終了して再起動し、新しい DerivedData の場所を認識させてください。既存の `~/Library/Developer/Xcode/DerivedData` フォルダは手動で削除しても安全で、Xcode は次回のビルド時にビルドデータを再生成します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode를 종료했다가 다시 실행하여 새 DerivedData 위치를 인식하도록 하세요. 기존 `~/Library/Developer/Xcode/DerivedData` 폴더는 직접 삭제해도 안전하며, Xcode가 다음 빌드 때 빌드 데이터를 다시 생성합니다."
+          }
+        }
+      }
+    },
+    "You can verify or change this in Xcode → Settings → Locations → Derived Data, which edits the same `IDECustomDerivedDataLocation` preference this recipe writes.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この値は Xcode → Settings → Locations → Derived Data で確認または変更でき、これはこのレシピが書き込むのと同じ `IDECustomDerivedDataLocation` の環境設定を編集します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 값은 Xcode → Settings → Locations → Derived Data에서 확인하거나 변경할 수 있으며, 이는 이 레시피가 기록하는 `IDECustomDerivedDataLocation` 환경설정과 동일한 항목을 편집합니다."
+          }
+        }
+      }
+    },
+    "Moves Xcode's Archives, iOS/watchOS DeviceSupport, and the SwiftPM cache into `$DEV_HOME/xcode` using an idempotent move-then-symlink (no official relocation exists for these). Quit Xcode before running; re-run Relocate safely anytime — already-linked folders are skipped.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode の Archives、iOS/watchOS DeviceSupport、SwiftPM キャッシュを、冪等な「移動してからシンボリックリンク」方式で `$DEV_HOME/xcode` に移動します（これらには公式の再配置方法がありません）。実行前に Xcode を終了してください。すでにリンク済みのフォルダはスキップされるため、再配置はいつでも安全に再実行できます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xcode의 Archives, iOS/watchOS DeviceSupport, SwiftPM 캐시를 idempotent한 이동-후-심볼릭링크 방식으로 `$DEV_HOME/xcode`로 옮깁니다(이 항목들에는 공식 재배치 방법이 없습니다). 실행 전 Xcode를 종료하세요. 이미 링크된 폴더는 건너뛰므로 재배치를 언제든 안전하게 다시 실행할 수 있습니다."
+          }
+        }
+      }
+    },
+    "Quit Xcode before running this — Xcode must not be writing to these folders during the move.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この操作を実行する前に Xcode を終了してください。移動中に Xcode がこれらのフォルダに書き込みを行っていてはいけません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 작업을 실행하기 전에 Xcode를 종료하세요. 이동하는 동안 Xcode가 이 폴더들에 쓰기를 하고 있으면 안 됩니다."
+          }
+        }
+      }
+    },
+    "Symlinks are created even for DeviceSupport folders that don't exist yet, so future device-support data also lands in the managed location. Already-symlinked folders are skipped, so re-running is safe (idempotent).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ存在しない DeviceSupport フォルダに対してもシンボリックリンクが作成されるため、今後生成される device-support データも管理された場所に配置されます。すでにシンボリックリンク済みのフォルダはスキップされるため、再実行しても安全です（冪等）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "아직 존재하지 않는 DeviceSupport 폴더에도 심볼릭 링크가 생성되므로, 앞으로 생길 device-support 데이터도 관리 위치에 쌓입니다. 이미 심볼릭 링크된 폴더는 건너뛰므로 다시 실행해도 안전합니다(idempotent)."
+          }
+        }
+      }
+    },
+    "If a folder exists in BOTH the original location and the managed destination (e.g. from a previous partial run), the relocate stops with a 'conflict' message instead of overwriting either copy — merge the two into one and delete the other, then run again.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "元の場所と管理先の両方にフォルダが存在する場合（例: 以前に部分的に実行された場合）、再配置はどちらのコピーも上書きせず、'conflict' メッセージとともに停止します。2 つを 1 つにマージして他方を削除し、その後で再実行してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "원본 위치와 관리 대상 위치 양쪽에 모두 폴더가 존재하면(예: 이전에 부분적으로 실행된 경우), 재배치는 어느 쪽도 덮어쓰지 않고 'conflict' 메시지와 함께 멈춥니다. 둘을 하나로 병합하고 다른 하나를 삭제한 뒤 다시 실행하세요."
+          }
+        }
+      }
+    },
+    "Reclaims Simulator disk space by deleting unavailable simulator devices via the supported `xcrun simctl delete unavailable` command; usage is measured under `~/Library/Developer/CoreSimulator`. Runtime-image deletion is a separate manual `simctl` step because the images are SIP-protected and cannot be moved, symlinked, or `rm`'d (PRD §9.5).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サポートされている `xcrun simctl delete unavailable` コマンドで利用できないシミュレーターデバイスを削除し、Simulator のディスク領域を回収します。使用量は `~/Library/Developer/CoreSimulator` の下で測定されます。ランタイムイメージは SIP で保護されており、移動・シンボリックリンク・`rm` ができないため、ランタイムイメージの削除は別途の手動 `simctl` ステップになります（PRD §9.5）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "지원되는 `xcrun simctl delete unavailable` 명령으로 사용 불가능한 시뮬레이터 기기를 삭제하여 Simulator 디스크 공간을 회수합니다. 사용량은 `~/Library/Developer/CoreSimulator` 아래에서 측정됩니다. 런타임 이미지는 SIP로 보호되어 이동·심볼릭링크·`rm`이 불가능하므로, 런타임 이미지 삭제는 별도의 수동 `simctl` 단계입니다(PRD §9.5)."
+          }
+        }
+      }
+    },
+    "To reclaim the large simulator runtime images (multiple GB each), list installed runtimes with `xcrun simctl runtime list`, then delete a specific one with `xcrun simctl runtime delete <identifier>`. These images live under `/System/Library/AssetsV2` (SIP-protected) and can only be removed through simctl — never with `rm`, symlinks, or a relocation (PRD §9.5).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "容量の大きいシミュレーターのランタイムイメージ（各数 GB）を回収するには、`xcrun simctl runtime list` でインストール済みのランタイムを一覧表示し、`xcrun simctl runtime delete <identifier>` で特定のランタイムを削除してください。これらのイメージは `/System/Library/AssetsV2`（SIP 保護）の下にあり、simctl でのみ削除できます — `rm`、シンボリックリンク、再配置では決して削除できません（PRD §9.5）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "용량이 큰 시뮬레이터 런타임 이미지(각 수 GB)를 회수하려면 `xcrun simctl runtime list`로 설치된 런타임을 나열한 뒤 `xcrun simctl runtime delete <identifier>`로 특정 런타임을 삭제하세요. 이 이미지들은 `/System/Library/AssetsV2`(SIP 보호) 아래에 있으며 오직 simctl로만 제거할 수 있습니다 — `rm`, 심볼릭 링크, 재배치로는 절대 불가합니다(PRD §9.5)."
+          }
+        }
+      }
+    },
+    "Do not try to relocate `~/Library/Developer/CoreSimulator/Devices` to another volume — CoreSimulator's daemon has real-world reports of breaking when that data is symlinked, so this recipe only cleans up rather than moves (PRD §9.5).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`~/Library/Developer/CoreSimulator/Devices` を別のボリュームに再配置しようとしないでください。CoreSimulator のデーモンは、そのデータをシンボリックリンクすると壊れるという実例が報告されているため、このレシピは移動ではなく整理のみを行います（PRD §9.5）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "`~/Library/Developer/CoreSimulator/Devices`를 다른 볼륨으로 재배치하려 하지 마세요. CoreSimulator 데몬은 해당 데이터를 심볼릭 링크했을 때 깨진 사례가 실제로 보고되어 있어, 이 레시피는 이동이 아니라 정리만 수행합니다(PRD §9.5)."
+          }
+        }
+      }
+    },
+    "Installs Claude Code via Anthropic's official native installer (`claude.ai/install.sh`, not the deprecated npm package) to `~/.local/bin/claude`, with its config directory relocated via `CLAUDE_CONFIG_DIR` to `$DEV_HOME/ai/claude`. Update re-runs the native installer to fetch the latest stable build; credentials stay in the macOS Keychain.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anthropic 公式のネイティブインストーラー（`claude.ai/install.sh`。非推奨の npm パッケージではありません）で Claude Code を `~/.local/bin/claude` にインストールし、設定ディレクトリを `CLAUDE_CONFIG_DIR` で `$DEV_HOME/ai/claude` に再配置します。更新はネイティブインストーラーを再実行して最新の stable ビルドを取得します。認証情報は macOS Keychain に保持されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anthropic 공식 네이티브 설치 프로그램(`claude.ai/install.sh`, 더 이상 권장되지 않는 npm 패키지가 아님)으로 Claude Code를 `~/.local/bin/claude`에 설치하며, 설정 디렉터리를 `CLAUDE_CONFIG_DIR`로 `$DEV_HOME/ai/claude`에 재배치합니다. 업데이트는 네이티브 설치 프로그램을 다시 실행하여 최신 stable 빌드를 받습니다. 자격 증명은 macOS Keychain에 유지됩니다."
+          }
+        }
+      }
+    },
+    "First run requires interactive sign-in — launch `claude` in a terminal to authenticate (browser OAuth or API key). Credentials are stored in the macOS Keychain and are not managed or removed by this recipe.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初回起動には対話型のサインインが必要です — ターミナルで `claude` を起動して認証してください（ブラウザ OAuth または API キー）。認証情報は macOS Keychain に保存され、このレシピが管理したり削除したりすることはありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "첫 실행에는 대화형 로그인이 필요합니다 — 터미널에서 `claude`를 실행하여 인증하세요(브라우저 OAuth 또는 API 키). 자격 증명은 macOS Keychain에 저장되며 이 레시피가 관리하거나 제거하지 않습니다."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CLAUDE_CONFIG_DIR` matches in your terminals. Also add `export PATH=\"$HOME/.local/bin:$PATH\"` so the `claude` command resolves in your own shells.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けると、ターミナルで `CLAUDE_CONFIG_DIR` が一致します。さらに `export PATH=\"$HOME/.local/bin:$PATH\"` を追加すると、ご自身のシェルで `claude` コマンドが解決されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으면 터미널에서 `CLAUDE_CONFIG_DIR`이 일치합니다. 또한 `export PATH=\"$HOME/.local/bin:$PATH\"`를 추가하면 사용자 셸에서 `claude` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "Installs OpenAI's Codex CLI globally via npm (`@openai/codex`) using nvm's default Node, with its config directory relocated via `CODEX_HOME` to `$DEV_HOME/ai/codex`. It uses the scoped package name — the unscoped `codex` npm package is an unrelated project (PRD §9.12). Update reinstalls the latest version. Requires the Node.js (nvm) recipe first.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenAI の Codex CLI を、nvm の default Node を使って npm（`@openai/codex`）でグローバルにインストールし、設定ディレクトリを `CODEX_HOME` で `$DEV_HOME/ai/codex` に再配置します。スコープ付きのパッケージ名を使用します — スコープなしの `codex` npm パッケージは無関係なプロジェクトです（PRD §9.12）。更新は最新バージョンを再インストールします。先に Node.js (nvm) レシピが必要です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenAI의 Codex CLI를 nvm의 default Node를 사용해 npm(`@openai/codex`)으로 전역 설치하며, 설정 디렉터리를 `CODEX_HOME`으로 `$DEV_HOME/ai/codex`에 재배치합니다. 스코프가 있는 패키지 이름을 사용합니다 — 스코프 없는 `codex` npm 패키지는 무관한 프로젝트입니다(PRD §9.12). 업데이트는 최신 버전을 재설치합니다. Node.js (nvm) 레시피가 먼저 필요합니다."
+          }
+        }
+      }
+    },
+    "Install the Node.js (nvm) recipe first — this uses nvm's default Node to run npm.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に Node.js (nvm) レシピをインストールしてください — このレシピは nvm の default Node を使って npm を実行します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Node.js (nvm) 레시피를 먼저 설치하세요 — 이 레시피는 nvm의 default Node로 npm을 실행합니다."
+          }
+        }
+      }
+    },
+    "Only the scoped package `@openai/codex` is correct; do not install the unscoped `codex` npm package, which is a different, unrelated tool (PRD §9.12).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正しいのはスコープ付きパッケージ `@openai/codex` だけです。スコープなしの `codex` npm パッケージは別の無関係なツールなので、インストールしないでください（PRD §9.12）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "스코프가 있는 패키지 `@openai/codex`만 올바릅니다. 스코프 없는 `codex` npm 패키지는 전혀 다른 무관한 도구이므로 설치하지 마세요(PRD §9.12)."
+          }
+        }
+      }
+    },
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CODEX_HOME` matches in your terminals. Because it installs through nvm's Node, make sure your shell sources `nvm.sh` (see the Node.js (nvm) recipe) so the `codex` command resolves.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けると、ターミナルで `CODEX_HOME` が一致します。nvm の Node を通じてインストールされるため、`codex` コマンドが解決されるよう、シェルが `nvm.sh` を source するようにしてください（Node.js (nvm) レシピを参照）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으면 터미널에서 `CODEX_HOME`이 일치합니다. nvm의 Node를 통해 설치되므로, 셸이 `nvm.sh`를 source하도록 해야(Node.js (nvm) 레시피 참고) `codex` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "Installs the opencode AI coding agent globally via npm (`opencode-ai`) using nvm's default Node. It follows the XDG base-directory spec natively (config at `~/.config/opencode`, data at `~/.local/share/opencode`), so no env overrides are needed — the simplest of the three agents. Update reinstalls the latest version. Requires the Node.js (nvm) recipe first.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "opencode AI コーディングエージェントを、nvm の default Node を使って npm（`opencode-ai`）でグローバルにインストールします。XDG base-directory 仕様をネイティブに従う（設定は `~/.config/opencode`、データは `~/.local/share/opencode`）ため、環境変数の上書きは不要です — 3 つのエージェントの中で最もシンプルです。更新は最新バージョンを再インストールします。先に Node.js (nvm) レシピが必要です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "opencode AI 코딩 에이전트를 nvm의 default Node를 사용해 npm(`opencode-ai`)으로 전역 설치합니다. XDG base-directory 사양을 기본으로 따르므로(설정은 `~/.config/opencode`, 데이터는 `~/.local/share/opencode`) 별도의 환경 변수 재정의가 필요 없습니다 — 세 에이전트 중 가장 단순합니다. 업데이트는 최신 버전을 재설치합니다. Node.js (nvm) 레시피가 먼저 필요합니다."
+          }
+        }
+      }
+    },
+    "opencode needs no dedicated env vars — it reads `XDG_CONFIG_HOME`/`XDG_DATA_HOME` if you set them, otherwise the standard `~/.config` and `~/.local/share` locations. Ensure your shell sources `nvm.sh` (see the Node.js (nvm) recipe) so the globally installed `opencode` command resolves.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "opencode に専用の環境変数は必要ありません — `XDG_CONFIG_HOME`/`XDG_DATA_HOME` を設定していればそれを読み取り、なければ標準の `~/.config` と `~/.local/share` の場所を使用します。グローバルにインストールされた `opencode` コマンドが解決されるよう、シェルが `nvm.sh` を source するようにしてください（Node.js (nvm) レシピを参照）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "opencode는 전용 환경 변수가 필요 없습니다 — `XDG_CONFIG_HOME`/`XDG_DATA_HOME`을 설정해 두면 그것을 읽고, 아니면 표준 `~/.config` 및 `~/.local/share` 위치를 사용합니다. 셸이 `nvm.sh`를 source하도록 해야(Node.js (nvm) 레시피 참고) 전역 설치된 `opencode` 명령이 인식됩니다."
+          }
+        }
+      }
+    },
+    "~/.nvm (default nvm location)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.nvm（既定の nvm の場所）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.nvm (기본 nvm 위치)"
+          }
+        }
+      }
+    },
+    "~/Library/pnpm (default PNPM_HOME)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/Library/pnpm（既定の PNPM_HOME）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/Library/pnpm (기본 PNPM_HOME)"
+          }
+        }
+      }
+    },
+    "Homebrew (/opt/homebrew)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew (/opt/homebrew)"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew (/opt/homebrew)"
+          }
+        }
+      }
+    },
+    "~/.bun (default BUN_INSTALL)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.bun（既定の BUN_INSTALL）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.bun (기본 BUN_INSTALL)"
+          }
+        }
+      }
+    },
+    "~/.sdkman (default SDKMAN_DIR)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.sdkman（既定の SDKMAN_DIR）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.sdkman (기본 SDKMAN_DIR)"
+          }
+        }
+      }
+    },
+    "~/.rustup + ~/.cargo (default rustup layout)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.rustup + ~/.cargo（既定の rustup レイアウト）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.rustup + ~/.cargo (기본 rustup 레이아웃)"
+          }
+        }
+      }
+    },
+    "/usr/local/go (official pkg installer)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/usr/local/go（公式 pkg インストーラー）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/usr/local/go (공식 pkg 설치 프로그램)"
+          }
+        }
+      }
+    },
+    "~/.local/bin (default uv installer)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.local/bin（既定の uv インストーラー）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.local/bin (기본 uv 설치 프로그램)"
+          }
+        }
+      }
+    },
+    "~/.cargo/bin (cargo-installed uv)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.cargo/bin（cargo でインストールした uv）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.cargo/bin (cargo로 설치한 uv)"
+          }
+        }
+      }
+    },
+    "~/.rbenv (default RBENV_ROOT)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.rbenv（既定の RBENV_ROOT）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/.rbenv (기본 RBENV_ROOT)"
+          }
+        }
+      }
+    },
+    "pod on PATH (system gem or Homebrew)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH 上の pod（システム gem または Homebrew）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH의 pod (시스템 gem 또는 Homebrew)"
+          }
+        }
+      }
+    },
+    "~/Library/Android/sdk (Android Studio default)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/Library/Android/sdk（Android Studio の既定値）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~/Library/Android/sdk (Android Studio 기본값)"
+          }
+        }
+      }
+    },
+    "nvim on PATH (Homebrew or other)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH 上の nvim（Homebrew またはその他）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH의 nvim (Homebrew 또는 기타)"
+          }
+        }
+      }
+    },
+    "claude on PATH (npm or other), default ~/.claude config": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH 上の claude（npm またはその他）、既定の ~/.claude 設定"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PATH의 claude (npm 또는 기타), 기본 ~/.claude 설정"
+          }
+        }
+      }
+    },
+    "Prepare": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "準備"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "준비"
+          }
+        }
+      }
+    },
+    "Relocate": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再配置"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "재배치"
+          }
+        }
+      }
+    },
+    "Clean Up": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "整理"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "정리"
+          }
+        }
+      }
+    },
+    "CPython interpreters managed by uv, installed under `$DEV_HOME/python/uv/pythons`. Install fetches the latest stable CPython; per-project versions are handled by uv (`.python-version`, `uv python pin`).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv が管理する CPython インタープリターで、`$DEV_HOME/python/uv/pythons` の下にインストールされます。インストールは最新の stable CPython を取得し、プロジェクトごとのバージョンは uv が処理します（`.python-version`、`uv python pin`）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv가 관리하는 CPython 인터프리터를 `$DEV_HOME/python/uv/pythons` 아래에 설치합니다. 설치를 누르면 최신 안정 버전 CPython을 받아오고, 프로젝트별 버전은 uv가 처리합니다(`.python-version`, `uv python pin`)."
+          }
+        }
+      }
+    },
+    "Install the uv recipe first — this recipe installs and updates CPython through `uv python install`.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に uv レシピをインストールしてください — このレシピは `uv python install` で CPython をインストール・更新します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv 레시피를 먼저 설치하세요 — 이 레시피는 `uv python install`로 CPython을 설치·업데이트합니다."
+          }
+        }
+      }
+    },
+    "Never use the macOS system `/usr/bin/python3` for development — it is an Xcode Command Line Tools shim, not a full interpreter (PRD §9.6).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS システムの `/usr/bin/python3` を開発に使わないでください — これは完全なインタープリターではなく、Xcode Command Line Tools の shim にすぎません（PRD §9.6）。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 시스템 `/usr/bin/python3`는 개발용으로 쓰지 마세요 — Xcode Command Line Tools의 심(shim)일 뿐 완전한 인터프리터가 아닙니다(PRD §9.6)."
+          }
+        }
+      }
+    },
+    "To make these interpreters available in your terminal and projects, use uv (`uv run`, `uv venv`, `uv python pin <version>`) rather than putting the interpreter on PATH by hand.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これらのインタープリターをターミナルやプロジェクトで利用できるようにするには、インタープリターを手動で PATH に追加するのではなく、uv（`uv run`、`uv venv`、`uv python pin <version>`）を使用してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "터미널·프로젝트에서 이 인터프리터를 쓰려면 PATH에 직접 올리기보다 uv를 이용하세요(`uv run`, `uv venv`, `uv python pin <버전>`)."
+          }
+        }
+      }
+    },
+    "The pip package installer inside the uv-managed CPython, for tools and workflows that still expect plain pip. Day-to-day dependency management is better served by uv itself (`uv add`, `uv pip`).": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv が管理する CPython に内蔵される pip パッケージインストーラーで、いまだに素の pip を前提とするツールやワークフローのためのものです。日常的な依存関係の管理は、uv 自体（`uv add`、`uv pip`）の方が適しています。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uv가 관리하는 CPython에 내장되는 pip 패키지 설치기입니다. 아직 pip를 직접 찾는 도구·워크플로를 위한 것으로, 일상적인 의존성 관리는 uv(`uv add`, `uv pip`)가 더 낫습니다."
+          }
+        }
+      }
+    },
+    "Install the Python recipe first — pip is bootstrapped into the newest uv-managed CPython with `ensurepip`.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に Python レシピをインストールしてください — pip は `ensurepip` で最新の uv 管理 CPython にブートストラップされます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Python 레시피를 먼저 설치하세요 — pip는 최신 uv 관리 CPython에 `ensurepip`로 부트스트랩됩니다."
+          }
+        }
+      }
+    },
+    "Prefer uv for real dependency work (`uv add`, `uv pip install`); keep pip for tools that call it directly.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実際の依存関係の作業には uv を優先し（`uv add`、`uv pip install`）、pip は直接呼び出すツールのために残しておいてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "실제 의존성 작업은 uv를 사용하고(`uv add`, `uv pip install`), pip는 직접 호출하는 도구를 위해 남겨 두세요."
+          }
+        }
+      }
+    },
+    "pyenv (~/.pyenv)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pyenv (~/.pyenv)"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pyenv (~/.pyenv)"
+          }
+        }
+      }
+    },
+    "Homebrew Python (/opt/homebrew)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew Python (/opt/homebrew)"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homebrew Python (/opt/homebrew)"
+          }
+        }
+      }
+    },
+    "Existing install detected:": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "既存のインストールを検出しました:"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기존 설치 감지됨:"
+          }
+        }
+      }
+    },
+    "The npm package manager that ships with the nvm-managed Node.js. Update upgrades npm itself inside the active default Node; the download cache lives at `~/.npm`.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nvm 管理下の Node.js に同梱される npm パッケージマネージャーです。更新は、有効な default Node 内の npm 自体をアップグレードします。ダウンロードキャッシュは `~/.npm` にあります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nvm이 관리하는 Node.js에 동봉되는 npm 패키지 매니저입니다. 업데이트는 기본(default) Node 안의 npm 자체를 최신으로 올리며, 다운로드 캐시는 `~/.npm`에 저장됩니다."
+          }
+        }
+      }
+    },
+    "npm ships with Node.js — install the Node.js (nvm) recipe first; there is nothing separate to install here.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "npm は Node.js に同梱されています — 先に Node.js (nvm) レシピをインストールしてください。ここで別途インストールするものはありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "npm은 Node.js에 포함되어 있습니다 — Node.js (nvm) 레시피를 먼저 설치하세요. 여기서 따로 설치할 것은 없습니다."
+          }
+        }
+      }
+    },
+    "Update runs `npm install -g npm@latest` inside the nvm default Node, so it only affects the currently selected Node version.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新は nvm の default Node 内で `npm install -g npm@latest` を実行するため、現在選択されている Node バージョンにのみ影響します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트는 nvm 기본 Node 안에서 `npm install -g npm@latest`를 실행하므로, 현재 선택된 Node 버전에만 적용됩니다."
+          }
+        }
+      }
+    },
+    "Account & Sync": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アカウントと同期"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "계정 및 동기화"
+          }
+        }
+      }
+    },
+    "Sync server URL": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバー URL"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버 URL"
+          }
+        }
+      }
+    },
+    "Self-hosting is supported — run your own server instance and point this URL at it.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セルフホスティングに対応しています — 独自のサーバーインスタンスを運用し、この URL をそのアドレスに指定してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "셀프 호스팅을 지원합니다 — 직접 서버 인스턴스를 운영하고 이 URL을 해당 주소로 지정하세요."
+          }
+        }
+      }
+    },
+    "Signed in as": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログイン中のアカウント"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로그인 계정"
+          }
+        }
+      }
+    },
+    "Last synced": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最終同期"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "마지막 동기화"
+          }
+        }
+      }
+    },
+    "Sync Now": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今すぐ同期"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "지금 동기화"
+          }
+        }
+      }
+    },
+    "Sign Out": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログアウト"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로그아웃"
+          }
+        }
+      }
+    },
+    "Sign in with GitHub": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub でログイン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub로 로그인"
+          }
+        }
+      }
+    },
+    "Dev login name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開発用ログイン名"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "개발용 로그인 이름"
+          }
+        }
+      }
+    },
+    "Dev Sign-In": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開発用ログイン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "개발용 로그인"
+          }
+        }
+      }
+    },
+    "Sync conflicts": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期の競合"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 충돌"
+          }
+        }
+      }
+    },
+    "These items differ between this Mac and the cloud. Choose per item — nothing is merged silently.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次の項目が、この Mac とクラウドとで異なります。項目ごとに選択してください — 何も自動的にマージされません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다음 항목이 이 Mac과 클라우드에서 서로 다릅니다. 항목별로 선택하세요 — 아무것도 자동으로 병합되지 않습니다."
+          }
+        }
+      }
+    },
+    "Cancel sync": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期をキャンセル"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 취소"
+          }
+        }
+      }
+    },
+    "Apply and sync": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "適用して同期"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "적용하고 동기화"
+          }
+        }
+      }
+    },
+    "This Mac": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この Mac"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 Mac"
+          }
+        }
+      }
+    },
+    "Cloud": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "클라우드"
+          }
+        }
+      }
+    },
+    "Use this Mac": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この Mac を使用"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 Mac 사용"
+          }
+        }
+      }
+    },
+    "Use cloud": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウドを使用"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "클라우드 사용"
+          }
+        }
+      }
+    },
+    "Keep both": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "両方を保持"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "둘 다 유지"
+          }
+        }
+      }
+    },
+    "Cloud updated: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウド更新: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "클라우드 업데이트: %@"
+          }
+        }
+      }
+    },
+    "The custom recipe definition differs between this Mac and the cloud.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタムレシピの定義が、この Mac とクラウドとで異なります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용자 지정 레시피 정의가 이 Mac과 클라우드에서 다릅니다."
+          }
+        }
+      }
+    },
+    "The sync server URL is invalid.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバー URL が正しくありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버 URL이 올바르지 않습니다."
+          }
+        }
+      }
+    },
+    "Sign in before syncing.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期の前にログインしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 전에 로그인하세요."
+          }
+        }
+      }
+    },
+    "Sync request failed: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期リクエストに失敗しました: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 요청 실패: %@"
+          }
+        }
+      }
+    },
+    "Sync server error: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバーエラー: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버 오류: %@"
+          }
+        }
+      }
+    },
+    "Unexpected response from the sync server.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバーから予期しない応答がありました。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버 응답이 올바르지 않습니다."
+          }
+        }
+      }
+    },
+    "Unknown server error.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不明なサーバーエラーです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "알 수 없는 서버 오류입니다."
+          }
+        }
+      }
+    },
+    "Sign-in was cancelled or returned no token.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログインがキャンセルされたか、トークンが返されませんでした。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로그인이 취소되었거나 토큰이 없습니다."
+          }
+        }
+      }
+    },
+    "Sign-in failed: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログインに失敗しました: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "로그인 실패: %@"
+          }
+        }
+      }
+    },
+    "Sync mode": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 모드"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期モード"
+          }
+        }
+      }
+    },
+    "Online": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "온라인"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンライン"
+          }
+        }
+      }
+    },
+    "Offline": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "오프라인"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフライン"
+          }
+        }
+      }
+    },
+    "Offline mode — sync and sign-in are disabled.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "오프라인 모드 — 동기화와 로그인이 비활성화됩니다."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインモード — 同期とサインインは無効です。"
+          }
+        }
+      }
+    },
+    "Test Connection": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "연결 테스트"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続テスト"
+          }
+        }
+      }
+    },
+    "Server connection": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "서버 연결"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サーバー接続"
+          }
+        }
+      }
+    },
+    "Connected to the sync server.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버에 연결되었습니다."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバーに接続しました。"
+          }
+        }
+      }
+    },
+    "Could not reach the sync server: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "동기화 서버에 연결할 수 없습니다: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期サーバーに接続できません: %@"
+          }
+        }
+      }
+    },
+    "Not checked yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "미확인"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未確認"
+          }
+        }
+      }
+    },
+    "Checked %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "확인: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "確認: %@"
+          }
+        }
+      }
+    },
+    "OK": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "확인"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Offline mode is on. Switch to online mode to sync.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "오프라인 모드가 켜져 있습니다. 동기화하려면 온라인 모드로 전환하세요."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインモードが有効です。同期するにはオンラインモードに切り替えてください。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

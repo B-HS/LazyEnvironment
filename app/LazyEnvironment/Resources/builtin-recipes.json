@@ -1,0 +1,779 @@
+[
+  {
+    "id": "homebrew",
+    "displayName": "Homebrew",
+    "category": "runtime",
+    "summary": "Bootstraps Homebrew at the default `/opt/homebrew` prefix, reserved for auxiliary CLIs (jq, git, gh) and GUI casks only — the primary language runtimes ship their own brew-free installers. Update runs `brew update` to refresh Homebrew and its formula definitions.",
+    "detectCommand": "test -x /opt/homebrew/bin/brew",
+    "currentVersionCommand": "/opt/homebrew/bin/brew --version",
+    "installCommand": "NONINTERACTIVE=1 /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+    "updateCommand": "/opt/homebrew/bin/brew update",
+    "diskUsagePaths": [
+      "/opt/homebrew"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+    },
+    "manualSteps": [
+      "On a fresh Mac, creating `/opt/homebrew` needs administrator rights. Because `NONINTERACTIVE=1` suppresses the password prompt and this app runs commands without a terminal, run the very first bootstrap yourself in Terminal.app: paste the official command from https://brew.sh (it will ask for your admin password). Once `/opt/homebrew` exists and is owned by your account, this app's Update and later brew operations need no sudo.",
+      "Keep the default `/opt/homebrew` prefix — a custom prefix loses access to precompiled bottles and forces slow from-source builds for most formulae. If you want it to appear under a custom apps folder, symlink rather than relocate.",
+      "Per product policy, use Homebrew only for auxiliary tools (jq, git, gh) and GUI casks (VS Code, Cursor), not for the primary language/runtime recipes — those install brew-free so your toolchains stay independent of Homebrew."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "node-nvm",
+    "displayName": "Node.js (nvm)",
+    "category": "language",
+    "summary": "Installs Node.js through nvm into a relocated `NVM_DIR` at `$DEV_HOME/js/nvm` (instead of the default `~/.nvm`). Update runs `nvm install --lts` and repoints the `default` alias, keeping you on the latest LTS Node.",
+    "detectCommand": "[ -s \"$DEV_HOME/js/nvm/nvm.sh\" ] && export NVM_DIR=\"$DEV_HOME/js/nvm\" && source \"$NVM_DIR/nvm.sh\" && nvm --version",
+    "currentVersionCommand": "export NVM_DIR=\"$DEV_HOME/js/nvm\" && source \"$NVM_DIR/nvm.sh\" && nvm current",
+    "installCommand": "export NVM_DIR=\"$DEV_HOME/js/nvm\" && mkdir -p \"$NVM_DIR\" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{latestTag}}/install.sh | bash",
+    "updateCommand": "export NVM_DIR=\"$DEV_HOME/js/nvm\" && source \"$NVM_DIR/nvm.sh\" && nvm install --lts && nvm alias default 'lts/*'",
+    "uninstallCommand": "rm -rf \"${NVM_DIR:?}\"",
+    "envVars": {
+      "NVM_DIR": "$DEV_HOME/js/nvm"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/js/nvm"
+    ],
+    "requiresInteractiveShell": true,
+    "brewFallbackRisk": false,
+    "sourcePinning": {
+      "type": "github-latest-tag",
+      "repo": "nvm-sh/nvm"
+    },
+    "manualSteps": [
+      "nvm is a shell function sourced from `nvm.sh`, not a binary on `PATH` (PRD §9.7), so this app drives it through an interactive shell (`zsh -ic`). Shell startup banners may leak into the log output — that is expected and safe to ignore.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `source \"$NVM_DIR/nvm.sh\"` after them so `nvm`, `node`, and `npm` resolve in every new terminal you open.",
+      "Several other recipes (Codex CLI, opencode) run their npm installs through this nvm-managed Node, so install this recipe first if you plan to use them."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.nvm (default nvm location)",
+        "detectCommand": "[ -s \"$HOME/.nvm/nvm.sh\" ]",
+        "currentVersionCommand": "export NVM_DIR=\"$HOME/.nvm\" && source \"$HOME/.nvm/nvm.sh\" && nvm current",
+        "diskUsagePaths": [
+          "$HOME/.nvm"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/.nvm\""
+      }
+    ]
+  },
+  {
+    "id": "npm",
+    "displayName": "npm",
+    "category": "language",
+    "parentId": "node-nvm",
+    "summary": "The npm package manager that ships with the nvm-managed Node.js. Update upgrades npm itself inside the active default Node; the download cache lives at `~/.npm`.",
+    "detectCommand": "source \"$NVM_DIR/nvm.sh\" >/dev/null 2>&1 && { nvm use default || nvm use node; } >/dev/null 2>&1 && command -v npm >/dev/null 2>&1",
+    "currentVersionCommand": "source \"$NVM_DIR/nvm.sh\" >/dev/null 2>&1 && { nvm use default || nvm use node; } >/dev/null 2>&1 && npm --version",
+    "updateCommand": "source \"$NVM_DIR/nvm.sh\" && { nvm use default || nvm use node; } && npm install -g npm@latest",
+    "envVars": {
+      "NVM_DIR": "$DEV_HOME/js/nvm"
+    },
+    "diskUsagePaths": [
+      "$HOME/.npm"
+    ],
+    "requiresInteractiveShell": true,
+    "manualSteps": [
+      "npm ships with Node.js — install the Node.js (nvm) recipe first; there is nothing separate to install here.",
+      "Update runs `npm install -g npm@latest` inside the nvm default Node, so it only affects the currently selected Node version."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "pnpm",
+    "displayName": "pnpm",
+    "category": "language",
+    "summary": "Installs the pnpm package manager to a managed `PNPM_HOME` at `$DEV_HOME/js/pnpm` via pnpm's official standalone script. Update re-runs the same script, which upgrades pnpm in place.",
+    "detectCommand": "\"$PNPM_HOME/pnpm\" --version",
+    "currentVersionCommand": "\"$PNPM_HOME/pnpm\" --version",
+    "installCommand": "mkdir -p \"$PNPM_HOME\" && curl -fsSL https://get.pnpm.io/install.sh | sh -",
+    "updateCommand": "mkdir -p \"$PNPM_HOME\" && curl -fsSL https://get.pnpm.io/install.sh | sh -",
+    "uninstallCommand": "rm -rf \"${PNPM_HOME:?}\"",
+    "envVars": {
+      "PNPM_HOME": "$DEV_HOME/js/pnpm"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/js/pnpm"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://get.pnpm.io/install.sh"
+    },
+    "manualSteps": [
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `PNPM_HOME` on your `PATH` with `export PATH=\"$PNPM_HOME:$PATH\"` so the `pnpm` command resolves in your own terminals.",
+      "pnpm is installed as a standalone binary and does not need Node to run itself. To install Node too, use the Node.js (nvm) recipe, or run `pnpm env use --global lts` after pnpm is on your PATH."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/Library/pnpm (default PNPM_HOME)",
+        "detectCommand": "\"$HOME/Library/pnpm/pnpm\" --version",
+        "currentVersionCommand": "\"$HOME/Library/pnpm/pnpm\" --version",
+        "diskUsagePaths": [
+          "$HOME/Library/pnpm"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/Library/pnpm\""
+      },
+      {
+        "label": "Homebrew (/opt/homebrew)",
+        "detectCommand": "/opt/homebrew/bin/pnpm --version",
+        "currentVersionCommand": "/opt/homebrew/bin/pnpm --version",
+        "uninstallCommand": "/opt/homebrew/bin/brew uninstall pnpm"
+      }
+    ],
+    "parentId": "node-nvm"
+  },
+  {
+    "id": "bun",
+    "displayName": "Bun",
+    "category": "language",
+    "summary": "Installs the Bun JavaScript runtime, bundler, and package manager under a managed `BUN_INSTALL` at `$DEV_HOME/js/bun` via Bun's official script. Update runs `bun upgrade`, which replaces the binary in place with the latest release.",
+    "detectCommand": "\"$BUN_INSTALL/bin/bun\" --version",
+    "currentVersionCommand": "\"$BUN_INSTALL/bin/bun\" --version",
+    "installCommand": "mkdir -p \"$BUN_INSTALL\" && curl -fsSL https://bun.sh/install | bash",
+    "updateCommand": "\"$BUN_INSTALL/bin/bun\" upgrade",
+    "uninstallCommand": "rm -rf \"${BUN_INSTALL:?}\"",
+    "envVars": {
+      "BUN_INSTALL": "$DEV_HOME/js/bun"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/js/bun"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://bun.sh/install"
+    },
+    "manualSteps": [
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add Bun to your `PATH` with `export PATH=\"$BUN_INSTALL/bin:$PATH\"` so the `bun` command resolves in your own terminals.",
+      "Bun's installer normally edits your shell profile automatically; because this recipe runs non-interactively, add the export and PATH lines yourself as above."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.bun (default BUN_INSTALL)",
+        "detectCommand": "\"$HOME/.bun/bin/bun\" --version",
+        "currentVersionCommand": "\"$HOME/.bun/bin/bun\" --version",
+        "diskUsagePaths": [
+          "$HOME/.bun"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/.bun\""
+      }
+    ],
+    "parentId": "node-nvm"
+  },
+  {
+    "id": "sdkman-java",
+    "displayName": "Java (SDKMAN)",
+    "category": "language",
+    "summary": "Installs a Java toolchain through SDKMAN into a relocated `SDKMAN_DIR` at `$DEV_HOME/java/sdkman`, configured to answer prompts automatically; the Gradle cache lives at `$DEV_HOME/java/gradle` (`GRADLE_USER_HOME`), shared with the Android SDK recipe. Update runs `sdk install java` to fetch the latest Java release.",
+    "detectCommand": "[ -s \"$DEV_HOME/java/sdkman/bin/sdkman-init.sh\" ] && export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk version",
+    "currentVersionCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk current java",
+    "installCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && curl -s https://get.sdkman.io | bash && sed -i '' 's/sdkman_auto_answer=false/sdkman_auto_answer=true/' \"$SDKMAN_DIR/etc/config\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install java",
+    "updateCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && sed -i '' 's/sdkman_auto_answer=false/sdkman_auto_answer=true/' \"$SDKMAN_DIR/etc/config\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install java",
+    "uninstallCommand": "rm -rf \"${SDKMAN_DIR:?}\"",
+    "envVars": {
+      "SDKMAN_DIR": "$DEV_HOME/java/sdkman",
+      "GRADLE_USER_HOME": "$DEV_HOME/java/gradle"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/java/sdkman",
+      "$DEV_HOME/java/gradle"
+    ],
+    "requiresInteractiveShell": true,
+    "brewFallbackRisk": false,
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://get.sdkman.io"
+    },
+    "manualSteps": [
+      "`sdk` is a shell function sourced from `sdkman-init.sh`, not a binary on `PATH` (PRD §9.7), so this app drives it through an interactive shell (`zsh -ic`); expect shell startup banners in the log output.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `source \"$SDKMAN_DIR/bin/sdkman-init.sh\"` after them so `sdk` and `java` resolve in every new terminal.",
+      "`GRADLE_USER_HOME` (`$DEV_HOME/java/gradle`) is shared with the Android SDK recipe so the Gradle cache is counted once, not twice — leave it in place if you use both."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.sdkman (default SDKMAN_DIR)",
+        "detectCommand": "[ -s \"$HOME/.sdkman/bin/sdkman-init.sh\" ]",
+        "currentVersionCommand": "export SDKMAN_DIR=\"$HOME/.sdkman\" && source \"$HOME/.sdkman/bin/sdkman-init.sh\" && sdk current java",
+        "diskUsagePaths": [
+          "$HOME/.sdkman",
+          "$HOME/.gradle"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/.sdkman\""
+      }
+    ]
+  },
+  {
+    "id": "rustup",
+    "displayName": "Rust (rustup)",
+    "category": "language",
+    "summary": "Installs the Rust toolchain via rustup with `RUSTUP_HOME` and `CARGO_HOME` relocated to `$DEV_HOME/rust/rustup` and `$DEV_HOME/rust/cargo` (installed with `--no-modify-path`, so your shell profile is left untouched). Update runs `rustup update` to refresh the stable toolchain.",
+    "detectCommand": "\"$CARGO_HOME/bin/rustup\" --version",
+    "currentVersionCommand": "\"$CARGO_HOME/bin/rustc\" --version",
+    "installCommand": "mkdir -p \"$RUSTUP_HOME\" \"$CARGO_HOME\" && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path --default-toolchain stable",
+    "updateCommand": "\"$CARGO_HOME/bin/rustup\" update",
+    "uninstallCommand": "rm -rf \"${RUSTUP_HOME:?}\" \"${CARGO_HOME:?}\"",
+    "envVars": {
+      "RUSTUP_HOME": "$DEV_HOME/rust/rustup",
+      "CARGO_HOME": "$DEV_HOME/rust/cargo"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/rust/rustup",
+      "$DEV_HOME/rust/cargo"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://sh.rustup.rs"
+    },
+    "manualSteps": [
+      "The installer runs with `--no-modify-path`, so wire the toolchain into your shell yourself: click the \"Copy export lines\" button in this recipe's detail view, paste them into `~/.zshrc`, and add `export PATH=\"$CARGO_HOME/bin:$PATH\"` so `cargo`, `rustc`, and `rustup` resolve in your own terminals.",
+      "Building crates needs the Xcode Command Line Tools' linker. If a build fails with a missing linker or compiler, run `xcode-select --install` (a GUI prompt appears) and retry."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.rustup + ~/.cargo (default rustup layout)",
+        "detectCommand": "RUSTUP_HOME=\"$HOME/.rustup\" CARGO_HOME=\"$HOME/.cargo\" \"$HOME/.cargo/bin/rustup\" --version",
+        "currentVersionCommand": "\"$HOME/.cargo/bin/rustc\" --version",
+        "diskUsagePaths": [
+          "$HOME/.rustup",
+          "$HOME/.cargo"
+        ],
+        "uninstallCommand": "RUSTUP_HOME=\"$HOME/.rustup\" CARGO_HOME=\"$HOME/.cargo\" \"$HOME/.cargo/bin/rustup\" self uninstall -y"
+      }
+    ]
+  },
+  {
+    "id": "go",
+    "displayName": "Go",
+    "category": "language",
+    "summary": "Installs a current Go toolchain from go.dev's official tarball into `$DEV_HOME/go/toolchain` (with `GOPATH` at `$DEV_HOME/go/gopath`) and sets `GOTOOLCHAIN=auto` so Go switches per-project versions from `go.mod` on its own. Update re-downloads and extracts the latest release, replacing the toolchain in place.",
+    "detectCommand": "\"$DEV_HOME/go/toolchain/go/bin/go\" version",
+    "currentVersionCommand": "\"$DEV_HOME/go/toolchain/go/bin/go\" version | awk '{print $3}'",
+    "installCommand": "mkdir -p \"$DEV_HOME/go/toolchain\" && curl -fsSL https://go.dev/dl/{{version}}.darwin-arm64.tar.gz -o \"$DEV_HOME/go/go-download.tar.gz\" && rm -rf \"${DEV_HOME:?}/go/toolchain/go\" && tar -xzf \"$DEV_HOME/go/go-download.tar.gz\" -C \"$DEV_HOME/go/toolchain\" && rm -f \"$DEV_HOME/go/go-download.tar.gz\"",
+    "updateCommand": "mkdir -p \"$DEV_HOME/go/toolchain\" && curl -fsSL https://go.dev/dl/{{version}}.darwin-arm64.tar.gz -o \"$DEV_HOME/go/go-download.tar.gz\" && rm -rf \"${DEV_HOME:?}/go/toolchain/go\" && tar -xzf \"$DEV_HOME/go/go-download.tar.gz\" -C \"$DEV_HOME/go/toolchain\" && rm -f \"$DEV_HOME/go/go-download.tar.gz\"",
+    "uninstallCommand": "rm -rf \"${DEV_HOME:?}/go/toolchain\" \"${DEV_HOME:?}/go/gopath\"",
+    "envVars": {
+      "GOPATH": "$DEV_HOME/go/gopath",
+      "GOTOOLCHAIN": "auto"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/go/toolchain",
+      "$DEV_HOME/go/gopath"
+    ],
+    "requiresInteractiveShell": false,
+    "brewFallbackRisk": false,
+    "supportsVersionPin": true,
+    "sourcePinning": {
+      "type": "go-dev-json",
+      "url": "https://go.dev/dl/?mode=json"
+    },
+    "manualSteps": [
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add the toolchain to your `PATH` with `export PATH=\"$DEV_HOME/go/toolchain/go/bin:$GOPATH/bin:$PATH\"` so the `go` command resolves in your own terminals.",
+      "This recipe supports pinning a specific Go version in the detail view; leave it empty to always fetch the latest. Because `GOTOOLCHAIN=auto` is set, a project's `go.mod` can still pull a different toolchain automatically when you build it."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "/usr/local/go (official pkg installer)",
+        "detectCommand": "/usr/local/go/bin/go version",
+        "currentVersionCommand": "/usr/local/go/bin/go version | awk '{print $3}'",
+        "diskUsagePaths": [
+          "/usr/local/go",
+          "$HOME/go"
+        ],
+        "uninstallCommand": "rm -rf /usr/local/go",
+        "uninstallRequiresAdmin": true
+      },
+      {
+        "label": "Homebrew (/opt/homebrew)",
+        "detectCommand": "/opt/homebrew/bin/go version",
+        "currentVersionCommand": "/opt/homebrew/bin/go version | awk '{print $3}'",
+        "diskUsagePaths": [
+          "$HOME/go"
+        ],
+        "uninstallCommand": "/opt/homebrew/bin/brew uninstall go"
+      }
+    ]
+  },
+  {
+    "id": "python",
+    "displayName": "Python",
+    "category": "language",
+    "summary": "CPython interpreters managed by uv, installed under `$DEV_HOME/python/uv/pythons`. Install fetches the latest stable CPython; per-project versions are handled by uv (`.python-version`, `uv python pin`).",
+    "detectCommand": "ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 >/dev/null 2>&1",
+    "currentVersionCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" --version",
+    "installCommand": "\"$UV_INSTALL_DIR/uv\" python install",
+    "updateCommand": "\"$UV_INSTALL_DIR/uv\" python install",
+    "uninstallCommand": "rm -rf \"${UV_PYTHON_INSTALL_DIR:?}\"",
+    "envVars": {
+      "UV_INSTALL_DIR": "$DEV_HOME/python/uv/bin",
+      "UV_PYTHON_INSTALL_DIR": "$DEV_HOME/python/uv/pythons"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/python/uv/pythons"
+    ],
+    "manualSteps": [
+      "Install the uv recipe first — this recipe installs and updates CPython through `uv python install`.",
+      "Never use the macOS system `/usr/bin/python3` for development — it is an Xcode Command Line Tools shim, not a full interpreter (PRD §9.6).",
+      "To make these interpreters available in your terminal and projects, use uv (`uv run`, `uv venv`, `uv python pin <version>`) rather than putting the interpreter on PATH by hand."
+    ],
+    "externalCandidates": [
+      {
+        "label": "pyenv (~/.pyenv)",
+        "detectCommand": "[ -d \"$HOME/.pyenv/versions\" ] && ls \"$HOME/.pyenv/versions\" | grep -q .",
+        "currentVersionCommand": "PYBIN=\"$(ls -d \"$HOME/.pyenv/versions\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" --version",
+        "uninstallCommand": "rm -rf \"${HOME:?}/.pyenv\"",
+        "diskUsagePaths": [
+          "$HOME/.pyenv"
+        ]
+      },
+      {
+        "label": "Homebrew (/opt/homebrew)",
+        "detectCommand": "/opt/homebrew/bin/python3 --version",
+        "currentVersionCommand": "/opt/homebrew/bin/python3 --version"
+      }
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "uv",
+    "displayName": "uv",
+    "category": "language",
+    "summary": "Installs Astral's uv Python package/version manager with every data directory relocated under `$DEV_HOME/python/uv` — the `uv`/`uvx` binaries, cache, installed tools, and downloaded Python interpreters. Update runs `uv self update` to upgrade uv in place.",
+    "detectCommand": "\"$UV_INSTALL_DIR/uv\" --version",
+    "currentVersionCommand": "\"$UV_INSTALL_DIR/uv\" --version",
+    "installCommand": "mkdir -p \"$UV_INSTALL_DIR\" && curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "updateCommand": "\"$UV_INSTALL_DIR/uv\" self update",
+    "uninstallCommand": "rm -rf \"${DEV_HOME:?}/python/uv\"",
+    "envVars": {
+      "UV_INSTALL_DIR": "$DEV_HOME/python/uv/bin",
+      "UV_CACHE_DIR": "$DEV_HOME/python/uv/cache",
+      "UV_TOOL_DIR": "$DEV_HOME/python/uv/tools",
+      "UV_PYTHON_INSTALL_DIR": "$DEV_HOME/python/uv/pythons",
+      "UV_TOOL_BIN_DIR": "$DEV_HOME/python/uv/tool-bin"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/python/uv/bin",
+      "$DEV_HOME/python/uv/cache",
+      "$DEV_HOME/python/uv/tools",
+      "$DEV_HOME/python/uv/tool-bin"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://astral.sh/uv/install.sh"
+    },
+    "manualSteps": [
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add uv to your `PATH` with `export PATH=\"$UV_INSTALL_DIR:$UV_TOOL_BIN_DIR:$PATH\"` so `uv`, `uvx`, and any tools you install with `uv tool install` resolve in your own terminals.",
+      "uv manages its own downloaded interpreters under `$DEV_HOME/python/uv/pythons`. Don't rely on the system `/usr/bin/python3`, which is an Xcode Command Line Tools stub, not a real development interpreter (PRD §9.6)."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.local/bin (default uv installer)",
+        "detectCommand": "\"$HOME/.local/bin/uv\" --version",
+        "currentVersionCommand": "\"$HOME/.local/bin/uv\" --version",
+        "diskUsagePaths": [
+          "$HOME/.local/share/uv",
+          "$HOME/.cache/uv"
+        ],
+        "uninstallCommand": "rm -f \"${HOME:?}/.local/bin/uv\" \"${HOME:?}/.local/bin/uvx\" && rm -rf \"${HOME:?}/.local/share/uv\" \"${HOME:?}/.cache/uv\""
+      },
+      {
+        "label": "~/.cargo/bin (cargo-installed uv)",
+        "detectCommand": "\"$HOME/.cargo/bin/uv\" --version",
+        "currentVersionCommand": "\"$HOME/.cargo/bin/uv\" --version",
+        "diskUsagePaths": [
+          "$HOME/.local/share/uv",
+          "$HOME/.cache/uv"
+        ],
+        "uninstallCommand": "rm -f \"${HOME:?}/.cargo/bin/uv\" \"${HOME:?}/.cargo/bin/uvx\" && rm -rf \"${HOME:?}/.local/share/uv\" \"${HOME:?}/.cache/uv\""
+      }
+    ],
+    "parentId": "python"
+  },
+  {
+    "id": "pip",
+    "displayName": "pip",
+    "category": "language",
+    "parentId": "python",
+    "summary": "The pip package installer inside the uv-managed CPython, for tools and workflows that still expect plain pip. Day-to-day dependency management is better served by uv itself (`uv add`, `uv pip`).",
+    "detectCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" -m pip --version",
+    "currentVersionCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" -m pip --version",
+    "installCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" -m ensurepip --upgrade",
+    "updateCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" -m pip install --upgrade pip",
+    "envVars": {
+      "UV_PYTHON_INSTALL_DIR": "$DEV_HOME/python/uv/pythons"
+    },
+    "diskUsagePaths": [
+      "$HOME/Library/Caches/pip"
+    ],
+    "manualSteps": [
+      "Install the Python recipe first — pip is bootstrapped into the newest uv-managed CPython with `ensurepip`.",
+      "Prefer uv for real dependency work (`uv add`, `uv pip install`); keep pip for tools that call it directly."
+    ],
+    "externalCandidates": [
+      {
+        "label": "Homebrew Python (/opt/homebrew)",
+        "detectCommand": "/opt/homebrew/bin/python3 -m pip --version",
+        "currentVersionCommand": "/opt/homebrew/bin/python3 -m pip --version"
+      }
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "ruby-rbenv",
+    "displayName": "Ruby (rbenv)",
+    "category": "language",
+    "summary": "Installs the rbenv Ruby version manager by cloning it directly from GitHub into `$DEV_HOME/ruby/rbenv` (avoiding the official installer's silent Homebrew fallback). Update pulls the latest rbenv/ruby-build, then compiles and selects the newest stable Ruby as your global version.",
+    "detectCommand": "\"$RBENV_ROOT/bin/rbenv\" --version",
+    "currentVersionCommand": "\"$RBENV_ROOT/bin/rbenv\" version-name",
+    "installCommand": "mkdir -p \"$DEV_HOME/ruby\" && git clone https://github.com/rbenv/rbenv.git \"${RBENV_ROOT:?}\" && git clone https://github.com/rbenv/ruby-build.git \"$RBENV_ROOT/plugins/ruby-build\"",
+    "updateCommand": "git -C \"${RBENV_ROOT:?}\" pull --ff-only && git -C \"$RBENV_ROOT/plugins/ruby-build\" pull --ff-only && LATEST_RUBY=\"$(\"$RBENV_ROOT/bin/rbenv\" install -l 2>/dev/null | grep -E '^[[:space:]]*[0-9]+\\.[0-9]+\\.[0-9]+$' | tail -1 | tr -d '[:space:]')\" && \"$RBENV_ROOT/bin/rbenv\" install -s \"$LATEST_RUBY\" && \"$RBENV_ROOT/bin/rbenv\" global \"$LATEST_RUBY\" && \"$RBENV_ROOT/bin/rbenv\" rehash",
+    "uninstallCommand": "rm -rf \"${RBENV_ROOT:?}\"",
+    "envVars": {
+      "RBENV_ROOT": "$DEV_HOME/ruby/rbenv"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/ruby/rbenv"
+    ],
+    "brewFallbackRisk": true,
+    "manualSteps": [
+      "Install sets up the version manager only (like the Node.js (nvm) recipe). Press Update to compile and select the latest stable Ruby — this can take several minutes and is streamed live in the log.",
+      "Compiling Ruby with ruby-build needs the Xcode Command Line Tools. If the build reports a missing compiler, run `xcode-select --install` (a GUI prompt appears) and retry Update.",
+      "ruby-build on macOS has historically needed OpenSSL/readline libraries that Homebrew usually supplies. Under the no-brew policy this is a known tension: if the Ruby build fails on OpenSSL, provide those libraries (or accept using Homebrew for just that dependency) and update again.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `export PATH=\"$RBENV_ROOT/bin:$PATH\"` and `eval \"$(rbenv init - zsh)\"` so `rbenv` and your selected Ruby resolve in your own terminals."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/.rbenv (default RBENV_ROOT)",
+        "detectCommand": "RBENV_ROOT=\"$HOME/.rbenv\" \"$HOME/.rbenv/bin/rbenv\" --version",
+        "currentVersionCommand": "RBENV_ROOT=\"$HOME/.rbenv\" \"$HOME/.rbenv/bin/rbenv\" version-name",
+        "diskUsagePaths": [
+          "$HOME/.rbenv"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/.rbenv\""
+      },
+      {
+        "label": "Homebrew (/opt/homebrew)",
+        "detectCommand": "/opt/homebrew/bin/rbenv --version",
+        "currentVersionCommand": "RBENV_ROOT=\"$HOME/.rbenv\" /opt/homebrew/bin/rbenv version-name",
+        "diskUsagePaths": [
+          "$HOME/.rbenv"
+        ],
+        "uninstallCommand": "/opt/homebrew/bin/brew uninstall rbenv && rm -rf \"${HOME:?}/.rbenv\""
+      }
+    ]
+  },
+  {
+    "id": "cocoapods",
+    "displayName": "CocoaPods",
+    "category": "mobile",
+    "summary": "Installs CocoaPods as a gem into the rbenv-managed Ruby, with its repos/templates directory relocated via `CP_HOME_DIR` to `$DEV_HOME/ruby/cocoapods`. Update runs `gem update cocoapods` and rehashes rbenv's shims.",
+    "detectCommand": "\"$RBENV_ROOT/bin/rbenv\" exec pod --version",
+    "currentVersionCommand": "\"$RBENV_ROOT/bin/rbenv\" exec pod --version",
+    "installCommand": "mkdir -p \"$CP_HOME_DIR\" && \"$RBENV_ROOT/bin/rbenv\" exec gem install cocoapods && \"$RBENV_ROOT/bin/rbenv\" rehash",
+    "updateCommand": "\"$RBENV_ROOT/bin/rbenv\" exec gem update cocoapods && \"$RBENV_ROOT/bin/rbenv\" rehash",
+    "uninstallCommand": "\"$RBENV_ROOT/bin/rbenv\" exec gem uninstall -aIx cocoapods 2>/dev/null; \"$RBENV_ROOT/bin/rbenv\" rehash 2>/dev/null; rm -rf \"${CP_HOME_DIR:?}\" \"${HOME:?}/Library/Caches/CocoaPods\"",
+    "envVars": {
+      "CP_HOME_DIR": "$DEV_HOME/ruby/cocoapods",
+      "RBENV_ROOT": "$DEV_HOME/ruby/rbenv"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/ruby/cocoapods",
+      "$HOME/Library/Caches/CocoaPods"
+    ],
+    "manualSteps": [
+      "Install the Ruby (rbenv) recipe and press Update on it first so a real Ruby exists. Otherwise `gem install cocoapods` targets the macOS system Ruby, which needs sudo and is discouraged.",
+      "`CP_HOME_DIR` relocates the CocoaPods repos/templates directory, but the separate download cache at `~/Library/Caches/CocoaPods` has not always honored `CP_HOME_DIR` across versions (PRD §9.8); it is tracked here as a best-effort disk path and removed on uninstall.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CP_HOME_DIR` and `RBENV_ROOT` match in your terminals. Run pod via `rbenv exec pod …` (or after `rbenv init`) so it uses the managed Ruby rather than the system one."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "pod on PATH (system gem or Homebrew)",
+        "detectCommand": "command -v pod",
+        "currentVersionCommand": "pod --version",
+        "diskUsagePaths": [
+          "$HOME/.cocoapods",
+          "$HOME/Library/Caches/CocoaPods"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "android-sdk",
+    "displayName": "Android SDK",
+    "category": "mobile",
+    "summary": "Prepares the `ANDROID_HOME` folder at `$DEV_HOME/android/sdk` and the shared Gradle cache (`$DEV_HOME/java/gradle`); the SDK components themselves are downloaded by Android Studio's first-run wizard, the only step that can set the SDK path. There is no automated update — SDK components are managed from Android Studio's SDK Manager.",
+    "detectCommand": "test -d \"$ANDROID_HOME\"",
+    "currentVersionCommand": "\"$ANDROID_HOME/platform-tools/adb\" --version 2>/dev/null | head -1",
+    "installCommand": "mkdir -p \"$ANDROID_HOME\" && mkdir -p \"$GRADLE_USER_HOME\"",
+    "installActionTitle": "Prepare",
+    "uninstallCommand": "rm -rf \"${ANDROID_HOME:?}\"",
+    "envVars": {
+      "ANDROID_HOME": "$DEV_HOME/android/sdk",
+      "GRADLE_USER_HOME": "$DEV_HOME/java/gradle"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/android/sdk",
+      "$DEV_HOME/java/gradle"
+    ],
+    "manualSteps": [
+      "Download and install Android Studio from https://developer.android.com/studio (a GUI app; not scriptable here).",
+      "In Android Studio's first-run Setup Wizard, choose Custom setup and set the Android SDK Location to the prepared path `$DEV_HOME/android/sdk`. This path cannot be scripted — it must be typed into the wizard (PRD §9.8).",
+      "Accept the SDK license agreements so the wizard downloads platform-tools, an SDK Platform, and build-tools into that folder. Until then the recipe shows the folder as present but reports no `adb` version.",
+      "Install component updates later via Android Studio → Settings → Languages & Frameworks → Android SDK (the SDK Manager). The Gradle cache at `$DEV_HOME/java/gradle` is shared with the Java (SDKMAN) recipe and is left untouched on uninstall.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add the platform tools to your `PATH` with `export PATH=\"$ANDROID_HOME/platform-tools:$PATH\"` so `adb` and other SDK tools resolve in your own terminals."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "~/Library/Android/sdk (Android Studio default)",
+        "detectCommand": "[ -d \"$HOME/Library/Android/sdk\" ]",
+        "currentVersionCommand": "\"$HOME/Library/Android/sdk/platform-tools/adb\" --version 2>/dev/null | head -1",
+        "diskUsagePaths": [
+          "$HOME/Library/Android/sdk",
+          "$HOME/.gradle"
+        ],
+        "uninstallCommand": "rm -rf \"${HOME:?}/Library/Android/sdk\""
+      }
+    ]
+  },
+  {
+    "id": "docker-desktop",
+    "displayName": "Docker Desktop",
+    "category": "runtime",
+    "summary": "Installs Docker Desktop by downloading the official DMG for Apple Silicon and copying `Docker.app` into `/Applications`; the first launch (privileged helper, license) is inherently manual. Update re-downloads the latest DMG and cleanly replaces the existing app bundle.",
+    "detectCommand": "test -d /Applications/Docker.app",
+    "currentVersionCommand": "defaults read /Applications/Docker.app/Contents/Info CFBundleShortVersionString",
+    "installCommand": "hdiutil detach \"$TMPDIR/lazyenv-docker-mnt\" 2>/dev/null; rm -rf \"${TMPDIR:?}/lazyenv-docker-mnt\"; mkdir -p \"$TMPDIR/lazyenv-docker-mnt\" && curl -fSL https://desktop.docker.com/mac/main/arm64/Docker.dmg -o \"$TMPDIR/Docker.dmg\" && hdiutil attach \"$TMPDIR/Docker.dmg\" -nobrowse -mountpoint \"$TMPDIR/lazyenv-docker-mnt\" && ditto \"$TMPDIR/lazyenv-docker-mnt/Docker.app\" /Applications/Docker.app && hdiutil detach \"$TMPDIR/lazyenv-docker-mnt\" && rm -f \"${TMPDIR:?}/Docker.dmg\"",
+    "updateCommand": "hdiutil detach \"$TMPDIR/lazyenv-docker-mnt\" 2>/dev/null; rm -rf \"${TMPDIR:?}/lazyenv-docker-mnt\" \"${TMPDIR:?}/Docker.app.new\"; mkdir -p \"$TMPDIR/lazyenv-docker-mnt\" && curl -fSL https://desktop.docker.com/mac/main/arm64/Docker.dmg -o \"$TMPDIR/Docker.dmg\" && hdiutil attach \"$TMPDIR/Docker.dmg\" -nobrowse -mountpoint \"$TMPDIR/lazyenv-docker-mnt\" && ditto \"$TMPDIR/lazyenv-docker-mnt/Docker.app\" \"$TMPDIR/Docker.app.new\" && hdiutil detach \"$TMPDIR/lazyenv-docker-mnt\" && rm -rf /Applications/Docker.app && ditto \"$TMPDIR/Docker.app.new\" /Applications/Docker.app && rm -rf \"${TMPDIR:?}/Docker.app.new\" && rm -f \"${TMPDIR:?}/Docker.dmg\"",
+    "diskUsagePaths": [
+      "/Applications/Docker.app",
+      "$HOME/Library/Containers/com.docker.docker"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://desktop.docker.com/mac/main/arm64/Docker.dmg"
+    },
+    "manualSteps": [
+      "First launch is manual: open Docker Desktop from `/Applications`. It installs a privileged helper (macOS prompts for your password) and asks you to accept the service agreement — the app cannot script past these OS-level prompts (PRD §9.10).",
+      "Copying `Docker.app` into `/Applications` assumes your account is an administrator (the app cannot supply a sudo password). If the copy is denied, open the downloaded DMG and drag `Docker.app` to Applications yourself.",
+      "Before running Update, quit Docker Desktop so its app bundle can be replaced cleanly — Update removes the old `/Applications/Docker.app` and copies the new version in (a clean replace, not a merge).",
+      "Docker's disk-image/data location is configurable only in Docker Desktop → Settings → Resources → Advanced, not from here (PRD §9.10)."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "neovim",
+    "displayName": "Neovim",
+    "category": "editor",
+    "summary": "Installs Neovim from the latest official GitHub release tarball for Apple Silicon into `$DEV_HOME/tools/neovim`. Update re-fetches the newest release tag and replaces the extracted build in place.",
+    "detectCommand": "[ -x \"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim\" ]",
+    "currentVersionCommand": "\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim\" --version",
+    "installCommand": "mkdir -p \"$DEV_HOME/tools/neovim\" && curl -fsSL -o \"$TMPDIR/nvim-macos-arm64.tar.gz\" \"https://github.com/neovim/neovim/releases/download/{{latestTag}}/nvim-macos-arm64.tar.gz\" && rm -rf \"${DEV_HOME:?}/tools/neovim/nvim-macos-arm64\" && tar -xzf \"$TMPDIR/nvim-macos-arm64.tar.gz\" -C \"$DEV_HOME/tools/neovim\" && rm -f \"$TMPDIR/nvim-macos-arm64.tar.gz\"",
+    "updateCommand": "mkdir -p \"$DEV_HOME/tools/neovim\" && curl -fsSL -o \"$TMPDIR/nvim-macos-arm64.tar.gz\" \"https://github.com/neovim/neovim/releases/download/{{latestTag}}/nvim-macos-arm64.tar.gz\" && rm -rf \"${DEV_HOME:?}/tools/neovim/nvim-macos-arm64\" && tar -xzf \"$TMPDIR/nvim-macos-arm64.tar.gz\" -C \"$DEV_HOME/tools/neovim\" && rm -f \"$TMPDIR/nvim-macos-arm64.tar.gz\"",
+    "uninstallCommand": "rm -rf \"${DEV_HOME:?}/tools/neovim\"",
+    "diskUsagePaths": [
+      "$DEV_HOME/tools/neovim"
+    ],
+    "sourcePinning": {
+      "type": "github-latest-tag",
+      "repo": "neovim/neovim"
+    },
+    "manualSteps": [
+      "The `nvim` binary lands at `$DEV_HOME/tools/neovim/nvim-macos-arm64/bin/nvim`, which isn't on your `PATH` by default. Add `export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\"` to `~/.zshrc` so the `nvim` command works in your own terminals.",
+      "Install this recipe before LunarVim — LunarVim requires Neovim 0.9+ and will not install Neovim itself."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "nvim on PATH (Homebrew or other)",
+        "detectCommand": "command -v nvim",
+        "currentVersionCommand": "nvim --version",
+        "diskUsagePaths": [
+          "$HOME/.local/share/nvim",
+          "$HOME/.cache/nvim"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lunarvim",
+    "displayName": "LunarVim",
+    "category": "editor",
+    "summary": "Installs LunarVim from its Neovim-compatibility release branch (`release-1.4/neovim-0.9`) into `~/.local/share/lunarvim`, with the `lvim` launcher placed at `~/.local/bin`. Update re-runs the same pinned installer; because the branch URL drifts as new Neovim versions ship, it is tracked with `lastVerified` and should be checked periodically (PRD §9.9).",
+    "detectCommand": "[ -x \"$HOME/.local/bin/lvim\" ]",
+    "currentVersionCommand": "git -C \"$HOME/.local/share/lunarvim/lvim\" describe --tags --always 2>/dev/null",
+    "installCommand": "export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\" && curl -fsSL -o \"$TMPDIR/lunarvim-install.sh\" \"https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh\" && LV_BRANCH='release-1.4/neovim-0.9' bash \"$TMPDIR/lunarvim-install.sh\" -y && rm -f \"$TMPDIR/lunarvim-install.sh\"",
+    "updateCommand": "export PATH=\"$DEV_HOME/tools/neovim/nvim-macos-arm64/bin:$PATH\" && curl -fsSL -o \"$TMPDIR/lunarvim-install.sh\" \"https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh\" && LV_BRANCH='release-1.4/neovim-0.9' bash \"$TMPDIR/lunarvim-install.sh\" -y && rm -f \"$TMPDIR/lunarvim-install.sh\"",
+    "uninstallCommand": "rm -rf \"${HOME:?}/.config/lvim\" \"${HOME:?}/.local/share/lunarvim\" && rm -f \"${HOME:?}/.local/bin/lvim\"",
+    "diskUsagePaths": [
+      "$HOME/.config/lvim",
+      "$HOME/.local/share/lunarvim"
+    ],
+    "sourcePinning": {
+      "type": "pinned",
+      "version": "release-1.4/neovim-0.9"
+    },
+    "manualSteps": [
+      "Install the Neovim recipe first — LunarVim's installer requires Neovim 0.9+ and will not install Neovim itself (on macOS it only prints a `brew install neovim` suggestion and exits, PRD §9.9).",
+      "Optional language-server dependencies are installed only if `node`/`npm`, `python`, or `cargo` are already on `PATH`; otherwise the installer skips them with a warning (safe to add later once those recipes are installed).",
+      "Add `export PATH=\"$HOME/.local/bin:$PATH\"` to `~/.zshrc` so the `lvim` command resolves. Note the pinned installer branch can go stale as Neovim advances — if an install fails, check the recipe's `lastVerified` date and confirm the branch URL is still current (PRD §9.9)."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "xcode-derived-data",
+    "displayName": "Xcode DerivedData",
+    "category": "mobile",
+    "summary": "Relocates Xcode's DerivedData build cache to `$DEV_HOME/xcode/derived-data` via Xcode's official `IDECustomDerivedDataLocation` setting (`defaults write com.apple.dt.Xcode`), the Apple-supported alternative to symlinking. Re-run Relocate to re-apply the setting if it is ever reset.",
+    "detectCommand": "[ \"$(defaults read com.apple.dt.Xcode IDECustomDerivedDataLocation 2>/dev/null)\" = \"$DEV_HOME/xcode/derived-data\" ]",
+    "currentVersionCommand": "defaults read com.apple.dt.Xcode IDECustomDerivedDataLocation",
+    "installCommand": "mkdir -p \"$DEV_HOME/xcode/derived-data\" && defaults write com.apple.dt.Xcode IDECustomDerivedDataLocation \"$DEV_HOME/xcode/derived-data\"",
+    "installActionTitle": "Relocate",
+    "diskUsagePaths": [
+      "$DEV_HOME/xcode/derived-data"
+    ],
+    "manualSteps": [
+      "Quit and relaunch Xcode so it picks up the new DerivedData location. The old `~/Library/Developer/Xcode/DerivedData` folder is safe to delete manually; Xcode regenerates build data on the next build.",
+      "You can verify or change this in Xcode → Settings → Locations → Derived Data, which edits the same `IDECustomDerivedDataLocation` preference this recipe writes."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "xcode-dev-caches",
+    "displayName": "Xcode Dev Caches",
+    "category": "mobile",
+    "summary": "Moves Xcode's Archives, iOS/watchOS DeviceSupport, and the SwiftPM cache into `$DEV_HOME/xcode` using an idempotent move-then-symlink (no official relocation exists for these). Quit Xcode before running; re-run Relocate safely anytime — already-linked folders are skipped.",
+    "detectCommand": "[ -L \"$HOME/Library/Developer/Xcode/Archives\" ] && [ -L \"$HOME/Library/Developer/Xcode/iOS DeviceSupport\" ] && [ -L \"$HOME/Library/Developer/Xcode/watchOS DeviceSupport\" ] && [ -L \"$HOME/Library/Caches/org.swift.swiftpm\" ]",
+    "currentVersionCommand": "readlink \"$HOME/Library/Developer/Xcode/Archives\"",
+    "installCommand": "reloc() { s=\"$1\"; d=\"$2\"; [ -L \"$s\" ] && return 0; if [ -e \"$s\" ] && [ -e \"$d\" ]; then echo \"xcode-dev-caches: [$s] and its destination [$d] both contain data; consolidate into one and remove the other, then re-run\" >&2; return 1; fi; mkdir -p \"$(dirname \"$d\")\"; if [ -e \"$s\" ]; then mv \"$s\" \"$d\"; else mkdir -p \"$d\"; fi; mkdir -p \"$(dirname \"$s\")\"; ln -s \"$d\" \"$s\"; }; reloc \"$HOME/Library/Developer/Xcode/Archives\" \"$DEV_HOME/xcode/Archives\" && reloc \"$HOME/Library/Developer/Xcode/iOS DeviceSupport\" \"$DEV_HOME/xcode/iOS DeviceSupport\" && reloc \"$HOME/Library/Developer/Xcode/watchOS DeviceSupport\" \"$DEV_HOME/xcode/watchOS DeviceSupport\" && reloc \"$HOME/Library/Caches/org.swift.swiftpm\" \"$DEV_HOME/xcode/org.swift.swiftpm\"",
+    "installActionTitle": "Relocate",
+    "diskUsagePaths": [
+      "$DEV_HOME/xcode/Archives",
+      "$DEV_HOME/xcode/iOS DeviceSupport",
+      "$DEV_HOME/xcode/watchOS DeviceSupport",
+      "$DEV_HOME/xcode/org.swift.swiftpm"
+    ],
+    "manualSteps": [
+      "Quit Xcode before running this — Xcode must not be writing to these folders during the move.",
+      "Symlinks are created even for DeviceSupport folders that don't exist yet, so future device-support data also lands in the managed location. Already-symlinked folders are skipped, so re-running is safe (idempotent).",
+      "If a folder exists in BOTH the original location and the managed destination (e.g. from a previous partial run), the relocate stops with a 'conflict' message instead of overwriting either copy — merge the two into one and delete the other, then run again."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "simulator-cleanup",
+    "displayName": "Simulator Cleanup",
+    "category": "mobile",
+    "summary": "Reclaims Simulator disk space by deleting unavailable simulator devices via the supported `xcrun simctl delete unavailable` command; usage is measured under `~/Library/Developer/CoreSimulator`. Runtime-image deletion is a separate manual `simctl` step because the images are SIP-protected and cannot be moved, symlinked, or `rm`'d (PRD §9.5).",
+    "detectCommand": "xcrun --find simctl >/dev/null 2>&1",
+    "updateCommand": "xcrun simctl delete unavailable",
+    "updateActionTitle": "Clean Up",
+    "diskUsagePaths": [
+      "$HOME/Library/Developer/CoreSimulator"
+    ],
+    "manualSteps": [
+      "To reclaim the large simulator runtime images (multiple GB each), list installed runtimes with `xcrun simctl runtime list`, then delete a specific one with `xcrun simctl runtime delete <identifier>`. These images live under `/System/Library/AssetsV2` (SIP-protected) and can only be removed through simctl — never with `rm`, symlinks, or a relocation (PRD §9.5).",
+      "Do not try to relocate `~/Library/Developer/CoreSimulator/Devices` to another volume — CoreSimulator's daemon has real-world reports of breaking when that data is symlinked, so this recipe only cleans up rather than moves (PRD §9.5)."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "claude-code",
+    "displayName": "Claude Code",
+    "category": "ai-agent",
+    "summary": "Installs Claude Code via Anthropic's official native installer (`claude.ai/install.sh`, not the deprecated npm package) to `~/.local/bin/claude`, with its config directory relocated via `CLAUDE_CONFIG_DIR` to `$DEV_HOME/ai/claude`. Update re-runs the native installer to fetch the latest stable build; credentials stay in the macOS Keychain.",
+    "detectCommand": "[ -x \"$HOME/.local/bin/claude\" ]",
+    "currentVersionCommand": "\"$HOME/.local/bin/claude\" --version",
+    "installCommand": "set -o pipefail && curl -fsSL https://claude.ai/install.sh | bash -s stable",
+    "updateCommand": "set -o pipefail && curl -fsSL https://claude.ai/install.sh | bash -s stable",
+    "uninstallCommand": "rm -f \"${HOME:?}/.local/bin/claude\" && rm -rf \"${HOME:?}/.local/share/claude\" \"${CLAUDE_CONFIG_DIR:?}\"",
+    "envVars": {
+      "CLAUDE_CONFIG_DIR": "$DEV_HOME/ai/claude"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/ai/claude",
+      "$HOME/.local/share/claude"
+    ],
+    "sourcePinning": {
+      "type": "stable-url",
+      "url": "https://claude.ai/install.sh"
+    },
+    "manualSteps": [
+      "First run requires interactive sign-in — launch `claude` in a terminal to authenticate (browser OAuth or API key). Credentials are stored in the macOS Keychain and are not managed or removed by this recipe.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CLAUDE_CONFIG_DIR` matches in your terminals. Also add `export PATH=\"$HOME/.local/bin:$PATH\"` so the `claude` command resolves in your own shells."
+    ],
+    "lastVerified": "2026-07-14",
+    "externalCandidates": [
+      {
+        "label": "claude on PATH (npm or other), default ~/.claude config",
+        "detectCommand": "command -v claude",
+        "currentVersionCommand": "claude --version",
+        "diskUsagePaths": [
+          "$HOME/.claude",
+          "$HOME/.local/share/claude"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "codex-cli",
+    "displayName": "Codex CLI (OpenAI)",
+    "category": "ai-agent",
+    "summary": "Installs OpenAI's Codex CLI globally via npm (`@openai/codex`) using nvm's default Node, with its config directory relocated via `CODEX_HOME` to `$DEV_HOME/ai/codex`. It uses the scoped package name — the unscoped `codex` npm package is an unrelated project (PRD §9.12). Update reinstalls the latest version. Requires the Node.js (nvm) recipe first.",
+    "detectCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && command -v codex >/dev/null 2>&1",
+    "currentVersionCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && codex --version",
+    "installCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default && npm install -g @openai/codex",
+    "updateCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default && npm install -g @openai/codex@latest",
+    "uninstallCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && npm uninstall -g @openai/codex; rm -rf \"${CODEX_HOME:?}\"",
+    "envVars": {
+      "NVM_DIR": "$DEV_HOME/js/nvm",
+      "CODEX_HOME": "$DEV_HOME/ai/codex"
+    },
+    "diskUsagePaths": [
+      "$DEV_HOME/ai/codex"
+    ],
+    "requiresInteractiveShell": true,
+    "brewFallbackRisk": false,
+    "manualSteps": [
+      "Install the Node.js (nvm) recipe first — this uses nvm's default Node to run npm.",
+      "Only the scoped package `@openai/codex` is correct; do not install the unscoped `codex` npm package, which is a different, unrelated tool (PRD §9.12).",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc` so `CODEX_HOME` matches in your terminals. Because it installs through nvm's Node, make sure your shell sources `nvm.sh` (see the Node.js (nvm) recipe) so the `codex` command resolves."
+    ],
+    "lastVerified": "2026-07-14"
+  },
+  {
+    "id": "opencode",
+    "displayName": "opencode",
+    "category": "ai-agent",
+    "summary": "Installs the opencode AI coding agent globally via npm (`opencode-ai`) using nvm's default Node. It follows the XDG base-directory spec natively (config at `~/.config/opencode`, data at `~/.local/share/opencode`), so no env overrides are needed — the simplest of the three agents. Update reinstalls the latest version. Requires the Node.js (nvm) recipe first.",
+    "detectCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && command -v opencode >/dev/null 2>&1",
+    "currentVersionCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && opencode --version",
+    "installCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default && npm install -g opencode-ai",
+    "updateCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default && npm install -g opencode-ai@latest",
+    "uninstallCommand": "source \"$NVM_DIR/nvm.sh\" && nvm use default >/dev/null 2>&1 && npm uninstall -g opencode-ai; rm -rf \"${HOME:?}/.config/opencode\" \"${HOME:?}/.local/share/opencode\"",
+    "envVars": {
+      "NVM_DIR": "$DEV_HOME/js/nvm"
+    },
+    "diskUsagePaths": [
+      "$HOME/.config/opencode",
+      "$HOME/.local/share/opencode"
+    ],
+    "requiresInteractiveShell": true,
+    "manualSteps": [
+      "Install the Node.js (nvm) recipe first — this uses nvm's default Node to run npm.",
+      "opencode needs no dedicated env vars — it reads `XDG_CONFIG_HOME`/`XDG_DATA_HOME` if you set them, otherwise the standard `~/.config` and `~/.local/share` locations. Ensure your shell sources `nvm.sh` (see the Node.js (nvm) recipe) so the globally installed `opencode` command resolves."
+    ],
+    "lastVerified": "2026-07-14"
+  }
+]
