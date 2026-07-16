@@ -1,10 +1,18 @@
 name: Release App
 
 on:
+  push:
+    branches: [prod]
+    paths-ignore:
+      - "**.md"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: release-app
+  cancel-in-progress: false
 
 jobs:
   release:
