@@ -9,7 +9,9 @@
         "start": "bun run src/index.ts",
         "test": "bun test",
         "typecheck": "bunx tsc --noEmit",
-        "db:generate": "drizzle-kit generate"
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "vercel-build": "bun build ./app.ts --outfile ./api/hub.js --target bun --format esm --external @libsql/client --external libsql"
     },
     "dependencies": {
         "@libsql/client": "0.17.4",

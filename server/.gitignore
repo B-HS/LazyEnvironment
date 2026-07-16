@@ -9,3 +9,6 @@ node_modules/
 local*.db
 test-*.db
 .DS_Store
+.vercel
+.env*
+api/hub.js
