@@ -1,0 +1,98 @@
+name: Release App
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Compute next version
+        id: version
+        run: |
+          latest=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          if [ -z "$latest" ]; then
+            echo "version=0.0.1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          base=${latest#v}
+          IFS=. read -r major minor patch <<< "$base"
+          patch=$((patch + 1))
+          while [[ "$patch" == *4* ]]; do patch=$((patch + 1)); done
+          if [[ "$minor" == *4* ]]; then
+            minor=$((minor + 1))
+            while [[ "$minor" == *4* ]]; do minor=$((minor + 1)); done
+            patch=0
+          fi
+          if [[ "$major" == *4* ]]; then
+            major=$((major + 1))
+            while [[ "$major" == *4* ]]; do major=$((major + 1)); done
+            minor=0
+            patch=0
+          fi
+          echo "version=$major.$minor.$patch" >> "$GITHUB_OUTPUT"
+      - run: brew install xcodegen
+      - name: Import signing certificate
+        env:
+          MACOS_CERTIFICATE_P12: ${{ secrets.MACOS_CERTIFICATE_P12 }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+        run: |
+          KEYCHAIN_PASSWORD=$(uuidgen)
+          KEYCHAIN_PATH="$RUNNER_TEMP/signing.keychain-db"
+          echo "$MACOS_CERTIFICATE_P12" | base64 --decode > "$RUNNER_TEMP/certificate.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$RUNNER_TEMP/certificate.p12" -P "$MACOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH" login.keychain-db
+      - name: Build signed app
+        working-directory: app
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          xcodegen generate
+          xcodebuild -project LazyEnvironment.xcodeproj \
+            -scheme LazyEnvironment \
+            -configuration Release \
+            -derivedDataPath .build/DerivedData \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="Developer ID Application" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            ENABLE_HARDENED_RUNTIME=YES \
+            OTHER_CODE_SIGN_FLAGS="--timestamp" \
+            MARKETING_VERSION="$VERSION" \
+            CURRENT_PROJECT_VERSION="$VERSION" \
+            build
+      - name: Notarize and staple
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          APP_PATH="app/.build/DerivedData/Build/Products/Release/LazyEnvironment.app"
+          ditto -c -k --keepParent "$APP_PATH" "notarize.zip"
+          xcrun notarytool submit "notarize.zip" \
+            --apple-id "$APPLE_ID" \
+            --password "$APPLE_APP_SPECIFIC_PASSWORD" \
+            --team-id "$APPLE_TEAM_ID" \
+            --wait
+          xcrun stapler staple "$APP_PATH"
+          ditto -c -k --keepParent "$APP_PATH" "LazyEnvironment-v$VERSION.zip"
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v$VERSION" "LazyEnvironment-v$VERSION.zip" \
+            --title "v$VERSION" \
+            --target "$GITHUB_SHA" \
+            --generate-notes
