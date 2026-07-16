@@ -92,7 +92,17 @@ jobs:
             --apple-id "$APPLE_ID" \
             --password "$APPLE_APP_SPECIFIC_PASSWORD" \
             --team-id "$APPLE_TEAM_ID" \
-            --wait
+            --wait \
+            --output-format json > notarize-result.json
+          SUBMISSION_ID=$(jq -r '.id' notarize-result.json)
+          SUBMISSION_STATUS=$(jq -r '.status' notarize-result.json)
+          if [ "$SUBMISSION_STATUS" != "Accepted" ]; then
+            xcrun notarytool log "$SUBMISSION_ID" \
+              --apple-id "$APPLE_ID" \
+              --password "$APPLE_APP_SPECIFIC_PASSWORD" \
+              --team-id "$APPLE_TEAM_ID"
+            exit 1
+          fi
           xcrun stapler staple "$APP_PATH"
           ditto -c -k --keepParent "$APP_PATH" "LazyEnvironment-v$VERSION.zip"
       - name: Create GitHub release
