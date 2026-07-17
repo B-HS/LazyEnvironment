@@ -47,7 +47,8 @@ export const createGithubAuthRoute = (deps: { authService: AuthService; callback
                 const { token, login } = await deps.authService.completeGithubLogin(code, resolveCallbackUri(c.req.url, deps.serverBaseUrl))
                 return c.redirect(`${deps.callbackScheme}://auth#token=${encodeURIComponent(token)}&login=${encodeURIComponent(login)}`, 302)
             } catch (error) {
-                return failureRedirect(isAppError(error) ? error.code : 'INTERNAL_ERROR')
+                if (isAppError(error)) return failureRedirect(error.code)
+                return failureRedirect(`INTERNAL_ERROR_${error instanceof Error ? error.name : 'UNKNOWN'}`)
             }
         }),
     )
