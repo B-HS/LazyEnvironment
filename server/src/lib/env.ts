@@ -12,6 +12,7 @@ const envSchema = z.object({
     NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
     APP_CALLBACK_SCHEME: z.string().min(1).default('lazyenvironment'),
     SERVER_BASE_URL: optionalString,
+    MIGRATE_ALLOW_RESET: optionalString,
 })
 
 export type Env = z.infer<typeof envSchema>

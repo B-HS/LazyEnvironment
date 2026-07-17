@@ -2,17 +2,19 @@ import { createClient } from '@libsql/client'
 import { drizzle } from 'drizzle-orm/libsql'
 import { migrate } from 'drizzle-orm/libsql/migrator'
 import { readMigrationFiles } from 'drizzle-orm/migrator'
-import { getDbCredentials } from '../src/lib/env'
+import { getEnv } from '../src/lib/env'
 import { MIGRATIONS_DIR } from '../src/lib/paths'
 
 const JOURNAL_TABLE = '__drizzle_migrations'
+const RESET_PREVIEW_LIMIT = 5
 const EXPECTED_COLUMNS: Record<string, string[]> = {
     users: ['id', 'login', 'created_at'],
     environments: ['user_id', 'recipe_id', 'pinned_version', 'custom_path', 'enabled', 'updated_at'],
     custom_recipes: ['user_id', 'recipe_id', 'recipe_json', 'updated_at'],
 }
 
-const credentials = getDbCredentials()
+const env = getEnv()
+const credentials = { url: env.TURSO_DATABASE_URL, authToken: env.TURSO_AUTH_TOKEN }
 const redact = (text: string) => {
     const masked = text.split(credentials.url).join('<db-url>')
     return credentials.authToken ? masked.split(credentials.authToken).join('<auth-token>') : masked
@@ -68,14 +70,19 @@ const adoptLegacySchema = async () => {
         }
     }
 
+    const allowReset = env.MIGRATE_ALLOW_RESET === '1'
     for (const name of existing) {
         const total = await rowCount(name)
-        if (total > 0) {
+        if (total > 0 && !allowReset) {
             for (const diagnostic of existing) {
                 console.error(`table ${diagnostic}: rows=${await rowCount(diagnostic)} columns=${(await tableColumns(diagnostic)).join(',')}`)
             }
-            console.error(`refusing to reset: table ${name} has ${total} rows, no journal, and schema does not match - resolve manually`)
+            console.error(`refusing to reset: table ${name} has ${total} rows, no journal, and schema does not match - set MIGRATE_ALLOW_RESET=1 to discard`)
             process.exit(1)
+        }
+        if (total > 0) {
+            const preview = await client.execute(`select * from \`${name}\` limit ${String(RESET_PREVIEW_LIMIT)}`)
+            console.log(`discarding table ${name} (${total} rows): ${redact(JSON.stringify(preview.rows))}`)
         }
     }
     for (const name of existing) {
