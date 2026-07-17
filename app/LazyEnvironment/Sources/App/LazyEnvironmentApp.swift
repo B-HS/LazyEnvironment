@@ -25,6 +25,26 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 StatusBarController.shared.openSettings()
             }
         }
+        if ProcessInfo.processInfo.arguments.contains("-debug-open-main") {
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(2))
+                StatusBarController.shared.openMainWindow()
+            }
+        }
+        if ProcessInfo.processInfo.arguments.contains("-debug-close-windows") {
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(3))
+                for window in NSApp.windows where window.canBecomeMain && !(window is NSPanel) {
+                    window.close()
+                }
+            }
+        }
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        guard !flag else { return true }
+        StatusBarController.shared.openMainWindow()
+        return false
     }
 
     private func observeWindowClosing() {
@@ -32,8 +52,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Task { @MainActor in
                 try? await Task.sleep(for: .milliseconds(250))
                 guard AppState.shared.settings.menuBarEnabled else { return }
+                guard !StatusBarController.shared.reopenRequestIsRecent else { return }
                 let hasVisibleMainWindow = NSApp.windows.contains { window in
-                    window.isVisible && window.canBecomeMain && !(window is NSPanel) && window.className != "NSStatusBarWindow"
+                    StatusBarController.isMainWindowCandidate(window, includingSettings: true)
                 }
                 if !hasVisibleMainWindow {
                     NSApp.setActivationPolicy(.accessory)

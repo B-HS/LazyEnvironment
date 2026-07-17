@@ -5,8 +5,22 @@ import SwiftUI
 final class StatusBarController: NSObject {
     static let shared = StatusBarController()
 
+    private static let settingsWindowIdentifier = "com_apple_SwiftUI_Settings_window"
+    private static let reopenGraceInterval: TimeInterval = 1
+
     private var statusItem: NSStatusItem?
     private let popover = NSPopover()
+    private var lastOpenMainWindowRequest = Date.distantPast
+
+    static func isMainWindowCandidate(_ window: NSWindow, includingSettings: Bool) -> Bool {
+        if window is NSPanel || window.className == "NSStatusBarWindow" { return false }
+        if !includingSettings, window.identifier?.rawValue == Self.settingsWindowIdentifier { return false }
+        return window.isMiniaturized || (window.isVisible && window.canBecomeMain)
+    }
+
+    var reopenRequestIsRecent: Bool {
+        Date().timeIntervalSince(lastOpenMainWindowRequest) < Self.reopenGraceInterval
+    }
 
     func install(appState: AppState) {
         guard statusItem == nil else { return }
@@ -97,16 +111,28 @@ final class StatusBarController: NSObject {
     }
 
     func openMainWindow() {
+        lastOpenMainWindowRequest = Date()
         popover.performClose(nil)
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
-        let mainWindow = NSApp.windows.first { window in
-            window.canBecomeMain && !(window is NSPanel) && window.className != "NSStatusBarWindow"
-        }
+        let mainWindow = NSApp.windows.first { Self.isMainWindowCandidate($0, includingSettings: false) }
         if let mainWindow {
             mainWindow.makeKeyAndOrderFront(nil)
         } else {
-            NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: NSWorkspace.OpenConfiguration())
+            openNewMainWindow()
         }
+    }
+
+    private func openNewMainWindow() {
+        for menu in NSApp.mainMenu?.items.compactMap(\.submenu) ?? [] {
+            let newWindowIndex = menu.items.firstIndex { item in
+                item.keyEquivalent == "n" && item.keyEquivalentModifierMask == .command
+            }
+            if let newWindowIndex {
+                menu.performActionForItem(at: newWindowIndex)
+                return
+            }
+        }
+        NSApp.setActivationPolicy(.accessory)
     }
 }

@@ -2551,19 +2551,19 @@
         }
       }
     },
-    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `PNPM_HOME` on your `PATH` with `export PATH=\"$PNPM_HOME:$PATH\"` so the `pnpm` command resolves in your own terminals.": {
+    "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `$PNPM_HOME/bin` on your `PATH` with `export PATH=\"$PNPM_HOME/bin:$PATH\"` so the `pnpm` command resolves in your own terminals.": {
       "extractionState": "manual",
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$PNPM_HOME:$PATH\"` で `PNPM_HOME` を `PATH` に追加すると、ご自身のターミナルで `pnpm` コマンドが解決されます。"
+            "value": "このレシピの詳細画面で「export 行をコピー」ボタンをクリックし、`~/.zshrc` に貼り付けてください。その後 `export PATH=\"$PNPM_HOME/bin:$PATH\"` で `$PNPM_HOME/bin` を `PATH` に追加すると、ご自身のターミナルで `pnpm` コマンドが解決されます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$PNPM_HOME:$PATH\"`로 `PNPM_HOME`을 `PATH`에 추가하면 사용자 터미널에서 `pnpm` 명령이 인식됩니다."
+            "value": "이 레시피의 상세 화면에서 “export 구문 복사” 버튼을 눌러 `~/.zshrc`에 붙여넣으세요. 그다음 `export PATH=\"$PNPM_HOME/bin:$PATH\"`로 `$PNPM_HOME/bin`을 `PATH`에 추가하면 사용자 터미널에서 `pnpm` 명령이 인식됩니다."
           }
         }
       }
@@ -3945,19 +3945,19 @@
         }
       }
     },
-    "Install the uv recipe first — this recipe installs and updates CPython through `uv python install`.": {
+    "Installing this recipe bootstraps uv automatically when it is missing, then runs `uv python install` — installing the uv recipe first is recommended but not required.": {
       "extractionState": "manual",
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "先に uv レシピをインストールしてください — このレシピは `uv python install` で CPython をインストール・更新します。"
+            "value": "このレシピをインストールすると、uv が無い場合は自動的に uv をインストールしてから `uv python install` を実行します — 先に uv レシピをインストールしておくことを推奨しますが、必須ではありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "uv 레시피를 먼저 설치하세요 — 이 레시피는 `uv python install`로 CPython을 설치·업데이트합니다."
+            "value": "이 레시피를 설치하면 uv가 없을 때 자동으로 uv를 먼저 설치한 뒤 `uv python install`을 실행합니다 — uv 레시피를 먼저 설치해 두면 좋지만 필수는 아닙니다."
           }
         }
       }
