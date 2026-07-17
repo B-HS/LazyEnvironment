@@ -39,6 +39,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
+        if ProcessInfo.processInfo.arguments.contains("-debug-github-signin-cancel") {
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(3))
+                SyncEngine.shared.signInWithGitHub()
+                try? await Task.sleep(for: .seconds(3))
+                SyncEngine.shared.cancelSignIn()
+            }
+        }
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

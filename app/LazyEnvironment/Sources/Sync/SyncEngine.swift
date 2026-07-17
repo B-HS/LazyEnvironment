@@ -103,7 +103,7 @@ final class SyncEngine: NSObject {
             lastError = SyncError.invalidServerURL.localizedDescription
             return
         }
-        let session = ASWebAuthenticationSession(url: startURL, callbackURLScheme: "lazyenvironment") { [weak self] callbackURL, error in
+        let session = ASWebAuthenticationSession(url: startURL, callbackURLScheme: "lazyenvironment") { @Sendable [weak self] callbackURL, error in
             Task { @MainActor in
                 guard let self else { return }
                 if let error {
@@ -117,6 +117,11 @@ final class SyncEngine: NSObject {
         session.prefersEphemeralWebBrowserSession = false
         authSession = session
         session.start()
+    }
+
+    func cancelSignIn() {
+        authSession?.cancel()
+        authSession = nil
     }
 
     private func handleCallback(_ callbackURL: URL?) {
