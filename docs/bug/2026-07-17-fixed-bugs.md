@@ -35,3 +35,10 @@
 - 원인: `ASWebAuthenticationSession`의 completion은 백그라운드(XPC reply) 스레드에서 호출되는데, `@MainActor` 컨텍스트에서 만든 **비-Sendable 클로저는 MainActor 격리를 상속** → 내부의 `Task { @MainActor in }`에 도달하기도 전에 클로저 프롤로그의 Swift 6 런타임 격리 검증에서 SIGTRAP. 실 OAuth 로그인이 최초 실행이라(dev 로그인은 URLSession 경로) 이제야 드러남.
 - 해결: completion 클로저에 `@Sendable` 명시(`{ @Sendable [weak self] callbackURL, error in ... }`) — 격리 상속이 끊겨 진입 검증이 사라지고, 내부 `Task { @MainActor }` 홉으로 상태 접근은 그대로 안전. `cancelSignIn()` + QA 인자 `-debug-github-signin-cancel`(3초 후 로그인 시작→3초 후 취소 = completion 강제 발화)로 재현 경로를 자동화 — 수정 후 앱 생존·신규 크래시 리포트 0건 확인.
 - 교훈: Apple 콜백 API에 넘기는 클로저는 `Task { @MainActor }` 래핑만으론 부족 — **클로저 자체가 격리를 상속하지 않게 `@Sendable`을 명시**해야 한다(같은 패턴 재발 시 이 항목부터).
+
+## 7. GitHub 로그인 "Sign-in failed: INTERNAL_ERROR" (2026-07-18, v0.0.5)
+- 증상: 크래시 수정 후 로그인 재시도 → GitHub 인증은 통과하는데 앱 복귀 시 `INTERNAL_ERROR`(콜백 라우트의 비-AppError 캐치 경로).
+- 원인: **프로덕션 Turso에 테이블이 없음.** `migrate()`는 셀프 호스트 진입점(`src/index.ts`)에만 있고 Vercel 함수 진입점(`app.ts`→`api/hub.js`)은 마이그레이션을 안 돌림 → 최초의 실제 DB 쓰기(users upsert)가 libsql 예외로 폭발. health/카탈로그/401 경로는 DB를 안 건드려서 그동안 안 드러남.
+- 진단 제약: Vercel Sensitive 변수는 `vercel env pull`로 실값이 안 내려옴(플레이스홀더, len=11) → 로컬에서 프로드 Turso 직접 검사 불가. 대신 빌드 시점에는 실값이 주입된다는 점을 이용.
+- 해결: `vercel-build`에 `&& bun run db:migrate`(drizzle-kit migrate) 체인 — 배포마다 빌드 단계에서 마이그레이션 실행(드리즐 저널로 멱등). env가 정말 잘못된 경우엔 빌드가 명시적으로 실패해 원인이 드러남. 로컬 file: DB로 마이그레이션 동작 검증(`__drizzle_migrations, custom_recipes, environments, users` 생성), tsc·31 테스트 그린.
+- 교훈: 서버리스 배포에는 "부팅 시 1회" 코드가 실행될 자리가 없다 — 부팅 훅(마이그레이션·워밍업)은 **배포(빌드) 단계로 옮겨야** 한다.

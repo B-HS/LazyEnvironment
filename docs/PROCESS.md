@@ -72,6 +72,7 @@
 - uv 레시피의 uninstall(`rm -rf $DEV_HOME/python/uv`)이 python 레시피 소유 `pythons/`까지 제거 — 후속 후보(감지됨, 미수정)
 - uv 레시피 자체 installCommand는 여전히 rc 파일을 수정함(python 부트스트랩만 `UV_NO_MODIFY_PATH=1` 적용) — 통일 여부는 후속 판단
 - **카탈로그 사본이 2곳**(`app/LazyEnvironment/Resources/builtin-recipes.json` ↔ `server/data/catalog.json`) — 앱 쪽만 고치면 서버 게스트 카탈로그가 구버전을 서빙(2026-07-17 드리프트 실발생·동기화함). **앱 카탈로그 수정 시 서버 사본도 함께 복사** 필수. 후속 후보: 단일 SSOT화 또는 CI 드리프트 체크
+- Vercel 함수는 부팅 마이그레이션이 없음 — DB 마이그레이션은 `vercel-build`의 `bun run db:migrate`가 배포마다 실행(멱등). 스키마 변경 시 `drizzle-kit generate`로 마이그레이션 파일 커밋만 하면 됨. Sensitive env는 `vercel env pull`로 실값 조회 불가(빌드/런타임에만 주입)
 - 공개 카탈로그를 앱이 가져와 병합하는 게스트 모드(PRD §6.3 첫 항목)는 서버 API만 존재, 앱 쪽 병합 UI 미구현
 - Homebrew 최초 부트스트랩은 sudo/TTY 필요 → 수동 단계로 안내(레시피에 반영됨)
 
