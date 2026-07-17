@@ -4845,6 +4845,23 @@
           }
         }
       }
+    },
+    "SDKMAN's installer requires Bash 4+, while macOS ships Bash 3.2 — installing this recipe bootstraps a modern Bash through Homebrew (`brew install bash`) when needed, so install the Homebrew recipe first.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SDKMAN のインストーラーには Bash 4 以上が必要ですが、macOS 標準の Bash は 3.2 です — このレシピはインストール時に必要に応じて Homebrew(`brew install bash`)で新しい Bash を先にインストールするため、Homebrew レシピを先にインストールしておいてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SDKMAN 설치 스크립트는 Bash 4 이상이 필요하지만 macOS 기본 Bash는 3.2입니다 — 이 레시피는 설치 시 필요하면 Homebrew(`brew install bash`)로 최신 Bash를 먼저 설치하므로, Homebrew 레시피를 먼저 설치해 두세요."
+          }
+        }
+      }
     }
   },
   "version": "1.0"
