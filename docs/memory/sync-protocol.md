@@ -28,7 +28,7 @@
 
 ## 서버 구현 메모
 
-- Drizzle(libSQL): users / environments(pk user+recipe) / custom_recipes(pk user+recipe). 부팅 시 마이그레이션 자동 실행.
+- Drizzle(libSQL): `lazyenv_users` / `lazyenv_environments`(pk user+recipe) / `lazyenv_custom_recipes`(pk user+recipe), 저널은 `lazyenv_drizzle_migrations` — **공유 Turso DB 공존을 위한 lazyenv_ 프리픽스 네임스페이스**(2026-07-18 결정). 마이그레이션: 셀프 호스트는 부팅 시, Vercel은 빌드 단계(`scripts/migrate.ts`)에서 실행.
 - env: TURSO_DATABASE_URL(기본 file:local.db), TURSO_AUTH_TOKEN, JWT_SECRET(필수), GITHUB_CLIENT_ID/SECRET(없으면 OAuth 503 stub), PORT(25252), APP_CALLBACK_SCHEME(lazyenvironment), SERVER_BASE_URL(선택).
 - 프로덕션 판정은 compose 시 `configureEnvironmentMode(env.NODE_ENV)`로 주입 env와 동기화(에러 details 숨김).
 - 미검증: GitHub OAuth 실플로우(자격증명 필요), Vercel 배포.

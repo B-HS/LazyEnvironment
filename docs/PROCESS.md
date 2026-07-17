@@ -73,7 +73,7 @@
 - uv 레시피 자체 installCommand는 여전히 rc 파일을 수정함(python 부트스트랩만 `UV_NO_MODIFY_PATH=1` 적용) — 통일 여부는 후속 판단
 - **카탈로그 사본이 2곳**(`app/LazyEnvironment/Resources/builtin-recipes.json` ↔ `server/data/catalog.json`) — 앱 쪽만 고치면 서버 게스트 카탈로그가 구버전을 서빙(2026-07-17 드리프트 실발생·동기화함). **앱 카탈로그 수정 시 서버 사본도 함께 복사** 필수. 후속 후보: 단일 SSOT화 또는 CI 드리프트 체크
 - Vercel 함수는 부팅 마이그레이션이 없음 — DB 마이그레이션은 `vercel-build`의 `scripts/migrate.ts`가 배포마다 실행(저널 멱등, 베이스라인 채택, 공유 DB 가드). 스키마 변경 시 `drizzle-kit generate`로 마이그레이션 파일 커밋만 하면 됨. Sensitive env는 `vercel env pull`로 실값 조회 불가(빌드 로그가 유일한 진단 채널)
-- **(2026-07-18 사고 기록) 프로드 TURSO_DATABASE_URL이 타 프로젝트 공유 DB를 가리켰었음** — FK 제약+가드로 무손실. lazy-environment는 반드시 **전용 Turso DB** 사용(사용자가 신설·교체). 상세: [bug/2026-07-17-fixed-bugs.md](./bug/2026-07-17-fixed-bugs.md) §7
+- **(2026-07-18 사고→설계 변경) 프로드 TURSO_DATABASE_URL은 타 프로젝트와 공유되는 DB** — 드랍 시도는 FK 제약+가드로 무손실. 사용자 결정으로 전용 DB 대신 **`lazyenv_` 프리픽스 네임스페이스로 공존**(테이블 4종 전부 프리픽스, 스크립트는 네임스페이스 밖을 절대 안 건드림). 상세: [bug/2026-07-17-fixed-bugs.md](./bug/2026-07-17-fixed-bugs.md) §7
 - 공개 카탈로그를 앱이 가져와 병합하는 게스트 모드(PRD §6.3 첫 항목)는 서버 API만 존재, 앱 쪽 병합 UI 미구현
 - Homebrew 최초 부트스트랩은 sudo/TTY 필요 → 수동 단계로 안내(레시피에 반영됨)
 
