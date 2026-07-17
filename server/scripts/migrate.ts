@@ -5,12 +5,13 @@ import { readMigrationFiles } from 'drizzle-orm/migrator'
 import { getEnv } from '../src/lib/env'
 import { MIGRATIONS_DIR } from '../src/lib/paths'
 
-const JOURNAL_TABLE = '__drizzle_migrations'
+const TABLE_PREFIX = 'lazyenv_'
+const JOURNAL_TABLE = 'lazyenv_drizzle_migrations'
 const RESET_PREVIEW_LIMIT = 5
 const EXPECTED_COLUMNS: Record<string, string[]> = {
-    users: ['id', 'login', 'created_at'],
-    environments: ['user_id', 'recipe_id', 'pinned_version', 'custom_path', 'enabled', 'updated_at'],
-    custom_recipes: ['user_id', 'recipe_id', 'recipe_json', 'updated_at'],
+    lazyenv_users: ['id', 'login', 'created_at'],
+    lazyenv_environments: ['user_id', 'recipe_id', 'pinned_version', 'custom_path', 'enabled', 'updated_at'],
+    lazyenv_custom_recipes: ['user_id', 'recipe_id', 'recipe_json', 'updated_at'],
 }
 
 const env = getEnv()
@@ -39,6 +40,12 @@ const tableColumns = async (name: string) => {
 
 const sameColumns = (left: string[], right: string[]) => left.length === right.length && left.every((value, index) => value === right[index])
 
+const unknownNamespaceTables = async () => {
+    const known = new Set([...Object.keys(EXPECTED_COLUMNS), JOURNAL_TABLE])
+    const result = await client.execute({ sql: 'select name from sqlite_master where type = ? and name like ?', args: ['table', `${TABLE_PREFIX}%`] })
+    return result.rows.map((row) => String(row.name)).filter((name) => !known.has(name))
+}
+
 const baselineJournal = async () => {
     await client.execute(`CREATE TABLE IF NOT EXISTS \`${JOURNAL_TABLE}\` (id SERIAL PRIMARY KEY, hash text NOT NULL, created_at numeric)`)
     for (const migration of readMigrationFiles({ migrationsFolder: MIGRATIONS_DIR })) {
@@ -49,29 +56,21 @@ const baselineJournal = async () => {
     }
 }
 
-const foreignTables = async () => {
-    const known = new Set([...Object.keys(EXPECTED_COLUMNS), JOURNAL_TABLE])
-    const result = await client.execute({
-        sql: "select name from sqlite_master where type = ? and name not like 'sqlite_%' and name not like '_litestream%'",
-        args: ['table'],
-    })
-    return result.rows.map((row) => String(row.name)).filter((name) => !known.has(name))
-}
-
-const adoptLegacySchema = async () => {
+const adoptLegacyNamespace = async () => {
     if (await tableExists(JOURNAL_TABLE)) return
+
+    const unknown = await unknownNamespaceTables()
+    if (unknown.length > 0) {
+        console.error(`refusing to manage this database: unexpected ${TABLE_PREFIX}* tables exist (${unknown.join(', ')}) - resolve manually`)
+        process.exit(1)
+    }
+
     const names = Object.keys(EXPECTED_COLUMNS)
     const existing: string[] = []
     for (const name of names) {
         if (await tableExists(name)) existing.push(name)
     }
     if (existing.length === 0) return
-
-    const unknown = await foreignTables()
-    if (unknown.length > 0) {
-        console.error(`refusing to touch this database: unknown tables exist (${unknown.join(', ')}) - it likely belongs to another application; point TURSO_DATABASE_URL at a dedicated database`)
-        process.exit(1)
-    }
 
     if (existing.length === names.length) {
         let allMatch = true
@@ -102,14 +101,14 @@ const adoptLegacySchema = async () => {
     }
     for (const name of existing) {
         await client.execute(`drop table \`${name}\``)
-        console.log(`dropped empty unjournaled table ${name}`)
+        console.log(`dropped unjournaled table ${name}`)
     }
 }
 
 console.log(`migrate target scheme=${credentials.url.split(':')[0]} urlLength=${credentials.url.length}`)
 try {
-    await adoptLegacySchema()
-    await migrate(drizzle({ client }), { migrationsFolder: MIGRATIONS_DIR })
+    await adoptLegacyNamespace()
+    await migrate(drizzle({ client }), { migrationsFolder: MIGRATIONS_DIR, migrationsTable: JOURNAL_TABLE })
     console.log('migrations applied')
 } catch (error) {
     const message = error instanceof Error ? `${error.name}: ${error.message}` : String(error)

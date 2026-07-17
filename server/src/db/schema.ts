@@ -1,13 +1,13 @@
 import { integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
-export const users = sqliteTable('users', {
+export const users = sqliteTable('lazyenv_users', {
     id: text('id').primaryKey(),
     login: text('login').notNull(),
     createdAt: integer('created_at').notNull(),
 })
 
 export const environments = sqliteTable(
-    'environments',
+    'lazyenv_environments',
     {
         userId: text('user_id').notNull(),
         recipeId: text('recipe_id').notNull(),
@@ -20,7 +20,7 @@ export const environments = sqliteTable(
 )
 
 export const customRecipes = sqliteTable(
-    'custom_recipes',
+    'lazyenv_custom_recipes',
     {
         userId: text('user_id').notNull(),
         recipeId: text('recipe_id').notNull(),

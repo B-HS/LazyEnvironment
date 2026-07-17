@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "af355f57-6c43-4258-8529-0e9263d52967",
+  "id": "4a2064e8-62fb-4bed-a95b-99fe43b0f513",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "custom_recipes": {
-      "name": "custom_recipes",
+    "lazyenv_custom_recipes": {
+      "name": "lazyenv_custom_recipes",
       "columns": {
         "user_id": {
           "name": "user_id",
@@ -39,19 +39,19 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "custom_recipes_user_id_recipe_id_pk": {
+        "lazyenv_custom_recipes_user_id_recipe_id_pk": {
           "columns": [
             "user_id",
             "recipe_id"
           ],
-          "name": "custom_recipes_user_id_recipe_id_pk"
+          "name": "lazyenv_custom_recipes_user_id_recipe_id_pk"
         }
       },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "environments": {
-      "name": "environments",
+    "lazyenv_environments": {
+      "name": "lazyenv_environments",
       "columns": {
         "user_id": {
           "name": "user_id",
@@ -100,19 +100,19 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "environments_user_id_recipe_id_pk": {
+        "lazyenv_environments_user_id_recipe_id_pk": {
           "columns": [
             "user_id",
             "recipe_id"
           ],
-          "name": "environments_user_id_recipe_id_pk"
+          "name": "lazyenv_environments_user_id_recipe_id_pk"
         }
       },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "users": {
-      "name": "users",
+    "lazyenv_users": {
+      "name": "lazyenv_users",
       "columns": {
         "id": {
           "name": "id",

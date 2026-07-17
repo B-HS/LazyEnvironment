@@ -1,4 +1,4 @@
-CREATE TABLE `custom_recipes` (
+CREATE TABLE `lazyenv_custom_recipes` (
 	`user_id` text NOT NULL,
 	`recipe_id` text NOT NULL,
 	`recipe_json` text NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE `custom_recipes` (
 	PRIMARY KEY(`user_id`, `recipe_id`)
 );
 --> statement-breakpoint
-CREATE TABLE `environments` (
+CREATE TABLE `lazyenv_environments` (
 	`user_id` text NOT NULL,
 	`recipe_id` text NOT NULL,
 	`pinned_version` text,
@@ -16,7 +16,7 @@ CREATE TABLE `environments` (
 	PRIMARY KEY(`user_id`, `recipe_id`)
 );
 --> statement-breakpoint
-CREATE TABLE `users` (
+CREATE TABLE `lazyenv_users` (
 	`id` text PRIMARY KEY NOT NULL,
 	`login` text NOT NULL,
 	`created_at` integer NOT NULL
