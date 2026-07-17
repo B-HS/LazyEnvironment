@@ -11,7 +11,7 @@
         "typecheck": "bunx tsc --noEmit",
         "db:generate": "drizzle-kit generate",
         "db:migrate": "drizzle-kit migrate",
-        "vercel-build": "bun build ./app.ts --outfile ./api/hub.js --target bun --format esm --external @libsql/client --external libsql"
+        "vercel-build": "bun build ./app.ts --outfile ./api/hub.js --target bun --format esm --external @libsql/client --external libsql && bun run db:migrate"
     },
     "dependencies": {
         "@libsql/client": "0.17.4",
