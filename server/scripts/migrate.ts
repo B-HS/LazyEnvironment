@@ -49,6 +49,15 @@ const baselineJournal = async () => {
     }
 }
 
+const foreignTables = async () => {
+    const known = new Set([...Object.keys(EXPECTED_COLUMNS), JOURNAL_TABLE])
+    const result = await client.execute({
+        sql: "select name from sqlite_master where type = ? and name not like 'sqlite_%' and name not like '_litestream%'",
+        args: ['table'],
+    })
+    return result.rows.map((row) => String(row.name)).filter((name) => !known.has(name))
+}
+
 const adoptLegacySchema = async () => {
     if (await tableExists(JOURNAL_TABLE)) return
     const names = Object.keys(EXPECTED_COLUMNS)
@@ -57,6 +66,12 @@ const adoptLegacySchema = async () => {
         if (await tableExists(name)) existing.push(name)
     }
     if (existing.length === 0) return
+
+    const unknown = await foreignTables()
+    if (unknown.length > 0) {
+        console.error(`refusing to touch this database: unknown tables exist (${unknown.join(', ')}) - it likely belongs to another application; point TURSO_DATABASE_URL at a dedicated database`)
+        process.exit(1)
+    }
 
     if (existing.length === names.length) {
         let allMatch = true

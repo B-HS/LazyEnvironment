@@ -38,7 +38,8 @@
 
 ## 7. GitHub 로그인 "Sign-in failed: INTERNAL_ERROR" (2026-07-18, v0.0.5)
 - 증상: 크래시 수정 후 로그인 재시도 → GitHub 인증은 통과하는데 앱 복귀 시 `INTERNAL_ERROR`(콜백 라우트의 비-AppError 캐치 경로).
-- 원인: **프로덕션 Turso에 테이블이 없음.** `migrate()`는 셀프 호스트 진입점(`src/index.ts`)에만 있고 Vercel 함수 진입점(`app.ts`→`api/hub.js`)은 마이그레이션을 안 돌림 → 최초의 실제 DB 쓰기(users upsert)가 libsql 예외로 폭발. health/카탈로그/401 경로는 DB를 안 건드려서 그동안 안 드러남.
-- 진단 제약: Vercel Sensitive 변수는 `vercel env pull`로 실값이 안 내려옴(플레이스홀더, len=11) → 로컬에서 프로드 Turso 직접 검사 불가. 대신 빌드 시점에는 실값이 주입된다는 점을 이용.
-- 해결: `vercel-build`에 `&& bun run db:migrate`(drizzle-kit migrate) 체인 — 배포마다 빌드 단계에서 마이그레이션 실행(드리즐 저널로 멱등). env가 정말 잘못된 경우엔 빌드가 명시적으로 실패해 원인이 드러남. 로컬 file: DB로 마이그레이션 동작 검증(`__drizzle_migrations, custom_recipes, environments, users` 생성), tsc·31 테스트 그린.
-- 교훈: 서버리스 배포에는 "부팅 시 1회" 코드가 실행될 자리가 없다 — 부팅 훅(마이그레이션·워밍업)은 **배포(빌드) 단계로 옮겨야** 한다.
+- 1차 오진: "프로드 Turso에 테이블 없음" — 실제로는 `users` 테이블이 **있었고**, 마이그레이션 재생성 시도가 "already exists"로 충돌했다.
+- 실제 원인(빌드 단계 진단 스크립트로 규명): **프로드 `TURSO_DATABASE_URL`이 다른 프로젝트의 기존 Turso DB를 가리키고 있었음.** 그 DB의 `users`는 구조가 다르고(`username` 컬럼, nanoid ID, 텍스트 타임스탬프, 2026-03~05 실사용자 3행) FK로 참조하는 다른 앱 테이블들도 존재. 현재 코드의 upsert(`login` 컬럼)가 "no such column"으로 폭발한 것이 INTERNAL_ERROR의 정체.
+- 아찔했던 지점: 잔재로 판단해 `MIGRATE_ALLOW_RESET=1` 승인 하에 드랍을 시도했으나 **FOREIGN KEY 제약이 거부해 데이터 무손실**. 드랍 전 내용 미리보기 로그 덕분에 남의 DB임을 즉시 인지.
+- 해결: (1) `vercel-build`에 마이그레이션 스크립트(`scripts/migrate.ts`) 체인 — 저널 존재 시 no-op, 스키마 일치 시 베이스라인 채택(데이터 보존), 빈 무저널 스키마만 드랍, **기대 외 테이블이 하나라도 있으면 플래그와 무관하게 전면 거부**(공유 DB 가드). 에러는 시크릿 마스킹 후 출력. (2) 콜백 비-AppError에 에러 클래스명 노출(`INTERNAL_ERROR_LibsqlError` 식). (3) **운영 조치: lazy-environment 전용 Turso DB 신설 후 `TURSO_DATABASE_URL`/`TURSO_AUTH_TOKEN` 교체**(사용자), `MIGRATE_ALLOW_RESET` 즉시 제거(사용자).
+- 교훈: ① 서버리스에는 "부팅 시 1회" 자리가 없다 — 마이그레이션은 배포(빌드) 단계로. ② Sensitive env는 `vercel env pull`로 실값이 안 내려온다(빌드 로그가 유일한 진단 채널). ③ **파괴적 마이그레이션은 드랍 전 내용 로그 + 기대 외 테이블 전면 거부가 생명줄** — 공유 DB 연결은 언제든 일어난다.
