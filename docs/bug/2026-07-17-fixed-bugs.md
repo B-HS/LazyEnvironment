@@ -18,3 +18,14 @@
 - 증상: Install 실행은 exit 0(로그에 "Done in 2.3s using pnpm v11.13.1")인데 재감지 후에도 미설치 상태.
 - 원인: pnpm v11 공식 install.sh는 `pnpm setup --force` 경유로 실행 파일을 **`$PNPM_HOME/bin/pnpm`** 에 넣는데(설치 스크립트가 ~/.zshrc에 쓰는 PATH도 `$PNPM_HOME/bin`), 레시피 감지 명령은 구 레이아웃 `$PNPM_HOME/pnpm`을 봄 — 경로 불일치. quarantine 가설은 실측으로 기각(바이너리 직접 실행 정상).
 - 해결: detect/currentVersionCommand를 `"$PNPM_HOME/bin/pnpm" --version 2>/dev/null || "$PNPM_HOME/pnpm" --version` 이중 경로로(구 레이아웃 폴백 유지). 외부 후보 `~/Library/pnpm`도 동일 처리. manualSteps[0]의 PATH 안내를 `$PNPM_HOME/bin`으로 교체(+xcstrings ko/ja 동기). 검증: 실제 설치본에서 새 감지 명령 `11.13.1`/exit 0, 레거시 레이아웃 모의 폴백 exit 0, 앱 화면에서 pnpm "Installed 11.13.1" 확인. 참고: 스크립트 주석의 "~/.pnpm 기본값"은 macOS에선 사실이 아님 — PNPM_HOME 미설정 샌드박스 실측 결과 기본 위치는 `~/Library/pnpm/bin/pnpm`(기존 외부 후보 위치 유지가 정답).
+
+## 4. Java(SDKMAN) 설치 실패 — Bash 3.2 (v0.0.2 이후 사용자 리포트)
+- 증상: Install 클릭 → exit 1. 로그: "SDKMAN requires Bash 4 or higher, but you are running Bash 3.2.57".
+- 원인: 레시피 검증(07-14) 이후 SDKMAN 업스트림이 설치 스크립트에 **Bash 4+ 요구**를 추가. `curl | bash`가 macOS 기본 `/bin/bash`(3.2.57)로 실행되어 설치가 시작 전에 중단. 런타임 `sdk` 함수는 zsh 지원이라 설치 스크립트만 문제.
+- 해결: installCommand를 `([ -x /opt/homebrew/bin/bash ] || /opt/homebrew/bin/brew install bash) && curl -s https://get.sdkman.io | /opt/homebrew/bin/bash`로 — Homebrew bash를 절대경로로 사용, 없으면 자동 설치(Homebrew 미설치면 명확히 실패 → manualSteps에 Homebrew 선행 안내 추가, xcstrings ko/ja 동기, 286키). updateCommand는 설치 스크립트를 안 돌리므로 무변경. 검증: 샌드박스 E2E(설치→detect `sdk version` exit 0→`sdk current java` exit 0) + 실 DEV_HOME 설치(Java 25.0.3-tem) + 앱 화면 "Installed" 확인.
+- 교훈: `lastVerified` 이후에도 업스트림 설치 스크립트는 언제든 계약을 바꾼다 — 설치 실패 재현 시 state.json의 `lastRun.logText`부터 볼 것(원인이 그대로 찍혀 있음).
+
+## 5. 서버 게스트 카탈로그 드리프트 (경로 감사 중 발견)
+- 증상: 라이브 서버(`/api/catalog`)가 이날 수정 전의 깨진 레시피(구 sdkman `| bash`, 구 pnpm `$PNPM_HOME/pnpm` 감지, uv 부트스트랩 없는 python)를 서빙.
+- 원인: 카탈로그가 `app/.../builtin-recipes.json`과 `server/data/catalog.json` **2곳에 사본**으로 존재 — 앱 쪽만 수정하면 서버가 구버전을 계속 서빙.
+- 해결: 서버 사본을 앱 카탈로그로 복사(diff IDENTICAL 확인) + 서버 tsc·31 테스트 그린. 재발 방지 규칙을 PROCESS 알려진 제약에 명문화(앱 카탈로그 수정 시 서버 사본 동시 복사, 후속: SSOT화/CI 체크).
