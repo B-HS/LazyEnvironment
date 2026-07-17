@@ -89,8 +89,8 @@
     "displayName": "pnpm",
     "category": "language",
     "summary": "Installs the pnpm package manager to a managed `PNPM_HOME` at `$DEV_HOME/js/pnpm` via pnpm's official standalone script. Update re-runs the same script, which upgrades pnpm in place.",
-    "detectCommand": "\"$PNPM_HOME/pnpm\" --version",
-    "currentVersionCommand": "\"$PNPM_HOME/pnpm\" --version",
+    "detectCommand": "\"$PNPM_HOME/bin/pnpm\" --version 2>/dev/null || \"$PNPM_HOME/pnpm\" --version",
+    "currentVersionCommand": "\"$PNPM_HOME/bin/pnpm\" --version 2>/dev/null || \"$PNPM_HOME/pnpm\" --version",
     "installCommand": "mkdir -p \"$PNPM_HOME\" && curl -fsSL https://get.pnpm.io/install.sh | sh -",
     "updateCommand": "mkdir -p \"$PNPM_HOME\" && curl -fsSL https://get.pnpm.io/install.sh | sh -",
     "uninstallCommand": "rm -rf \"${PNPM_HOME:?}\"",
@@ -105,15 +105,15 @@
       "url": "https://get.pnpm.io/install.sh"
     },
     "manualSteps": [
-      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `PNPM_HOME` on your `PATH` with `export PATH=\"$PNPM_HOME:$PATH\"` so the `pnpm` command resolves in your own terminals.",
+      "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then put `$PNPM_HOME/bin` on your `PATH` with `export PATH=\"$PNPM_HOME/bin:$PATH\"` so the `pnpm` command resolves in your own terminals.",
       "pnpm is installed as a standalone binary and does not need Node to run itself. To install Node too, use the Node.js (nvm) recipe, or run `pnpm env use --global lts` after pnpm is on your PATH."
     ],
-    "lastVerified": "2026-07-14",
+    "lastVerified": "2026-07-17",
     "externalCandidates": [
       {
         "label": "~/Library/pnpm (default PNPM_HOME)",
-        "detectCommand": "\"$HOME/Library/pnpm/pnpm\" --version",
-        "currentVersionCommand": "\"$HOME/Library/pnpm/pnpm\" --version",
+        "detectCommand": "\"$HOME/Library/pnpm/bin/pnpm\" --version 2>/dev/null || \"$HOME/Library/pnpm/pnpm\" --version",
+        "currentVersionCommand": "\"$HOME/Library/pnpm/bin/pnpm\" --version 2>/dev/null || \"$HOME/Library/pnpm/pnpm\" --version",
         "diskUsagePaths": [
           "$HOME/Library/pnpm"
         ],
@@ -173,7 +173,7 @@
     "summary": "Installs a Java toolchain through SDKMAN into a relocated `SDKMAN_DIR` at `$DEV_HOME/java/sdkman`, configured to answer prompts automatically; the Gradle cache lives at `$DEV_HOME/java/gradle` (`GRADLE_USER_HOME`), shared with the Android SDK recipe. Update runs `sdk install java` to fetch the latest Java release.",
     "detectCommand": "[ -s \"$DEV_HOME/java/sdkman/bin/sdkman-init.sh\" ] && export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk version",
     "currentVersionCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk current java",
-    "installCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && curl -s https://get.sdkman.io | bash && sed -i '' 's/sdkman_auto_answer=false/sdkman_auto_answer=true/' \"$SDKMAN_DIR/etc/config\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install java",
+    "installCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && ([ -x /opt/homebrew/bin/bash ] || /opt/homebrew/bin/brew install bash) && curl -s https://get.sdkman.io | /opt/homebrew/bin/bash && sed -i '' 's/sdkman_auto_answer=false/sdkman_auto_answer=true/' \"$SDKMAN_DIR/etc/config\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install java",
     "updateCommand": "export SDKMAN_DIR=\"$DEV_HOME/java/sdkman\" && sed -i '' 's/sdkman_auto_answer=false/sdkman_auto_answer=true/' \"$SDKMAN_DIR/etc/config\" && source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install java",
     "uninstallCommand": "rm -rf \"${SDKMAN_DIR:?}\"",
     "envVars": {
@@ -192,10 +192,11 @@
     },
     "manualSteps": [
       "`sdk` is a shell function sourced from `sdkman-init.sh`, not a binary on `PATH` (PRD §9.7), so this app drives it through an interactive shell (`zsh -ic`); expect shell startup banners in the log output.",
+      "SDKMAN's installer requires Bash 4+, while macOS ships Bash 3.2 — installing this recipe bootstraps a modern Bash through Homebrew (`brew install bash`) when needed, so install the Homebrew recipe first.",
       "Open this recipe's detail view, click the \"Copy export lines\" button, and paste them into `~/.zshrc`. Then add `source \"$SDKMAN_DIR/bin/sdkman-init.sh\"` after them so `sdk` and `java` resolve in every new terminal.",
       "`GRADLE_USER_HOME` (`$DEV_HOME/java/gradle`) is shared with the Android SDK recipe so the Gradle cache is counted once, not twice — leave it in place if you use both."
     ],
-    "lastVerified": "2026-07-14",
+    "lastVerified": "2026-07-17",
     "externalCandidates": [
       {
         "label": "~/.sdkman (default SDKMAN_DIR)",
@@ -309,18 +310,19 @@
     "summary": "CPython interpreters managed by uv, installed under `$DEV_HOME/python/uv/pythons`. Install fetches the latest stable CPython; per-project versions are handled by uv (`.python-version`, `uv python pin`).",
     "detectCommand": "ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 >/dev/null 2>&1",
     "currentVersionCommand": "PYBIN=\"$(ls -d \"$UV_PYTHON_INSTALL_DIR\"/*/bin/python3 2>/dev/null | sort | tail -1)\" && \"$PYBIN\" --version",
-    "installCommand": "\"$UV_INSTALL_DIR/uv\" python install",
-    "updateCommand": "\"$UV_INSTALL_DIR/uv\" python install",
+    "installCommand": "[ -x \"$UV_INSTALL_DIR/uv\" ] || (mkdir -p \"$UV_INSTALL_DIR\" && curl -LsSf https://astral.sh/uv/install.sh | UV_NO_MODIFY_PATH=1 sh) && \"$UV_INSTALL_DIR/uv\" python install",
+    "updateCommand": "[ -x \"$UV_INSTALL_DIR/uv\" ] || (mkdir -p \"$UV_INSTALL_DIR\" && curl -LsSf https://astral.sh/uv/install.sh | UV_NO_MODIFY_PATH=1 sh) && \"$UV_INSTALL_DIR/uv\" python install",
     "uninstallCommand": "rm -rf \"${UV_PYTHON_INSTALL_DIR:?}\"",
     "envVars": {
       "UV_INSTALL_DIR": "$DEV_HOME/python/uv/bin",
-      "UV_PYTHON_INSTALL_DIR": "$DEV_HOME/python/uv/pythons"
+      "UV_PYTHON_INSTALL_DIR": "$DEV_HOME/python/uv/pythons",
+      "UV_CACHE_DIR": "$DEV_HOME/python/uv/cache"
     },
     "diskUsagePaths": [
       "$DEV_HOME/python/uv/pythons"
     ],
     "manualSteps": [
-      "Install the uv recipe first — this recipe installs and updates CPython through `uv python install`.",
+      "Installing this recipe bootstraps uv automatically when it is missing, then runs `uv python install` — installing the uv recipe first is recommended but not required.",
       "Never use the macOS system `/usr/bin/python3` for development — it is an Xcode Command Line Tools shim, not a full interpreter (PRD §9.6).",
       "To make these interpreters available in your terminal and projects, use uv (`uv run`, `uv venv`, `uv python pin <version>`) rather than putting the interpreter on PATH by hand."
     ],
@@ -340,7 +342,7 @@
         "currentVersionCommand": "/opt/homebrew/bin/python3 --version"
       }
     ],
-    "lastVerified": "2026-07-14"
+    "lastVerified": "2026-07-17"
   },
   {
     "id": "uv",
