@@ -20,6 +20,8 @@ xcodebuild ... test             # 47 tests (같은 인자에 build 대신 test)
 | `-force-dark` | 다크모드 강제(스킴 오버라이드) |
 | `-debug-show-popover` | 실행 2초 후 메뉴바 팝오버 자동 표시(클릭 불가 환경 캡처용) |
 | `-debug-open-settings` | 실행 2초 후 설정 창 자동 오픈 |
+| `-debug-open-main` | 실행 2초 후 `openMainWindow()` 호출(메인 창 표시 경로 검증) |
+| `-debug-close-windows` | 실행 3초 후 메인 창 전부 닫기(창 없는 상주 상태 재현) |
 
 ## 서버 (server/)
 

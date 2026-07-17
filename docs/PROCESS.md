@@ -3,7 +3,7 @@
 > **새 세션은 이 문서부터 읽는다.** 기준 문서: [PRD.md](./PRD.md)(§16 개정 포함), `~/.claude/convention/*`, `~/personal-llm/*`, 레포 루트 `CLAUDE.md`.
 > Swift(비-웹 도메인)는 웹 코드 컨벤션(arrow fn 등)을 적용하지 않고 Swift 표준 관례를 따른다. 공통 적용: 주석 금지(영어 doc comment만), Conventional Commits·author 단독·co-author 금지·요청 시에만 커밋, 시크릿/.env 접근 금지, 종료 전 검증.
 
-## 세션 재개 가이드 (2026-07-14 기준 현황)
+## 세션 재개 가이드 (2026-07-17 기준 현황)
 
 | 항목 | 상태 |
 |------|------|
@@ -11,8 +11,11 @@
 | 서버 (`server/`) | v2 완성. Bun + Hono + Turso(libSQL·Drizzle). **31 tests + tsc 그린**, 컨벤션 리뷰 반영 완료 |
 | i18n | ko/en/ja 3언어, xcstrings 285키(레시피 콘텐츠 포함). ko·ja 라이브 렌더 확인 |
 | 카탈로그 | 내장 레시피 23종(계층: node-nvm▸npm·pnpm·bun / python▸uv·pip), 외부 설치 감지 12+종 |
-| git | 커밋 0개(전부 워킹트리). **커밋은 사용자 지시 대기** |
-| 앱 언어 설정 | 사용자 머신에서 ko로 사용 중 (`~/Library/Application Support/LazyEnvironment/settings.json`) |
+| git | prod 브랜치 커밋 8개(ed1bf86..49c6859, 2026-07-15/16). **커밋은 여전히 사용자 지시 시에만** |
+| CI/릴리즈 | `.github/workflows/{ci,release-app}.yml` — push마다 서명·공증 자동 릴리즈(md 전용 제외, 직렬화, 버전 4-스킵 자동 증가). 태그 v0.0.1 공증 통과, 사용자가 `/Applications`에 설치해 사용 중 |
+| 서버 배포 | Vercel 배포 계약 반영(자가 번들 함수·public 디렉토리·카탈로그 정적 import 폴백). 사용자 settings의 서버 URL `https://lazy.seok.dev` |
+| 앱 언어 설정 | 사용자 머신에서 ko로 사용 중, `startInMenuBar: true` (`~/Library/Application Support/LazyEnvironment/settings.json`) |
+| 워킹트리 | 2026-07-17 버그 3건 수정분(체크리스트 ac) 미커밋 상태 |
 
 빌드·실행·검증 명령: [memory/commands.md](./memory/commands.md). 아키텍처 지도: [memory/project-map.md](./memory/project-map.md). 세션 도구·재사용 자산: [utils/session-tools.md](./utils/session-tools.md). 검증 절차: [quality-assurance/resume-checklist.md](./quality-assurance/resume-checklist.md).
 
@@ -47,6 +50,7 @@
 - [x] z. 서버 컨벤션 리뷰 반영(프로덕션 판정 DI 동기화·프로필 교체 원자화·사각 코드 제거. `getDbCredentials` 삭제 제안은 오탐 — drizzle.config가 사용)
 - [x] aa. (사용자 지시 8차) 서버 연결 상태 — 연결 테스트 버튼+결과 팝업(알럿), 상태 점(온라인/오프라인/미확인)+마지막 확인 시각, **동기화 모드(온라인/오프라인)** 설정(오프라인 시 로그인·동기화·연결 확인 비활성), sync 전 자동 헬스체크
 - [x] ab. 레포 리네임 `lazy-enviroment`→`lazy-environment`(오타 수정, 사용자 지시) + README `{여기에 한줄}` 태그라인 기입 + docs 전면 정비(memory/utils/bug/feedback/QA/루트 CLAUDE.md) — 리네임 후 앱 47·서버 31 테스트 재통과
+- [x] ac. (사용자 지시 9차, 2026-07-17) 릴리즈 앱 버그 3건 수정 — (1) 메뉴바 시작 시 앱 재실행해도 창 안 뜸 → `applicationShouldHandleReopen` + `openMainWindow` 가시성 필터(+File▸New Window ⌘N 폴백), (2) python 설치 실패(uv 역의존, exit 127) → installCommand/updateCommand가 uv 자동 부트스트랩 + `UV_CACHE_DIR` env, (3) pnpm 설치 성공인데 미설치 표시 → pnpm v11 `$PNPM_HOME/bin` 레이아웃 반영(관리+외부 후보 이중 경로, 레거시 폴백). xcstrings 2키 교체(ko/ja), QA 인자 `-debug-open-main`/`-debug-close-windows` 추가. 적대적 리뷰(3에이전트, 프로브 실증) 반영: 최소화 창 `canBecomeMain=false` 중복 창 블로커, Settings 창 제외, ⌘N 부재 시 accessory 복귀, accessory 전환 레이스 가드, `UV_NO_MODIFY_PATH=1`(rc 무수정). 검증: 47 테스트 그린 + 샌드박스 E2E(uv 부트스트랩→CPython 3.14.6, rc 0바이트) + 실행 화면 캡처(pnpm Installed 11.13.1, reopen 창 표시). 상세: [bug/2026-07-17-fixed-bugs.md](./bug/2026-07-17-fixed-bugs.md)
 
 ## 미확인 항목 (사용자 직접 확인 필요 — 클릭/자격증명 필요)
 
@@ -61,10 +65,15 @@
 
 - 실행 중 설치 로그는 스트리밍되지만 **관리자(osascript) 실행은 완료 후 일괄 출력**(do shell script 특성)
 - 레시피 콘텐츠 번역은 xcstrings 키=영문 원문 방식 — **builtin-recipes.json의 summary/manualSteps/라벨을 수정하면 xcstrings의 해당 키도 함께 갱신**해야 함(안 하면 해당 문자열만 영어 폴백). 검증법은 QA 체크리스트 참조
-- 서버 배포(Vercel 등) 미착수 — 현재 로컬 `bun run dev`. Turso 연결은 `vercel env pull`
+- 서버 배포는 Vercel 계약 반영 완료(31ef17a·38da3f2·0c01ee3), 로컬 검증은 여전히 `bun run dev`. Turso 연결은 `vercel env pull`
+- `/Applications`의 릴리즈 앱은 v0.0.1(수정 전) — 버그 3건 수정은 다음 push→자동 릴리즈에 포함되어야 반영됨. 그 전까지는 로컬 Debug 빌드(`./start.sh`)로 사용
+- uv 레시피의 uninstall(`rm -rf $DEV_HOME/python/uv`)이 python 레시피 소유 `pythons/`까지 제거 — 후속 후보(감지됨, 미수정)
+- uv 레시피 자체 installCommand는 여전히 rc 파일을 수정함(python 부트스트랩만 `UV_NO_MODIFY_PATH=1` 적용) — 통일 여부는 후속 판단
 - 공개 카탈로그를 앱이 가져와 병합하는 게스트 모드(PRD §6.3 첫 항목)는 서버 API만 존재, 앱 쪽 병합 UI 미구현
 - Homebrew 최초 부트스트랩은 sudo/TTY 필요 → 수동 단계로 안내(레시피에 반영됨)
 
 ## 진행 메모 (시간순 요약)
 
 - (2026-07-14) 스캐폴딩→코어→UI→카탈로그 워크플로(1차 15종 검증, 그룹B 스톨 재실행으로 20종)→i18n ko→외부 감지→관리자 실행→메뉴바/자동시작/아이콘→자동 재검사 삭제→Settings 버그→콘텐츠 보강(20 요약+54 단계)→계층화(23종)→v2 서버+클라이언트+E2E→ja→연결 상태/오프라인 모드→docs 전면 정비. 상세: [history/2026-07-14-v0v1-initial-build.md](./history/2026-07-14-v0v1-initial-build.md), 버그: [bug/2026-07-14-fixed-bugs.md](./bug/2026-07-14-fixed-bugs.md), 피드백: [feedback/2026-07-14-session-feedback.md](./feedback/2026-07-14-session-feedback.md)
+- (2026-07-15/16, 세션 외) 사용자 주도 커밋 8개 — 초기 스캐폴딩 커밋, Vercel 배포 계약, CI+서명 릴리즈 워크플로(버전 4-스킵), 공증 거절 해결(get-task-allow 주입 차단), push 자동 릴리즈. 태그 v0.0.1 배포
+- (2026-07-17) 릴리즈 앱 사용자 버그 3건 수정(체크리스트 ac) — 창 reopen / python uv 부트스트랩 / pnpm bin 경로. 버그: [bug/2026-07-17-fixed-bugs.md](./bug/2026-07-17-fixed-bugs.md)

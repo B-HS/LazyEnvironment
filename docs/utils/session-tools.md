@@ -29,7 +29,13 @@ for window in list {
 
 ### QA 런치 인자 (앱에 영구 내장)
 
-`-force-dark`(다크 강제) · `-debug-show-popover`(2초 후 팝오버) · `-debug-open-settings`(2초 후 설정 창). 새 시트/창 검증이 필요하면 같은 패턴으로 AppDelegate에 인자 추가.
+`-force-dark`(다크 강제) · `-debug-show-popover`(2초 후 팝오버) · `-debug-open-settings`(2초 후 설정 창) · `-debug-open-main`(2초 후 메인 창 열기) · `-debug-close-windows`(3초 후 메인 창 전부 닫기 — 창 없는 상주 상태 재현). 새 시트/창 검증이 필요하면 같은 패턴으로 AppDelegate에 인자 추가.
+
+### 창 검증 주의 (2026-07-17 확립)
+
+- winid.swift의 `onscreen`은 `true/false`가 아니라 `1/0`으로 출력될 수 있음 — `grep 'onscreen=true'` 금지, 값 자체를 눈으로 확인.
+- 앱 바이너리 직접 실행 시 `print`(stdout)는 파일 리다이렉트에서 전부 버퍼링되어 유실됨 — 계측 출력은 `fputs(..., stderr)`.
+- reopen 이벤트 검증: 실행 중 앱에 `open <번들>` 재호출. 창 없는 상태는 `-debug-close-windows`로 재현(Saved Application State 삭제 불필요).
 
 ### 로케일 강제
 
