@@ -58,7 +58,7 @@
 
 - [ ] 메뉴바 팝오버·우클릭 메뉴·자동 시작 토글 실클릭 (QA 인자로 팝오버 표시는 확인됨)
 - [ ] 관리자 비밀번호 프롬프트 실동작 (go `/usr/local/go` 외부 제거 시)
-- [ ] GitHub OAuth 실로그인 — **사용자가 GitHub OAuth 앱 생성 필요**(프로덕션 콜백 `https://lazy.seok.dev/auth/github/callback`, 로컬은 `http://127.0.0.1:25252/...`, 절차 `server/docs/server.md`). 2026-07-17 실측: 프로드 `/auth/github` 503(미구성), Keychain 세션 없음(로그인 이력 없음) → Vercel env에 `GITHUB_CLIENT_ID/SECRET` 설정 필요. 서버 계층은 검증됨(health ok, dev 로그인 404 게이팅, 무효 토큰 401, 카탈로그 23종 서빙)
+- [ ] GitHub OAuth 실로그인 — 서버 측 구성은 **완료**(2026-07-18: 사용자가 Vercel env `GITHUB_CLIENT_ID`/`GITHUB_CLIENT_SECRET` 등록 — 최초 `GITHUB_SECRET` 오기를 정정 — 후 `vercel redeploy`로 반영, `/auth/github` 302→github.com 확인). 남은 것: **앱에서 실클릭 로그인**(설정→GitHub 로그인→브라우저 인증→`lazyenvironment://` 콜백) 후 동기화 왕복 확인. GitHub OAuth 앱 콜백 URL은 `https://lazy.seok.dev/auth/github/callback`이어야 함
 - [ ] 충돌 해소 시트 실사용(두 기기 또는 로컬 상태 변경 후 재동기화)
 - [ ] 실제 설치 E2E(파괴적 — 입회 권장)
 - [ ] 커스텀 레시피 에디터 시트 상호작용

@@ -29,3 +29,9 @@
 - 증상: 라이브 서버(`/api/catalog`)가 이날 수정 전의 깨진 레시피(구 sdkman `| bash`, 구 pnpm `$PNPM_HOME/pnpm` 감지, uv 부트스트랩 없는 python)를 서빙.
 - 원인: 카탈로그가 `app/.../builtin-recipes.json`과 `server/data/catalog.json` **2곳에 사본**으로 존재 — 앱 쪽만 수정하면 서버가 구버전을 계속 서빙.
 - 해결: 서버 사본을 앱 카탈로그로 복사(diff IDENTICAL 확인) + 서버 tsc·31 테스트 그린. 재발 방지 규칙을 PROCESS 알려진 제약에 명문화(앱 카탈로그 수정 시 서버 사본 동시 복사, 후속: SSOT화/CI 체크).
+
+## 6. GitHub 로그인 클릭 시 앱 크래시 (2026-07-18, v0.0.3)
+- 증상: 설정에서 GitHub 로그인 → 앱 즉사(macOS "Reopen/Report" 다이얼로그). `.ips` 2건 동일 서명: `dispatch_assert_queue_fail` ← `_swift_task_checkIsolatedSwift` ← `closure #1 in SyncEngine.signInWithGitHub()`.
+- 원인: `ASWebAuthenticationSession`의 completion은 백그라운드(XPC reply) 스레드에서 호출되는데, `@MainActor` 컨텍스트에서 만든 **비-Sendable 클로저는 MainActor 격리를 상속** → 내부의 `Task { @MainActor in }`에 도달하기도 전에 클로저 프롤로그의 Swift 6 런타임 격리 검증에서 SIGTRAP. 실 OAuth 로그인이 최초 실행이라(dev 로그인은 URLSession 경로) 이제야 드러남.
+- 해결: completion 클로저에 `@Sendable` 명시(`{ @Sendable [weak self] callbackURL, error in ... }`) — 격리 상속이 끊겨 진입 검증이 사라지고, 내부 `Task { @MainActor }` 홉으로 상태 접근은 그대로 안전. `cancelSignIn()` + QA 인자 `-debug-github-signin-cancel`(3초 후 로그인 시작→3초 후 취소 = completion 강제 발화)로 재현 경로를 자동화 — 수정 후 앱 생존·신규 크래시 리포트 0건 확인.
+- 교훈: Apple 콜백 API에 넘기는 클로저는 `Task { @MainActor }` 래핑만으론 부족 — **클로저 자체가 격리를 상속하지 않게 `@Sendable`을 명시**해야 한다(같은 패턴 재발 시 이 항목부터).

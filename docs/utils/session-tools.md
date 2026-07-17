@@ -29,7 +29,7 @@ for window in list {
 
 ### QA 런치 인자 (앱에 영구 내장)
 
-`-force-dark`(다크 강제) · `-debug-show-popover`(2초 후 팝오버) · `-debug-open-settings`(2초 후 설정 창) · `-debug-open-main`(2초 후 메인 창 열기) · `-debug-close-windows`(3초 후 메인 창 전부 닫기 — 창 없는 상주 상태 재현). 새 시트/창 검증이 필요하면 같은 패턴으로 AppDelegate에 인자 추가.
+`-force-dark`(다크 강제) · `-debug-show-popover`(2초 후 팝오버) · `-debug-open-settings`(2초 후 설정 창) · `-debug-open-main`(2초 후 메인 창 열기) · `-debug-close-windows`(3초 후 메인 창 전부 닫기 — 창 없는 상주 상태 재현) · `-debug-github-signin-cancel`(3초 후 로그인 시작→3초 후 취소 — ASWebAuthenticationSession completion 발화 재현). 새 시트/창 검증이 필요하면 같은 패턴으로 AppDelegate에 인자 추가.
 
 ### 창 검증 주의 (2026-07-17 확립)
 

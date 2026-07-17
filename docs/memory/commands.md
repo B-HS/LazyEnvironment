@@ -22,6 +22,7 @@ xcodebuild ... test             # 47 tests (같은 인자에 build 대신 test)
 | `-debug-open-settings` | 실행 2초 후 설정 창 자동 오픈 |
 | `-debug-open-main` | 실행 2초 후 `openMainWindow()` 호출(메인 창 표시 경로 검증) |
 | `-debug-close-windows` | 실행 3초 후 메인 창 전부 닫기(창 없는 상주 상태 재현) |
+| `-debug-github-signin-cancel` | 실행 3초 후 GitHub 로그인 시작→3초 후 취소(ASWebAuthenticationSession completion 발화 재현) |
 
 ## 서버 (server/)
 
